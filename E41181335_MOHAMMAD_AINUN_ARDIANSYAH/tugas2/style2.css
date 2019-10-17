@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+body {
+    font-family: 'Mansalva', cursive;
+}
+
+header {
+    background-color: red;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: white;
+}
+
+logo {}
+
+nav a {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+section h1 {
+    color: black;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+}
+
+nav li {
+    display: inline;
+}
