@@ -113,6 +113,43 @@ img {vertical-align: middle;}
   .text {font-size: 11px}
 }
 /* body {background-color: cadetblue;} */
+footer{
+  background-color: cadetblue;
+}
+
+.mySlides.img {
+  width: 100%;
+  height: auto;
+}
+.mySlides .button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  padding: 16px 30px; */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.mySlides .button:hover{
+  background-color: black;
+  color: white;
+}
+.button{
+  background-color: rgb(67, 175, 202);
+  border: none;
+  color: black;
+  padding: 16px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+   
+}
     </style>
 </head>
 <body>
@@ -139,18 +176,21 @@ img {vertical-align: middle;}
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
             <img src="Image3.jpg" style="width:100%">
+            <button class="button">PILIH PAKET LIBURAN</button>
             <!-- <div class="text">Caption Text</div> -->
         </div>
                         
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
             <img src="Alun-Alun-Merdeka-Malang.jpg" style="width:100%">
+            <button class="button">PILIH PAKET LIBURAN</button>
             <!-- <div class="text">Caption Two</div> -->
         </div>
                         
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
             <img src="jatim-park-3-Live-With-Dino.jpg" style="width:100%">
+            <button class="button">PILIH PAKET LIBURAN</button>
             <!-- <div class="text">Caption Three</div> -->
         </div>
                         
@@ -164,6 +204,9 @@ img {vertical-align: middle;}
         </div>
                         
 </section>
+<footer>
+  <center><p>Copyright &copy; 2019 Powered By Lita</p></center>
+</footer>
 <script>
         var slideIndex = 0;
         showSlides();
