@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+}
+
+div input[button] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 13px;
+}
+
+div {
+    text-align: center;
+}
