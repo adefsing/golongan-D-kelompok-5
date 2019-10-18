@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
             $_SESSION['username'] = $user['username'];
             header("location:quixlab-master/index.html");
         }else{
-            echo "<script>alert('Username dan Password yang anda masukkan salah Silahkan masukkan kembali');document.location.href='index.php'</script>\n";
+            echo "<script>alert('Username dan Password yang anda masukkan salah Silahkan masukkan kembali');document.location.href='login.php'</script>\n";
         }
     }
 
