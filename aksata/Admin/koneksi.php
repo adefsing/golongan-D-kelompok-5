@@ -2,6 +2,6 @@
 $host       = "localhost";
 $user       = "root";
 $password   = "";
-$database   = "aksata";
+$database   = "login";
 $connect    = mysqli_connect($host, $user, $password, $database)
 ?>
