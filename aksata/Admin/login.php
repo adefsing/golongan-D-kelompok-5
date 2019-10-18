@@ -1,3 +1,15 @@
+<?php 
+
+    require 'function.php';
+
+    if(isset($_POST["login"])) {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        $result = mysqli_query(conn, "SELECT * from login where username ='$username' ")
+
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +34,7 @@
             <form action="#" method="POST">
                 <input type="text" id="name" name="username" placeholder="username">
                 <input type="password" name="password" id="password" placeholder="*******">
-                <p><button type="button" formmethod="POST" formaction="#">Login</button></p>
+                <p><button type="submit" formmethod="POST" formaction="#" name="login">Login</button></p>
             </form>
         </div>
     </div>
