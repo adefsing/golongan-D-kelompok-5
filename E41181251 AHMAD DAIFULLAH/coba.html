@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>AKSATA | LOGIN</title>
+</head>
+<body>
+	<style type="text/css">
+		.content {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+@font-face {
+font-family: 'TypoGraphica Regular';
+font-style: normal;
+font-weight: normal;
+src: local('TypoGraphica Regular'), url('TypoGraphica_demo.woff') format('woff');
+}
+
+.logo>#n {
+    color: #71c5aa;
+    font-family: 'TypoGraphica Regular';
+    font-size: 40px;
+
+
+    margin: 0;
+    display: inline;
+}
+
+.logo>#c {
+    color: #71c5aa;
+    font-family: 'TypoGraphica Regular';
+    position: relative;
+    top:-16px;
+
+    font-weight: bold;
+    margin: 0;
+    display: inline;
+}
+
+.login {
+    position: relative;
+    z-index: 1;
+    background: #79d4b7;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.login>h1 {
+    background-color: rgb(157, 94, 185);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 20px 0 20px 0;
+    margin:0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    clip-path: circle(54.1% at 50% -50%);
+}
+
+form {
+    padding: 0 45px 25px 45px;
+}
+
+form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #e4e4e4;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: transform .2s;
+}
+
+form input:hover {
+    transform: scale(1.1);
+}
+
+form>p {
+    text-align: right;
+    margin: 0;
+
+}
+
+form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: rgb(157, 94, 185);
+    width: 50%;
+    border: 0;
+    padding: 13px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-size: 14px;
+   transition: transform .2s;
+    cursor: pointer;
+    
+}
+
+form button:hover{
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	transform: scale(1.1);
+}
+
+
+	</style>
+    <div class="content">
+        <div class="logo">
+                <p id="n">Sfruit Line</p>
+                <p id="c">&copy;</p>
+        
+        </div>
+        <div class="login">
+            <h1>Login</h1>
+            <form action="proses_login.php" method="POST">
+                <input type="text" id="name" name="username" placeholder="username">
+                <input type="password" name="password" id="password" placeholder="*******">
+                <p><button type="submit" formmethod="POST" name="submit" formaction="proses_login.php">Login</button></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
