@@ -44,7 +44,16 @@ echo $campuran[0];
 </head>
 <body>
     
-    <div class="kotak"> 5 </div>
+    <?php 
+    $angka = [[1,2,3],[4,5,6,7],[8,9,0]];
+  
+    ?>
+
+    <?php foreach($angka as $a) :?>
+        <?php foreach($a as $b) :?>
+            <div class="kotak"> <?= $b;?> </div>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
 
 </body>
 </html>
