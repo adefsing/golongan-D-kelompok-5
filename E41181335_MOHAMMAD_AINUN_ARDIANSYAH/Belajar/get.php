@@ -37,7 +37,7 @@ $datadiri=[
 <?php foreach ($datadiri as $dd) :?>
     <ul>
     <li>
-    <a href="didin.php?nama=<?= $dd["nama"];?>"><?= $dd["nama"]; ?></a>
+    <a href="didin.php?nama=<?= $dd["nama"]; ?>&ttl=<?= $dd["ttl"]; ?>&sekolah=<?= $dd["sekolah"]; ?>"><?= $dd["nama"]; ?></a>
     </li>
     </ul>
 <?php endforeach; ?>

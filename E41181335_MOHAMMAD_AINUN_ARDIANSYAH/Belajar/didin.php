@@ -1,3 +1,12 @@
+<?php
+if (!isset($_GET["nama"])||
+    !isset($_GET["ttl"]) ||
+    !isset($_GET["sekolah"])) {
+
+        header("Location: get.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +18,8 @@
 <body>
 <ul>
     <li><?= $_GET["nama"]; ?></li>
+    <li><?= $_GET["ttl"]; ?></li>
+    <li><?= $_GET["sekolah"]; ?></li>
 </ul>
 </body>
 </html>
