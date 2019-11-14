@@ -6,15 +6,7 @@ include "../koneksi.php";
 
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
-$harga    = mysqli_query($connect, "select SUM(HARGA_DEAL) AS total from transaksi");
-$jmlt     = mysqli_query($connect, "select COUNT(NMR_TRNS) AS jmlt from transaksi");
-$jmlp     = mysqli_query($connect, "select COUNT(ID_CUST) AS jmlp from customer");
-$row      = mysqli_fetch_array($harga);
-$row2     = mysqli_fetch_array($jmlt);
-$row3     = mysqli_fetch_array($jmlp);
-$sum      = $row['total'];
-$jmltr    = $row2['jmlt'];
-$jmlcs    = $row3['jmlp'];
+
  
 if ($username == "" || $username == NULL || empty($username)) { 
 
@@ -332,7 +324,7 @@ if ($username == "" || $username == NULL || empty($username)) {
                             <div class="card-body">
                                 <h3 class="card-title text-white">Pelanggan</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white"><?php echo $jmlcs?></h2>
+                                    <h2 class="text-white"><?php echo $jmlcs; ?></h2>
                                     <p class="text-white mb-0">Jan - Maret 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
