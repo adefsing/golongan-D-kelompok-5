@@ -1,5 +1,5 @@
 <?php
-require 'koneksi.php';
+require 'functions.php';
 $wisata = query("SELECT * FROM wisata");
 
 ?>

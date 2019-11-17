@@ -1,27 +1,12 @@
 <?php
-    require 'koneksi.php';
-
-    function tambah($data) {
-    global $connect;
-
-    $id_wst = htmlspecialchars($data["ID_WST"]);
-    $nm_wst = htmlspecialchars($data["NM_WST"]);        
-    $alamat_wst = htmlspecialchars($data["ALAMAT_WST"]);
-    $tlp_wst = htmlspecialchars($data["TLP_WST"]); 
-
-    $query = "INSERT INTO wisata VALUES 
-                ('wst'+'$id_wst', '$nm_wst', '$alamat_wst', '$tlp_wst')";
-    mysqli_query($connect, $query); 
-
-    return mysqli_affected_rows($connect);
-    }
+    require 'functions.php';
 
     if( isset($_POST["submit"]) ) {
-        if(tambah($_POST) > 0) {
+        if(tambahwst($_POST) > 0) {
             echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'wisata.php';
+                document.location.href = 'index.php';
             </script>
             ";
         } else {
