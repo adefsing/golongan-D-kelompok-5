@@ -50,7 +50,7 @@ function hapuswst($nm) {
 
 function ubahwst($data){
     global $connect;
-    // global $idwst;
+    global $idwst;
 
     $id_wst = $data["ID_WST"];
     $nm_wst = htmlspecialchars($data["NM_WST"]);        

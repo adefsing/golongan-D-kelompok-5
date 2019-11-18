@@ -2,8 +2,8 @@
 require 'functions.php';
 
 // ambil data di URL
-$id = $_GET["ID_WST"];
-$ubah = query ("SELECT * FROM wisata WHERE ID_WST = '$id'")[0];
+$idw = $_GET["ID_WST"];
+$ubah = query ("SELECT * FROM wisata WHERE ID_WST = '$idw'")[0];
 // var_dump($ubah); 
 
 // cek apakah tombol submit sudah ditekan atau belum
