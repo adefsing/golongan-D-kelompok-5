@@ -21,25 +21,25 @@ $wisata = query("SELECT * FROM wisata");
         <th>Telepon</th>
         <th>Aksi</th>
     </tr>
-    <?php $a ="wst"; ?>
-    <?php $i = 1; ?>
+    <!-- <?php $a ="wst"; ?> -->
+    <!-- <?php $i = 1; ?> -->
     <?php foreach( $wisata as $wst ) : ?>
     <tr>
-        <td> <?= $a.$i; ?> </td>
+        <td></td>
+        <!-- <td> <?= $a.$i; ?> </td> -->
         <td> <?= $wst["NM_WST"]; ?> </td>
         <td> <?= $wst["ALAMAT_WST"]; ?> </td>
         <td> <?= $wst["TLP_WST"]; ?> </td>
         <td>
-            <a href="">Ubah</a>
+            <a href="ubah.php?ID_WST=<?=$wst["ID_WST"];?>">Ubah</a>
             <a href="hapus.php?NM_WST=<?=$wst["NM_WST"];?>">Hapus</a>
         </td>
     </tr>
-    <?php $i++; ?>
+    <!-- <?php $i++; ?> -->
     <?php endforeach; ?>
 </table>
 <br>
 <a href="tambah.php">Tambah</a>
-<a href="hapus.php"></a>
 
 </body>
 </html>

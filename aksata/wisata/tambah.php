@@ -1,4 +1,5 @@
 <?php
+
     require 'functions.php';
 
     if( isset($_POST["submit"]) ) {
@@ -18,6 +19,7 @@
             ";
         }
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,11 +34,11 @@
 
     <form action="" method="post">
     <ul>
-        <li>
+        <!-- <li>
             <label for="ID_WST">ID</label>
-            <input type="text" name="ID_WST" id="ID_WST" required>
+            <input type="text" name="ID_WST" id="ID_WST" value="<?=$idwst;?>" required disabled>
         </li>
-        <br>
+        <br> -->
         <li>
             <label for="NM_WST">Nama Wisata</label>
             <input type="text" name="NM_WST" id="NM_WST" required>

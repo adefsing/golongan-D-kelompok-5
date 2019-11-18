@@ -1,5 +1,19 @@
 <?php
+
 $connect    = mysqli_connect("localhost", "root", "", "aksata");
+
+// auto increment
+$query = "SELECT max(ID_WST) as maxid FROM wisata";
+$hasil = mysqli_query($connect,$query);
+$dataa = mysqli_fetch_array($hasil);
+$idwst = $dataa['maxid'];
+
+$noUrut = (int) substr($idwst, 3, 3);
+
+$noUrut++;
+
+$char = "wst";
+$idwst = $char . sprintf("%02s", $noUrut);
 
 function query ($query) {
     global $connect;
@@ -14,14 +28,15 @@ function query ($query) {
 
 function tambahwst($data) {
     global $connect;
+    global $idwst;
 
-    $id_wst = htmlspecialchars($data["ID_WST"]);
+    // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_wst = htmlspecialchars($data["NM_WST"]);        
     $alamat_wst = htmlspecialchars($data["ALAMAT_WST"]);
     $tlp_wst = htmlspecialchars($data["TLP_WST"]); 
 
     $query = "INSERT INTO wisata VALUES 
-                ('$id_wst', '$nm_wst', '$alamat_wst', '$tlp_wst')";
+                ('$idwst', '$nm_wst', '$alamat_wst', '$tlp_wst')";
     mysqli_query($connect, $query); 
 
     return mysqli_affected_rows($connect);
@@ -33,5 +48,26 @@ function hapuswst($nm) {
     return mysqli_affected_rows($connect);
 }
 
+function ubahwst($data){
+    global $connect;
+    // global $idwst;
+
+    $id_wst = $data["ID_WST"];
+    $nm_wst = htmlspecialchars($data["NM_WST"]);        
+    $alamat_wst = htmlspecialchars($data["ALAMAT_WST"]);
+    $tlp_wst = htmlspecialchars($data["TLP_WST"]); 
+
+    $query = "UPDATE 'wisata' SET 
+                'NM_WST' = '$nm_wst', 
+                'ALAMAT_WST' = '$alamat_wst',
+                'TLP_WST' '$tlp_wst' 
+                WHERE 'wisata'.'ID_WST' = '$id_wst'
+            ";
+
+    mysqli_query($connect, $query); 
+
+    return mysqli_affected_rows($connect);
+
+}
 
 ?>
