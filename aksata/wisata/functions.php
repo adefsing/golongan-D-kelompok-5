@@ -50,18 +50,20 @@ function hapuswst($nm) {
 
 function ubahwst($data){
     global $connect;
-    global $idwst;
+    // global $idwst;
 
     $id_wst = $data["ID_WST"];
     $nm_wst = htmlspecialchars($data["NM_WST"]);        
     $alamat_wst = htmlspecialchars($data["ALAMAT_WST"]);
     $tlp_wst = htmlspecialchars($data["TLP_WST"]); 
 
-    $query = "UPDATE 'wisata' SET 
-                'NM_WST' = '$nm_wst', 
-                'ALAMAT_WST' = '$alamat_wst',
-                'TLP_WST' '$tlp_wst' 
-                WHERE 'wisata'.'ID_WST' = '$id_wst'
+    // var_dump($data);
+
+    $query = "UPDATE wisata SET 
+                NM_WST = '$nm_wst', 
+                ALAMAT_WST = '$alamat_wst',
+                TLP_WST = '$tlp_wst' 
+                WHERE ID_WST = '$id_wst'
             ";
 
     mysqli_query($connect, $query); 

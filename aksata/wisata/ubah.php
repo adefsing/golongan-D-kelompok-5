@@ -2,6 +2,7 @@
 require 'functions.php';
 
 // ambil data di URL
+if(isset($_GET["ID_WST"])){
 $idw = $_GET["ID_WST"];
 $ubah = query ("SELECT * FROM wisata WHERE ID_WST = '$idw'")[0];
 // var_dump($ubah); 
@@ -13,19 +14,19 @@ $ubah = query ("SELECT * FROM wisata WHERE ID_WST = '$idw'")[0];
             echo "
             <script>
                 alert('data berhasil diubah');
-                document.location.href = 'ubah.php';
+                document.location.href = 'index.php';
             </script>
             ";
         } else {
             echo "
             <script>
                 alert('data gagal diubah');
-                document.location.href = 'ubah.php';
+                document.location.href = 'ubah.php?ID_WST=".$_POST['ID_WST']."';
             </script>
             ";
         }
     }
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
