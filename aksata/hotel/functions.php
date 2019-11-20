@@ -4,7 +4,7 @@ $connect    = mysqli_connect("localhost", "root", "", "aksata");
 
 // auto increment
 $query = "SELECT max(ID_HOTEL) as maxid FROM hotel";
-$hasil = mysqli_query($connect,$query);
+$hasil = mysqli_query($connect, $query);
 $dataa = mysqli_fetch_array($hasil);
 $idhtl = $dataa['maxid'];
 
@@ -12,8 +12,8 @@ $noUrut = (int) substr($idhtl, 3, 3);
 
 $noUrut++;
 
-$char = "wst";
-$idhtl = $char . sprintf("%02s", $noUrut);
+$char = "hl";
+$idhtl = $char . sprintf("%03s", $noUrut);
 
 function query ($query) {
     global $connect;
@@ -26,44 +26,44 @@ function query ($query) {
 
 }
 
-function tambahwst($data) {
+function tambahhtl($data) {
     global $connect;
     global $idhtl;
 
     // $id_wst = htmlspecialchars($data["ID_WST"]);
-    $nm_wst = htmlspecialchars($data["NM_WST"]);        
-    $alamat_wst = htmlspecialchars($data["ALAMAT_WST"]);
-    $tlp_wst = htmlspecialchars($data["TLP_WST"]); 
+    $nm_htl = htmlspecialchars($data["NM_HOTEL"]);        
+    $alamat_htl = htmlspecialchars($data["ALAMAT_HOTEL"]);
+    $tlp_htl = htmlspecialchars($data["TLP_HOTEL"]); 
 
-    $query = "INSERT INTO wisata VALUES 
-                ('$idhtl', '$nm_wst', '$alamat_wst', '$tlp_wst')";
+    $query = "INSERT INTO hotel VALUES 
+                ('$idhtl', '$nm_htl', '$alamat_htl', '$tlp_htl')";
     mysqli_query($connect, $query); 
 
     return mysqli_affected_rows($connect);
 }
 
-function hapuswst($nm) {
+function hapushtl($nm) {
     global $connect;
-    mysqli_query($connect, "DELETE FROM wisata WHERE NM_WST = '$nm'");
+    mysqli_query($connect, "DELETE FROM hotel WHERE NM_HOTEL = '$nm'");
     return mysqli_affected_rows($connect);
 }
 
-function ubahwst($data){
+function ubahhtl($data){
     global $connect;
     // global $idwst;
 
-    $id_wst = $data["ID_WST"];
-    $nm_wst = htmlspecialchars($data["NM_WST"]);        
-    $alamat_wst = htmlspecialchars($data["ALAMAT_WST"]);
-    $tlp_wst = htmlspecialchars($data["TLP_WST"]); 
+    $id_htl = $data["ID_HOTEL"];
+    $nm_htl = htmlspecialchars($data["NM_HOTEL"]);        
+    $alamat_htl = htmlspecialchars($data["ALAMAT_HOTEL"]);
+    $tlp_htl = htmlspecialchars($data["TLP_HOTEL"]); 
 
     // var_dump($data);
 
     $query = "UPDATE wisata SET 
-                NM_WST = '$nm_wst', 
-                ALAMAT_WST = '$alamat_wst',
-                TLP_WST = '$tlp_wst' 
-                WHERE ID_WST = '$id_wst'
+                NM_HOTEL = '$nm_htl', 
+                ALAMAT_HOTEL = '$alamat_htl',
+                TLP_HOTEL = '$tlp_htl' 
+                WHERE ID_HOTEL = '$id_htl'
             ";
 
     mysqli_query($connect, $query); 
@@ -72,13 +72,13 @@ function ubahwst($data){
 
 }
 
-function cariwst($keyword){
-    $query = "SELECT * FROM wisata
+function carihtl($keyword){
+    $query = "SELECT * FROM hotel
                 WHERE 
-                NM_WST LIKE '%$keyword%' OR
-                ID_WST LIKE '%$keyword%' OR
-                ALAMAT_WST LIKE '%$keyword%' OR
-                TLP_WST LIKE '%$keyword%' ";
+                NM_HOTEL LIKE '%$keyword%' OR
+                ID_HOTEL LIKE '%$keyword%' OR
+                ALAMAT_HOTEL LIKE '%$keyword%' OR
+                TLP_HOTEL LIKE '%$keyword%' ";
 
     return query($query);
 }
