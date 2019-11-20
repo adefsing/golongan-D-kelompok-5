@@ -2,6 +2,11 @@
 require 'functions.php';
 $wisata = query("SELECT * FROM wisata");
 
+// tombol search
+if(isset($_POST["cari"])){
+    $wisata = cari($_POST["keyword"]);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +18,17 @@ $wisata = query("SELECT * FROM wisata");
 </head>
 <body>
 <h1>wisata</h1>
+
+<br>
+
+<form action="" method="post">
+<input type="text" name="keyword" size="35" placeholder="masukkan 
+keyoword.." autocomplete="off">
+<button type="submit" name="cari">Cari</button>
+</form>
+
+<br>
+
 <table border="1" cellpadding="10" cellspacing="1">
     <tr>
         <th>Id</th>

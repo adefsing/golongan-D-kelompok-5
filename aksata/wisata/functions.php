@@ -72,4 +72,13 @@ function ubahwst($data){
 
 }
 
+function cari($keyword){
+    $query ="SELECT * FROM wisata
+                WHERE
+                Nama LIKE '%$keyword%' OR
+                Id LIKE '%$keyword%' OR
+                Alamat LIKE '%$keyword%' OR
+                Telepon LIKE '%$keyword%' ";
+}
+
 ?>
