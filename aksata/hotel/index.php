@@ -1,10 +1,10 @@
 <?php
 require 'functions.php';
-$wisata = query("SELECT * FROM wisata ORDER BY ID_WST ASC");
+$hotel = query("SELECT * FROM hotel ORDER BY ID_HOTEL ASC");
 
 // tombol search
 if(isset($_POST["cari"]) ) {
-    $wisata = cariwst ($_POST["keyword"]);
+    $hotel = carihtl ($_POST["keyword"]);
 }
 
 ?>
@@ -17,7 +17,7 @@ if(isset($_POST["cari"]) ) {
     <title>Document</title>
 </head>
 <body>
-<h1>wisata</h1>
+<h1>hotel</h1>
 
 <br>
 
@@ -37,17 +37,17 @@ keyoword.." autocomplete="off">
         <th>Telepon</th>
         <th>Aksi</th>
     </tr>
-    <?php $a ="wst"; ?>
+    <?php $a ="hl"; ?>
     <?php $i = 1; ?>
-    <?php foreach( $wisata as $wst ) : ?>
+    <?php foreach( $hotel as $htl ) : ?>
     <tr>
         <td> <?= $a.$i; ?> </td>
-        <td> <?= $wst["NM_WST"]; ?> </td>
-        <td> <?= $wst["ALAMAT_WST"]; ?> </td>
-        <td> <?= $wst["TLP_WST"]; ?> </td>
+        <td> <?= $htl["NM_HOTEL"]; ?> </td>
+        <td> <?= $htl["ALAMAT_HOTEL"]; ?> </td>
+        <td> <?= $htl["TLP_HOTEL"]; ?> </td>
         <td>
-            <a href="ubah.php?ID_WST=<?=$wst["ID_WST"];?>">Ubah</a>
-            <a href="hapus.php?NM_WST=<?=$wst["NM_WST"];?>">Hapus</a>
+            <a href="ubah.php?ID_HOTEL=<?=$htl["ID_HOTEL"];?>">Ubah</a>
+            <a href="hapus.php?NM_HOTEL=<?=$htl["NM_HOTEL"];?>">Hapus</a>
         </td>
     </tr>
     <?php $i++; ?>

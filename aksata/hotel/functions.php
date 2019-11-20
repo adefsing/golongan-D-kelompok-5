@@ -3,17 +3,17 @@
 $connect    = mysqli_connect("localhost", "root", "", "aksata");
 
 // auto increment
-$query = "SELECT max(ID_WST) as maxid FROM wisata";
+$query = "SELECT max(ID_HOTEL) as maxid FROM hotel";
 $hasil = mysqli_query($connect,$query);
 $dataa = mysqli_fetch_array($hasil);
-$idwst = $dataa['maxid'];
+$idhtl = $dataa['maxid'];
 
-$noUrut = (int) substr($idwst, 3, 3);
+$noUrut = (int) substr($idhtl, 3, 3);
 
 $noUrut++;
 
 $char = "wst";
-$idwst = $char . sprintf("%02s", $noUrut);
+$idhtl = $char . sprintf("%02s", $noUrut);
 
 function query ($query) {
     global $connect;
@@ -28,7 +28,7 @@ function query ($query) {
 
 function tambahwst($data) {
     global $connect;
-    global $idwst;
+    global $idhtl;
 
     // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_wst = htmlspecialchars($data["NM_WST"]);        
@@ -36,7 +36,7 @@ function tambahwst($data) {
     $tlp_wst = htmlspecialchars($data["TLP_WST"]); 
 
     $query = "INSERT INTO wisata VALUES 
-                ('$idwst', '$nm_wst', '$alamat_wst', '$tlp_wst')";
+                ('$idhtl', '$nm_wst', '$alamat_wst', '$tlp_wst')";
     mysqli_query($connect, $query); 
 
     return mysqli_affected_rows($connect);
