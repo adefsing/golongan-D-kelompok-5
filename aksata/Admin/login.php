@@ -12,7 +12,7 @@
 <body>
 <?php 
 if(isset($_POST['submit'])){
-    include 'koneksi.php';
+    include '../koneksi.php';
     error_reporting(0);
     $username = $_POST['username'];
         $password = $_POST['password'];
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
             $user = mysqli_fetch_array($login);
             session_start();
             $_SESSION['username'] = $user['username'];
-            header("location:quixlab-master/index.php");
+            header("location:quixlab-master/index.php?page=home");
         }else{
             echo "<script>alert('Username dan Password yang anda masukkan salah Silahkan masukkan kembali');document.location.href='login.php'</script>\n";
         }

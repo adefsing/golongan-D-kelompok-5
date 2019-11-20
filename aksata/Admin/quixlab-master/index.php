@@ -2,11 +2,19 @@
 error_reporting(0);
 session_start();
 
-include "../koneksi.php";
+include "../../koneksi.php";
 
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
-
+$harga    = mysqli_query($connect, "select SUM(HARGA_DEAL) AS total from transaksi");
+$jmlt     = mysqli_query($connect, "select COUNT(NMR_TRNS) AS jmlt from transaksi");
+$jmlp     = mysqli_query($connect, "select COUNT(ID_CUST) AS jmlp from customer");
+$row      = mysqli_fetch_array($harga);
+$row2     = mysqli_fetch_array($jmlt);
+$row3     = mysqli_fetch_array($jmlp);
+$sum      = $row['total'];
+$jmltr    = $row2['jmlt'];
+$jmlcs    = $row3['jmlp'];
  
 if ($username == "" || $username == NULL || empty($username)) { 
 
@@ -31,6 +39,7 @@ if ($username == "" || $username == NULL || empty($username)) {
     <!-- Chartist -->
     <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -276,11 +285,23 @@ if ($username == "" || $username == NULL || empty($username)) {
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.php">Home</a></li>
+                            <li><a href="?page=home">Home</a></li>
                             <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                         </ul>
                     </li>
-                    
+                    <li class="nav-label">Forms</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="?page=paket">Paket</a></li>
+                            <li><a href="./table-datatable.html">Pegawai</a></li>
+                            <li><a href="./table-datatable.html">Wisata</a></li>
+                            <li><a href="./table-datatable.html">Customer</a></li>
+                            <li><a href="./table-datatable.html">Hotel</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -292,107 +313,43 @@ if ($username == "" || $username == NULL || empty($username)) {
             Content body start
         ***********************************-->
         <div class="content-body">
+            <?php 
+	if(isset($_GET['page'])){
+		$page = $_GET['page'];
 
-            <div class="container-fluid mt-3">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-1">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Paket Terjual</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white"><?php echo $jmltr; ?></h2>
-                                    <p class="text-white mb-0">Jan - Maret 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-2">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Pendapatan</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">Rp <?php echo $sum; ?></h2>
-                                    <p class="text-white mb-0">Jan - Maret 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-3">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Pelanggan</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white"><?php echo $jmlcs; ?></h2>
-                                    <p class="text-white mb-0">Jan - Maret 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-4">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Kepuasan Pelanggan</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">99%</h2>
-                                    <p class="text-white mb-0">Jan - Maret 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body pb-0 d-flex justify-content-between">
-                                        <div>
-                                            <h4 class="mb-1">Penjualan Paket</h4>
-                                            <p>Total Pendapatan Bulan Ini</p>
-                                            <h3 class="m-0">Rp <?php echo $sum; ?></h3>
-                                        </div>
-                                        <div>
-                                            <ul>
-                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#">Hari</a></li>
-                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#">Minggu</a></li>
-                                                <li class="d-inline-block"><a class="text-dark" href="#">Bulan</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="chart-wrapper">
-                                <canvas id="team-chart" width="500" height="250"></canvas>
-                            
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="w-100 mr-2">
-                                                <h6>BALI  EXOTIC TOUR</h6>
-                                                <div class="progress" style="height: 6px">
-                                                    <div class="progress-bar bg-danger" style="width: 40%"></div>
-                                                </div>
-                                            </div>
-                                            <div class="ml-2 w-100">
-                                                <h6>BALI  CRUISE TOUR</h6>
-                                                <div class="progress" style="height: 6px">
-                                                    <div class="progress-bar bg-primary" style="width: 80%"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            
-            </div>
+		switch ($page) {
+			case 'home':
+				include "./_index.php";
+				break;
+			case 'paket':
+				include "./_paket.php";
+				break;
+			case 'galeri':
+				include "drink.php";
+				break;
+			case 'contact':
+				include "contact.php";
+				break;	
+            case 'logout':
+                include "logout.php";
+                break;
+            case 'inputmakanan':
+                include "makanan/inputmakanan.php";
+                break;
+            case 'editmakanan':
+                include "makanan/formeditmakanan.php";
+                break;
+            case 'inputgaleri':
+                include "makanan/inputgaleri.php";
+                break;
+            case 'editgaleri':
+                include "makanan/formeditgaleri.php";
+                break;
+			default:
+				include "./_index.php";
+				break;
+		}}
+	 ?>
             <!-- #/ container -->
         </div>
         <!--**********************************
@@ -405,7 +362,7 @@ if ($username == "" || $username == NULL || empty($username)) {
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Aksata</a> 2018</p>
             </div>
         </div>
         <!--**********************************
@@ -442,7 +399,10 @@ if ($username == "" || $username == NULL || empty($username)) {
     <!-- ChartistJS -->
     <script src="./plugins/chartist/js/chartist.min.js"></script>
     <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
-
+    
+    <script src="./plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
 
     <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
     <script src="./js/plugins-init/chartjs-init.js"></script>
