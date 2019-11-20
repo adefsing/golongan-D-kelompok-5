@@ -1,0 +1,46 @@
+.jumbotron{
+   background-image: url(img/two.jpg);
+   background-size: cover;
+   height: 800px;
+   text-align: center;
+   margin-top: -120px;
+   border: 1px solid some-color;
+}
+.jumbotron .display-4{
+    color: white;
+    margin-top: 250px;
+}
+.jumbotron p{
+    color: white;
+    font-size: 25px;
+}
+.jumbotron .btn{
+    border: none;
+   background-color: transparent;
+   
+}
+.jumbotron hr{
+    border-color: white;
+    width: 70px;
+    border-width: 3px;
+}
+
+.carousel-item{
+    height: 780px;
+}
+.carousel-item{
+    margin-top: -120px;
+}
+.carousel-item .display-4{
+    margin-top: -430px; 
+}
+.carousel-item .btn{
+    border: none;
+   background-color: transparent;
+   
+}
+.carousel-item hr{
+    border-color: white;
+    width: 70px;
+    border-width: 3px;
+}
