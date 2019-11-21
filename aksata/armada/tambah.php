@@ -3,7 +3,7 @@
     require 'functions.php';
 
     if( isset($_POST["submit"]) ) {
-        if(tambahrm($_POST) > 0) {
+        if(tambaharm($_POST) > 0) {
             echo "
             <script>
                 alert('data berhasil ditambahkan');
@@ -40,18 +40,18 @@
         </li>
         <br> -->
         <li>
-            <label for="NM_RM">Nama Rumah Makan</label>
-            <input type="text" name="NM_RM" id="NM_RM" required>
+            <label for="NM_ARM">Nama Armada</label>
+            <input type="text" name="NM_ARM" id="NM_ARM" required = "halo">
         </li>
         <br>
         <li>
-            <label for="ALAMAT_RM">Alamat</label>
-            <input type="text" name="ALAMAT_RM" id="ALAMAT_RM">
+            <label for="ALAMAT_ARM">Alamat</label>
+            <input type="text" name="ALAMAT_ARM" id="ALAMAT_ARM">
         </li>
         <br>
         <li>
-            <label for="TLP_RM">Telepon</label>
-            <input type="text" name="TLP_RM" id="TLP_RM" max = "13" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <label for="TLP_ARM">Telepon</label>
+            <input type="text" name="TLP_ARM" id="TLP_ARM" max = "13" onkeypress="return event.charCode >= 48 && event.charCode <=57">
         </li>
         <br>
         <li>
