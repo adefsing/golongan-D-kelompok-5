@@ -22,8 +22,7 @@ if(isset($_POST["cari"]) ) {
 <br>
 
 <form action="" method="post">
-<input type="text" name="keyword" size="35" placeholder="masukkan 
-keyoword.." autocomplete="off">
+<input type="text" name="keyword" size="35" placeholder="masukkan keyoword.." autocomplete="off">
 <button type="submit" name="cari">Cari</button>
 </form>
 

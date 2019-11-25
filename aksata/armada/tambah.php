@@ -41,7 +41,7 @@
         <br> -->
         <li>
             <label for="NM_ARM">Nama Armada</label>
-            <input type="text" name="NM_ARM" id="NM_ARM" required = "halo">
+            <input type="text" name="NM_ARM" id="NM_ARM" required>
         </li>
         <br>
         <li>
@@ -51,7 +51,7 @@
         <br>
         <li>
             <label for="TLP_ARM">Telepon</label>
-            <input type="text" name="TLP_ARM" id="TLP_ARM" max = "13" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <input type="text" name="TLP_ARM" id="TLP_ARM" max = "13" placeholder ="isikan angka" onkeypress="return event.charCode >= 48 && event.charCode <=57">
         </li>
         <br>
         <li>
