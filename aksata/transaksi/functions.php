@@ -1,19 +1,19 @@
 <?php
 
-$connect    = mysqli_connect("localhost", "root", "", "aksata");
+$connect    = mysqli_connect("localhost", "root", "", "aksataa");
 
 // auto increment
-$query = "SELECT max(ID_RM) as maxid FROM rm";
-$hasil = mysqli_query($connect,$query);
-$dataa = mysqli_fetch_array($hasil);
-$idrm = $dataa['maxid'];
+// $query = "SELECT max(ID_RM) as maxid FROM rm";
+// $hasil = mysqli_query($connect,$query);
+// $dataa = mysqli_fetch_array($hasil);
+// $idrm = $dataa['maxid'];
 
-$noUrut = (int) substr($idrm, 3, 3);
+// $noUrut = (int) substr($idrm, 3, 3);
 
-$noUrut++;
+// $noUrut++;
 
-$char = "rm";
-$idrm = $char . sprintf("%02s", $noUrut);
+// $char = "rm";
+// $idrm = $char . sprintf("%02s", $noUrut);
 
 function query ($query) {
     global $connect;
@@ -29,7 +29,7 @@ function query ($query) {
 function tambahrm($data) {
     global $connect;
     global $idrm;
-    $idrm = $dataa['maxid'];
+
     // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_rm = htmlspecialchars($data["NM_RM"]);        
     $alamat_rm = htmlspecialchars($data["ALAMAT_RM"]);
