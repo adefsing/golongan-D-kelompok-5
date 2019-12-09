@@ -28,7 +28,7 @@ function query ($query) {
 
 function tambahrm($data) {
     global $connect;
-    global $idrm;
+    global $idtrns;
 
     // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_rm = htmlspecialchars($data["NM_RM"]);        
@@ -36,7 +36,7 @@ function tambahrm($data) {
     $tlp_rm = htmlspecialchars($data["TLP_RM"]); 
 
     $query = "INSERT INTO rm VALUES 
-                ('$idrm', '$nm_rm', '$alamat_rm', '$tlp_rm')";
+                ('$idtrns', '$nm_rm', '$alamat_rm', '$tlp_rm')";
     mysqli_query($connect, $query); 
 
     return mysqli_affected_rows($connect);
