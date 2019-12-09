@@ -3,7 +3,7 @@
     require 'functions.php';
 
     if( isset($_POST["submit"]) ) {
-        if(tambahrm($_POST) > 0) {
+        if(tambahtrns($_POST) > 0) {
             echo "
             <script>
                 alert('data berhasil ditambahkan');
@@ -34,19 +34,19 @@
 
     <form action="" method="post">
     <ul>
-        <!-- <li>
-            <label for="ID_WST">ID</label>
-            <input type="text" name="ID_WST" id="ID_WST" value="<?=$idwst;?>" required disabled>
-        </li>
-        <br> -->
         <li>
-            <label for="NM_RM">Nama Rumah Makan</label>
-            <input type="text" name="NM_RM" id="NM_RM" required>
+            <label for="ID_TRNS">ID</label>
+            <input type="text" name="ID_TRNS" id="ID_TRNS" value="<?=$idtrns;?>" required disabled>
         </li>
         <br>
+        <!-- <li>
+            <label for="ID_TRNS">No.</label>
+            <input type="text" name="ID_TRNS" id="ID_TRNS" required disabled>
+        </li> -->
+        <br>
         <li>
-            <label for="ALAMAT_RM">Alamat</label>
-            <input type="text" name="ALAMAT_RM" id="ALAMAT_RM">
+            <label for="NM_PEMESAN">Nama Pemesan</label>
+            <input type="text" name="NM_PEMESAN" id="NM_PEMESAN">
         </li>
         <br>
         <li>

@@ -3,17 +3,11 @@
 $connect    = mysqli_connect("localhost", "root", "", "aksataa");
 
 // auto increment
-// $query = "SELECT max(ID_RM) as maxid FROM rm";
-// $hasil = mysqli_query($connect,$query);
-// $dataa = mysqli_fetch_array($hasil);
-// $idrm = $dataa['maxid'];
-
-// $noUrut = (int) substr($idrm, 3, 3);
-
-// $noUrut++;
-
-// $char = "rm";
-// $idrm = $char . sprintf("%02s", $noUrut);
+$query = "SELECT max(ID_TRNS) as maxid FROM transaksi";
+$hasil = mysqli_query($connect,$query);
+$dataa = mysqli_fetch_array($hasil);
+$idtrns = $dataa['maxid'];
+$idtrns++;
 
 function query ($query) {
     global $connect;
@@ -26,11 +20,11 @@ function query ($query) {
 
 }
 
-function tambahrm($data) {
+function tambahtrns($data) {
     global $connect;
     global $idtrns;
 
-    // $id_wst = htmlspecialchars($data["ID_WST"]);
+    // $id_trns = htmlspecialchars($data["ID_TRNS"]);
     $nm_rm = htmlspecialchars($data["NM_RM"]);        
     $alamat_rm = htmlspecialchars($data["ALAMAT_RM"]);
     $tlp_rm = htmlspecialchars($data["TLP_RM"]); 
