@@ -5,11 +5,11 @@
 
         $id = $_GET['id'];
 
-        $sql1 = mysqli_query($connect, "DELETE FROM paket WHERE  ID_PKT='$id';");
+        $sql1 = mysqli_query($connect, "DELETE FROM hotel WHERE ID_HOTEL ='$id';");
         if ($sql1) {
-            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=paket'</script>";
+            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=hotel'</script>";
         } else {
-            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=paket'</script>";
+            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=hotel'</script>";
         }
     }
     ?>
@@ -22,7 +22,7 @@
                         <div class="col-sm-12">
                             <div class="col-sm-12 col-md-6">
                                 <label>
-                                    <h4>Data Paket</h4>
+                                    <h4>Data Hotel</h4>
                                 </label>
                             </div>
 
@@ -30,7 +30,6 @@
                                 <label style="text-aling:right;">
 
                                     <button type="button" class="btn mb-1 btn-primary btn-lg" data-toggle="modal" data-target="#tambahmodal" data-whatever="@getbootstrap">TAMBAH DATA</button>
-
 
 
                                 </label>
@@ -43,15 +42,28 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="post" action="_tambah_paket.php" enctype="multipart/form-data">
+                                                <form method="post" action="_tambah_hotel.php" enctype="multipart/form-data">
                                                     <div class="row">
                                                         <div class="form-group col ml-auto">
-                                                            <label class="col-form-label">Nama Paket</label>
-                                                            <input type="text" name="nm_paket" class="form-control input-default" placeholder="Nama Paket">
-                                                            <label class="col-form-label">Harga</label>
-                                                            <input type="text" name="harga" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Harga">
-                                                            <label class="col-form-label">Rincian</label>
-                                                            <textarea type="text" name="rincian" class="form-control input-default" placeholder="Rincian" style="height:125px;"></textarea>
+                                                            <label class="col-form-label">Nama Hotel</label>
+                                                            <input type="text" name="nm_hotel" class="form-control input-default" placeholder="Nama hotel">
+
+                                                            <label>Pilih Paket</label>
+                                                            <select name="id_paket" class="form-control">
+                                                                <option selected="selected">Choose...</option>
+                                                                <?php
+                                                                $query = "Select * from paket";
+                                                                $sql = mysqli_query($connect, $query);
+                                                                while ($dataa = mysqli_fetch_array($sql)) {
+                                                                    ?>
+                                                                    <option><?php echo $dataa["ID_PKT"] ?></option>
+                                                                <?php } ?>
+                                                            </select>
+
+                                                            <label class="col-form-label">Telepon Hotel</label>
+                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon Hotel">
+                                                            <label class="col-form-label">Alamat Hotel</label>
+                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Hotel" style="height:125px;"></textarea>
                                                         </div>
                                                     </div>
                                             </div>
@@ -70,29 +82,29 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>ID PAKET</th>
-                                    <th>NAMA PAKET</th>
-                                    <th>HARGA</th>
-                                    <th>RINCIAN</th>
+                                    <th>ID HOTEL</th>
+                                    <th>NAMA HOTEL</th>
+                                    <th>ALAMAT HOTEL</th>
+                                    <th>TLP_HOTEL</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $id = $_GET['id'];
-                                $query = "Select * from paket";
+                                $query = "Select * from hotel";
                                 $sql = mysqli_query($connect, $query);
                                 while ($data = mysqli_fetch_array($sql)) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $data['ID_PKT']; ?></td>
-                                        <td><?php echo $data['NM_PKT']; ?></td>
-                                        <td><?php echo $data['HARGA']; ?></td>
-                                        <td><?php echo $data['RINCIAN']; ?></td>
+                                        <td><?php echo $data['ID_HOTEL']; ?></td>
+                                        <td><?php echo $data['NM_HOTEL']; ?></td>
+                                        <td><?php echo $data['ALAMAT_HOTEL']; ?></td>
+                                        <td><?php echo $data['TLP_HOTEL']; ?></td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_paket&id=<?php echo $data['ID_PKT']; ?>" data-placement="top" title="" data-original-title="Edit">
+                                                    <a href="?page=fedit_hotel&id=<?php echo $data['ID_HOTEL']; ?>" data-placement="top" title="">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -101,7 +113,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=paket&id=<?php echo $data['ID_PKT']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="?page=hotel&id=<?php echo $data['ID_HOTEL']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -116,10 +128,10 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID PAKET</th>
-                                    <th>NAMA PAKET</th>
-                                    <th>HARGA</th>
-                                    <th>RINCIAN</th>
+                                    <th>ID HOTEL</th>
+                                    <th>NAMA HOTEL</th>
+                                    <th>ALAMAT HOTEL</th>
+                                    <th>TLP_HOTEL</th>
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>
