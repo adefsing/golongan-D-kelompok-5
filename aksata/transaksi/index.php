@@ -36,7 +36,7 @@ if(isset($_POST["cari"]) ) {
     <title>Document</title>
 </head>
 <body>
-<h1>rm</h1>
+<h1>Transaksi</h1>
 
 <br>
 

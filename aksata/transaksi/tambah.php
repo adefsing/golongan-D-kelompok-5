@@ -20,6 +20,7 @@
         }
     }
 
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,12 +32,14 @@
 </head>
 <body>
     <h1>Tambah Data</h1>
+    <br>
+    <br>
 
     <form action="" method="post">
     <ul>
         <li>
             <label for="ID_TRNS">ID</label>
-            <input type="text" name="ID_TRNS" id="ID_TRNS" value="<?=$idtrns;?>" required disabled>
+            <input type="text" name="ID_TRNS" id="ID_TRNS" value="<?=$idtrns;?>" disabled>
         </li>
         <br>
         <!-- <li>
@@ -45,19 +48,84 @@
         </li> -->
         <br>
         <li>
-            <label for="NM_PEMESAN">Nama Pemesan</label>
-            <input type="text" name="NM_PEMESAN" id="NM_PEMESAN">
+            <label for="NM_PEMESAN">Jumlah Anggota</label>
+            <select>
+                    <?php
+                    $query = "SELECT * FROM pemesan ORDER BY TGL_PSN DESC";
+                    $hasil = mysqli_query($connect, $query);
+                    while ($tabel = mysqli_fetch_assoc($hasil)){
+                        echo '<option>'.$tabel["NM_PEMESAN"].'</option>';
+                    }
+                    ?>
+            </select>
         </li>
         <br>
         <li>
-            <label for="TLP_RM">Telepon</label>
-            <input type="text" name="TLP_RM" id="TLP_RM" max = "13" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <label for="JMLH_ANGGOTA">Nama Pemesan</label>
+            <select>
+                    <?php
+                    $query = "SELECT * FROM pemesan ORDER BY TGL_PSN DESC";
+                    $hasil = mysqli_query($connect, $query);
+                    while ($tabel = mysqli_fetch_assoc($hasil)){
+                        echo '<option>'.$tabel["JMLH_ANGGOTA"].'</option>';
+                    }
+                    ?>
+            </select>
+        </li>
+        <br>
+        <li>
+            <label for="NM_PKT">Paket</label>
+            <select>
+                    <?php
+                    $query = "SELECT * FROM paket";
+                    $hasil = mysqli_query($connect, $query);
+                    while ($tabel = mysqli_fetch_assoc($hasil)){
+                        echo '<option>'.$tabel["NM_PKT"].'</option>';
+                    }
+                    ?>
+            </select>
+        </li>
+        <br>
+        <li>
+            <label for="TGL_PSN">Tanggal Pesan</label>
+            <select>
+                    <?php
+                    $query = "SELECT DATE_FORMAT( TGL_PSN, '%d-%m-%Y' ) AS TGL_PSN FROM pemesan ORDER BY TGL_PSN DESC ";
+                    $hasil = mysqli_query($connect, $query);
+                    while ($tabel = mysqli_fetch_assoc($hasil)){
+                        echo '<option>'.$tabel["TGL_PSN"].'</option>';
+                    }
+                    ?>
+            </select>
+            <!-- INSERT INTO tanggal VALUES (STR_TO_DATE ('13-07-2013', '%d-%m-%Y')) -->
+        </li>
+        <br>
+        <li>
+            <label for="TGL_BRKT">Tanggal Berangkat</label>
+            <input type="date">
+           
+        </li>
+        <br>
+        <li>
+            <label for="TMPT_JPT">Tempat Jemput</label>
+            <input type="text" name="TMPT_JPT" id="TMPT_JPT">
+        </li>
+        <br>
+        <li>
+            <label for="HARGA">Harga</label>
+            <input type="text" name="HARGA" id="HARGA">
+        </li>
+        <br>
+        <li>
+            <label for="BAYAR">Bayar</label>
+            <input type="text" name="BAYAR" id="BAYAR">
         </li>
         <br>
         <li>
             <button type="submit" name="submit">TAMBAH</button>
         </li>
     </ul>
+    <br>
         
 
     </form>
@@ -70,5 +138,9 @@ function hanyaAngka(evt) {
 		  return true;
 		}
 </script>   -->
+
+
+
+
 </body>
 </html>
