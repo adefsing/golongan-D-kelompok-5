@@ -22,7 +22,7 @@
                         <div class="col-sm-12">
                             <div class="col-sm-12 col-md-6">
                                 <label>
-                                    <h4>Data Customer</h4>
+                                    <h4>Data Pemesan</h4>
                                 </label>
                             </div>
 
@@ -46,12 +46,14 @@
                                                 <form method="post" action="_tambah_customer.php" enctype="multipart/form-data">
                                                     <div class="row">
                                                         <div class="form-group col ml-auto">
-                                                            <label class="col-form-label">Nama Customer</label>
+                                                            <label class="col-form-label">Nama Pemesan</label>
                                                             <input type="text" name="nm_customer" class="form-control input-default" placeholder="Nama customer">
-                                                            <label class="col-form-label">Telepon Customer</label>
-                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon Customer">
-                                                            <label class="col-form-label">Alamat Customer</label>
-                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Customer" style="height:125px;"></textarea>
+                                                            <label class="col-form-label">Jumlah Anggota</label>
+                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
+                                                            <label class="col-form-label">NIK</label>
+                                                            <input type="text" name="alamat" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
+                                                            <label class="col-form-label">Tanggal Pesan</label>
+                                                            <input type="date" name="tanggal" class="form-control input-default" placeholder="">
                                                         </div>
                                                     </div>
                                             </div>
