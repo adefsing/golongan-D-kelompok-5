@@ -1,9 +1,9 @@
 <?php
 // require 'index.php';
 require 'functions.php';
-$nm = $_GET["NM_RM"];
+$nm = $_GET["ID_TRNS"];
 
-if (hapusrm($nm) > 0 ){
+if (hapustrns($nm) > 0 ){
     echo "
             <script>
                 alert('data berhasil dihapus');
