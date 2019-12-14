@@ -113,43 +113,6 @@
                                     </tr>
                                 <?php } ?>
 
-                                <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Edit Data</h5>
-                                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body ">
-                                                <form method="post" action="_edit_rm.php&id=<?php echo $data['ID_RM']; ?>">
-
-                                                    <div class="row ">
-                                                        <div class="form-group col ml-auto">
-                                                            <?php
-                                                            $ide = $_GET['ide'];
-                                                            $query = "Select * from rm where ID_RM = '$ide'";
-                                                            $sql = mysqli_query($connect, $query);
-                                                            $data = mysqli_fetch_array($sql)
-                                                            ?>
-
-                                                            <label class="col-form-label">Nama Rumah Makan</label>
-                                                            <input type="text" name="nm_rm" value="<?php echo $data['NM_RM']; ?>" class="form-control input-default" placeholder="Nama rm">
-                                                            <label class="col-form-label">Telepon Rumah Makan</label>
-                                                            <input type="text" name="tlp" value="<?php echo $data['TLP_RM']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telpon Rumah Makan">
-                                                            <label class="col-form-label">Alamat Rumah Makan</label>
-                                                            <textarea type="text" name="alamat" value="<?php echo $data['ALAMAT_RM']; ?>" class="form-control input-default" placeholder="Alamat Rumah Makan" style="height:125px;"></textarea>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <input type="reset" class="btn btn-secondary" value="Reset" style="color:white;">
-                                                        <button type="submit" name="Esubmit" class="btn btn-primary">Simpan</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
 
                             </tbody>
                             <tfoot>

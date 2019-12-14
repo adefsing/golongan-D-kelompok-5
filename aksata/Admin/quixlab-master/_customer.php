@@ -47,11 +47,11 @@
                                                     <div class="row">
                                                         <div class="form-group col ml-auto">
                                                             <label class="col-form-label">Nama Pemesan</label>
-                                                            <input type="text" name="nm_customer" class="form-control input-default" placeholder="Nama customer">
+                                                            <input type="text" name="nama_pemesan" class="form-control input-default" placeholder="Nama customer">
                                                             <label class="col-form-label">Jumlah Anggota</label>
-                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
+                                                            <input type="text" name="jml" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
                                                             <label class="col-form-label">NIK</label>
-                                                            <input type="text" name="alamat" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
+                                                            <input type="text" name="nik" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
                                                             <label class="col-form-label">Tanggal Pesan</label>
                                                             <input type="date" name="tanggal" class="form-control input-default" placeholder="">
                                                         </div>

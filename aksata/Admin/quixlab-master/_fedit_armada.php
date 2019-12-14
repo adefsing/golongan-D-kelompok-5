@@ -7,7 +7,7 @@
                         <div class="col-sm-12">
                             <div class="col-sm-12 col-md-6">
                                 <label>
-                                    <h4>Peramalan Stok</h4>
+                                    <h4>Edit Armada</h4>
                                 </label>
                             </div>
                             <?php

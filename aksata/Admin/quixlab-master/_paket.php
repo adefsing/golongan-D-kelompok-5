@@ -48,10 +48,6 @@
                                                         <div class="form-group col ml-auto">
                                                             <label class="col-form-label">Nama Paket</label>
                                                             <input type="text" name="nm_paket" class="form-control input-default" placeholder="Nama Paket">
-                                                            <label class="col-form-label">Harga</label>
-                                                            <input type="text" name="harga" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Harga">
-                                                            <label class="col-form-label">Rincian</label>
-                                                            <textarea type="text" name="rincian" class="form-control input-default" placeholder="Rincian" style="height:125px;"></textarea>
                                                         </div>
                                                     </div>
                                             </div>
@@ -72,8 +68,6 @@
                                 <tr>
                                     <th>ID PAKET</th>
                                     <th>NAMA PAKET</th>
-                                    <th>HARGA</th>
-                                    <th>RINCIAN</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -87,8 +81,7 @@
                                     <tr>
                                         <td><?php echo $data['ID_PKT']; ?></td>
                                         <td><?php echo $data['NM_PKT']; ?></td>
-                                        <td><?php echo $data['HARGA']; ?></td>
-                                        <td><?php echo $data['RINCIAN']; ?></td>
+
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
@@ -118,8 +111,7 @@
                                 <tr>
                                     <th>ID PAKET</th>
                                     <th>NAMA PAKET</th>
-                                    <th>HARGA</th>
-                                    <th>RINCIAN</th>
+
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>

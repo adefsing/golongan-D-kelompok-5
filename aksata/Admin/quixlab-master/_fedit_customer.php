@@ -7,12 +7,12 @@
                         <div class="col-sm-12">
                             <div class="col-sm-12 col-md-6">
                                 <label>
-                                    <h4>Edit Customer</h4>
+                                    <h4>Edit Pemesan</h4>
                                 </label>
                             </div>
                             <?php
                             $id = $_GET['id'];
-                            $query = "Select * from customer where ID_CUST = '$id'";
+                            $query = "Select * from pemesan where ID_PEMESAN = '$id'";
                             $sql = mysqli_query($connect, $query);
                             $data = mysqli_fetch_array($sql)
                             ?>
@@ -20,13 +20,14 @@
 
                                 <div class="row ">
                                     <div class="form-group col ml-auto">
-                                        <label class="col-form-label">Nama Customer</label>
-                                        <input type="text" name="nm_customer" value="<?php echo $data['NAMA_CUST']; ?>" class="form-control input-default" placeholder="Nama customer">
-                                        <label class="col-form-label">Telepon Customer</label>
-                                        <input type="text" name="tlp" value="<?php echo $data['TLP_CUST']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telpon Customer">
-                                        <label class="col-form-label">Alamat Customer</label>
-                                        <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Customer" style="height:125px;"><?php echo $data['ALAMAT_CUST']; ?></textarea>
-
+                                        <label class="col-form-label">Nama Pemesan</label>
+                                        <input type="text" name="nama_pemesan" value="<?php echo $data['NM_PEMESAN']; ?>" class="form-control input-default" placeholder="Nama customer">
+                                        <label class="col-form-label">Jumlah Anggota</label>
+                                        <input type="text" name="jml" value="<?php echo $data['JMLH_ANGGOTA']; ?>" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
+                                        <label class="col-form-label">NIK</label>
+                                        <input type="text" name="nik" value="<?php echo $data['NIK']; ?>" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
+                                        <label class="col-form-label">Tanggal Pesan</label>
+                                        <input type="date" name="tanggal" value="<?php echo $data['TGL_PSN']; ?>" class="form-control input-default" placeholder="">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
