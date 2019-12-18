@@ -77,9 +77,10 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="container">
                 <div class="row">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
-                        <h1>Explore Indonesia with <strong>aksata </strong><br>Mau liburan <strong>kemana ?</strong></h1>
-                        <p>Aksata tour & travel menyediakan beberaa Paket liburan tour & travel untuk kalian para traveler</p>
-                        <a href="#features" class="main-button-slider">Discover More</a>
+                        <h1>EXPLORE INDONESIA WITH <br><strong>AKSATA</strong></h1>
+                        <h2 class="text-white">Mau Liburan Kemana?</h2>
+                        <br>
+                        <a href="#features" class="main-button-slider">Pilih Paket</a>
                     </div>
                 </div>
             </div>
@@ -100,8 +101,8 @@ https://templatemo.com/tm-535-softy-pinko
                                 <div class="icon">
                                     <i><img src="assets/images/featured-item-01.png" alt=""></i>
                                 </div>
-                                <h5 class="features-title">Modern Strategy</h5>
-                                <p>Customize anything in this template to fit your website needs</p>
+                                <h5 class="features-title">Wisata Yang Menarik</h5>
+                                <p>Kami akan mengantar Anda ke tempat wisata yang Anda inginkan</p>
                             </div>
                         </div>
                         <!-- ***** Features Small Item End ***** -->
@@ -112,8 +113,8 @@ https://templatemo.com/tm-535-softy-pinko
                                 <div class="icon">
                                     <i><img src="assets/images/featured-item-01.png" alt=""></i>
                                 </div>
-                                <h5 class="features-title">Best Relationship</h5>
-                                <p>Contact us immediately if you have a question in mind</p>
+                                <h5 class="features-title">Hotel Bintang Lima</h5>
+                                <p>Kami akan memberikan pelayan terbaik untuk Anda</p>
                             </div>
                         </div>
                         <!-- ***** Features Small Item End ***** -->
@@ -124,8 +125,8 @@ https://templatemo.com/tm-535-softy-pinko
                                 <div class="icon">
                                     <i><img src="assets/images/featured-item-01.png" alt=""></i>
                                 </div>
-                                <h5 class="features-title">Ultimate Marketing</h5>
-                                <p>You just need to tell your friends about our free templates</p>
+                                <h5 class="features-title">Rumah Makan Terbaik</h5>
+                                <p>Kami akan mewujudkan liburan impian Anda, keluarga serta rekan</p>
                             </div>
                         </div>
                         <!-- ***** Features Small Item End ***** -->
@@ -149,7 +150,12 @@ https://templatemo.com/tm-535-softy-pinko
                         <h2 class="section-title">Aksata Tour & Travel</h2>
                     </div>
                     <div class="left-text">
-                        <p>Nullam sit amet purus libero. Etiam ullamcorper nisl ut augue blandit, at finibus leo efficitur. Nam gravida purus non sapien auctor, ut aliquam magna ullamcorper.</p>
+                        <p>Aksata Tour & Travel adalah perusahaan yang bersifat komersial yang bergerak
+                            dibidang pariwisata. Aksata Tour & Travel memiliki kantor pelayanan yang terletak
+                            di Jalan Sumatra Nomor 21 Jember. Perusahaan ini berdiri pada tahun 2016 yang dibangun
+                            oleh Hariadi beserta rekannya Lasdiyono. Prinsip kerjanya yaitu mengatur dan menyediakan
+                            pelayanan bagi orang yang ingin melakukan perjalanan dengan tujuan utama berwisata.
+                            Aksata Tour & Travel menyediakan berbagai macam paket liburan salah satunya paket liburan ke Bali.</p>
                     </div>
                 </div>
             </div>

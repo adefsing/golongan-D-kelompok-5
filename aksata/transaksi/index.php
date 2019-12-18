@@ -1,6 +1,6 @@
 <?php
 require 'functions.php';
-$rm = query("SELECT transaksi.ID_TRNS, 
+$trns = query("SELECT transaksi.ID_TRNS, 
                     -- transaksi.ID_PEMESAN, 
                     pemesan.NM_PEMESAN, 
                     pemesan.JMLH_ANGGOTA, 
@@ -13,17 +13,18 @@ $rm = query("SELECT transaksi.ID_TRNS,
                     armada.NM_ARM, 
                     -- transaksi.ID_HOTEL, 
                     hotel.NM_HOTEL,
-                    transaksi.harga,
-                    transaksi.bayar,
-                    transaksi.status_bayar
+                    transaksi.HARGA,
+                    transaksi.BAYAR,
+                    transaksi.STATUS_BAYAR
                     FROM (((transaksi INNER JOIN paket ON transaksi.ID_PKT = paket.ID_PKT) 
                     INNER JOIN pemesan ON transaksi.ID_PEMESAN = pemesan.ID_PEMESAN) 
                     INNER JOIN armada ON transaksi.ID_ARM = armada.ID_ARM) 
-                    INNER JOIN hotel ON transaksi.ID_HOTEL = hotel.ID_HOTEL ");
+                    INNER JOIN hotel ON transaksi.ID_HOTEL = hotel.ID_HOTEL 
+                    ORDER BY transaksi.ID_TRNS DESC");
 
 // tombol search
 if(isset($_POST["cari"]) ) {
-    $rm = carirm ($_POST["keyword"]);
+    $trns = caritrns ($_POST["keyword"]);
 }
 
 ?>
@@ -68,30 +69,29 @@ keyoword.." autocomplete="off">
         <th>Status</th>
         <th>Aksi</th>
     </tr>
-    <!-- <?php $a ="rm"; ?> -->
     <?php $i = 1; ?>
-    <?php foreach( $rm as $rmm ) : ?>
+    <?php foreach( $trns as $trans ) : ?>
     <tr>
         <td> <?= $i; ?> </td>
-        <!-- <td> <?= $rmm["ID_TRNS"]; ?> </td> -->
-        <!-- <td> <?= $rmm["ID_PEMESAN"]; ?> </td> -->
-        <td> <?= $rmm["NM_PEMESAN"]; ?> </td>
-        <td> <?= $rmm["JMLH_ANGGOTA"]; ?> <a href="anggota.php">detail</a></td>
-        <!-- <td> <?= $rmm["ID_PKT"]; ?> </td> -->
-        <td> <?= $rmm["NM_PKT"]; ?> <a href="detailpaket.php">detail</a></td>
-        <td> <?= $rmm["TGL_PSN"]; ?> </td>
-        <td> <?= $rmm["TGL_BRKT"]; ?> </td>
-        <td> <?= $rmm["TMPT_JPT"]; ?> </td>
-        <!-- <td> <?= $rmm["ID_ARM"]; ?> </td> -->
-        <td> <?= $rmm["NM_ARM"]; ?> </td>
-        <!-- <td> <?= $rmm["ID_HOTEL"]; ?> </td> -->
-        <td> <?= $rmm["NM_HOTEL"]; ?> </td>
-        <td> <?= $rmm["harga"]; ?></td>
-        <td> <?= $rmm["bayar"]; ?> </td>
-        <td> <?= $rmm["status_bayar"]; ?> </td>
+        <!-- <td> <?= $trans["ID_TRNS"]; ?> </td> -->
+        <!-- <td> <?= $trans["ID_PEMESAN"]; ?> </td> -->
+        <td> <?= $trans["NM_PEMESAN"]; ?> </td>
+        <td> <?= $trans["JMLH_ANGGOTA"]; ?> <a href="anggota.php">detail</a></td>
+        <!-- <td> <?= $trans["ID_PKT"]; ?> </td> -->
+        <td> <?= $trans["NM_PKT"]; ?> <a href="detailpaket.php">detail</a></td>
+        <td> <?= $trans["TGL_PSN"]; ?> </td>
+        <td> <?= $trans["TGL_BRKT"]; ?> </td>
+        <td> <?= $trans["TMPT_JPT"]; ?> </td>
+        <!-- <td> <?= $trans["ID_ARM"]; ?> </td> -->
+        <td> <?= $trans["NM_ARM"]; ?> </td>
+        <!-- <td> <?= $trans["ID_HOTEL"]; ?> </td> -->
+        <td> <?= $trans["NM_HOTEL"]; ?> </td>
+        <td> <?= $trans["HARGA"]; ?></td>
+        <td> <?= $trans["BAYAR"]; ?> </td>
+        <td> <?= $trans["STATUS_BAYAR"]; ?> </td>
         <td>
-            <a href="ubah.php?ID_RM=<?=$rmm["ID_RM"];?>">Ubah</a>
-            <a href="hapus.php?NM_RM=<?=$rmm["NM_RM"];?>">Hapus</a>
+            <a href="ubah.php?ID_RM=<?=$trans["ID_RM"];?>">Ubah</a>
+            <a href="hapus.php?ID_TRNS=<?=$trans["ID_TRNS"];?>">Hapus</a>
         </td>
     </tr>
     <?php $i++; ?>
