@@ -29,11 +29,10 @@ function query ($query) {
 function tambahpsn($data) {
     global $connect;
     global $idpsn;
-    // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);        
     $jmlh_anggota = htmlspecialchars($data["JMLH_ANGGOTA"]);
     $nik = htmlspecialchars($data["NIK"]);
-    $tgl_psn = htmlspecialchars($data["TGL_PSN"]);
+    $tgl_psn = date('Y-m-d');
 
     $query = "INSERT INTO pemesan VALUES 
                 ('$idpsn', '$nm_pemesan', '$jmlh_anggota', '$nik', '$tgl_psn')";
@@ -44,7 +43,8 @@ function tambahpsn($data) {
 
 function hapuspsn($nm) {
     global $connect;
-    mysqli_query($connect, "DELETE FROM pemesan WHERE NIK = '$n/m'");
+    $nik = htmlspecialchars($nm);
+    mysqli_query($connect, "DELETE FROM pemesan WHERE NIK = '$nik'");
     return mysqli_affected_rows($connect);
 }
 
@@ -83,6 +83,54 @@ function caripsn($keyword){
     return query($query);
 }
 
+$query2 = "SELECT max(DTL_PEMESAN) as maxid FROM dtl_pemesan";
+$hasil2 = mysqli_query($connect,$query2);
+$dataa2 = mysqli_fetch_array($hasil2);
+$idpsn2 = $dataa2['maxid'];
 
+$noUrut2 = (int) substr($idpsn2, 3, 3);
+
+$noUrut2++;
+
+$char2 = "dps";
+$idpsn2 = $char2 . sprintf("%02s", $noUrut2);
+
+function tambahdtlpsn($data) {
+    global $connect;
+    global $idpsn2;
+    $nm_anggota = htmlspecialchars($data["NM_ANGGOTA"]);        
+    $idps = htmlspecialchars($data["ID_PEMESAN"]);
+
+    $query = "INSERT INTO dtl_pemesan VALUES 
+                ('$idpsn2', '$idps', '$nm_anggota')";
+    mysqli_query($connect, $query); 
+
+    return mysqli_affected_rows($connect);
+}
+
+function ubahdtlpsn($data){
+    global $connect;
+
+    $nm_anggota = htmlspecialchars($data["NM_ANGGOTA"]);
+    // $idps = htmlspecialchars($data["ID_PEMESAN"]); 
+    $iddps = htmlspecialchars($data["DTL_PEMESAN"]);
+
+    $query = "UPDATE dtl_pemesan SET 
+                NM_ANGGOTA = '$nm_anggota'
+                WHERE DTL_PEMESAN = '$iddps'
+            ";
+
+    mysqli_query($connect, $query); 
+
+    return mysqli_affected_rows($connect);
+
+}
+
+function hapusdtlpsn($nm) {
+    global $connect;
+    $dtl_pemesan = htmlspecialchars($nm);
+    mysqli_query($connect, "DELETE FROM dtl_pemesan WHERE DTL_PEMESAN = '$dtl_pemesan'");
+    return mysqli_affected_rows($connect);
+}
 
 ?>

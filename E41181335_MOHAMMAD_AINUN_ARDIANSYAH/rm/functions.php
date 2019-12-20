@@ -1,6 +1,6 @@
 <?php
 
-$connect    = mysqli_connect("localhost", "root", "", "aksata");
+$connect    = mysqli_connect("localhost", "root", "", "aksataa");
 
 // auto increment
 $query = "SELECT max(ID_RM) as maxid FROM rm";
@@ -8,7 +8,7 @@ $hasil = mysqli_query($connect,$query);
 $dataa = mysqli_fetch_array($hasil);
 $idrm = $dataa['maxid'];
 
-$noUrut = (int) substr($idrm, 3, 3);
+$noUrut = (int) substr($idrm, 2, 3);
 
 $noUrut++;
 
@@ -29,7 +29,7 @@ function query ($query) {
 function tambahrm($data) {
     global $connect;
     global $idrm;
-    $idrm = $dataa['maxid'];
+    // $idrm = $dataa['maxid'];
     // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_rm = htmlspecialchars($data["NM_RM"]);        
     $alamat_rm = htmlspecialchars($data["ALAMAT_RM"]);
@@ -76,7 +76,6 @@ function carirm($keyword){
     $query = "SELECT * FROM rm
                 WHERE 
                 NM_RM LIKE '%$keyword%' OR
-                ID_RM LIKE '%$keyword%' OR
                 ALAMAT_RM LIKE '%$keyword%' OR
                 TLP_RM LIKE '%$keyword%' ";
 

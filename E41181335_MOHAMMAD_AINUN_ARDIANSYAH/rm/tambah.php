@@ -41,17 +41,17 @@
         <br> -->
         <li>
             <label for="NM_RM">Nama Rumah Makan</label>
-            <input type="text" name="NM_RM" id="NM_RM" required>
+            <input type="text" name="NM_RM" id="NM_RM" required autocomplete="off">
         </li>
         <br>
         <li>
             <label for="ALAMAT_RM">Alamat</label>
-            <input type="text" name="ALAMAT_RM" id="ALAMAT_RM">
+            <input type="text" name="ALAMAT_RM" id="ALAMAT_RM" autocomplete="off">
         </li>
         <br>
         <li>
             <label for="TLP_RM">Telepon</label>
-            <input type="text" name="TLP_RM" id="TLP_RM" max = "13" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <input type="text" name="TLP_RM" id="TLP_RM" max = "13" onkeypress="return event.charCode >= 48 && event.charCode <=57" autocomplete="off">
         </li>
         <br>
         <li>

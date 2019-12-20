@@ -46,7 +46,7 @@ keyoword.." autocomplete="off">
         <!-- <td> <?= $rmm["ID_PEMESAN"]; ?> </td> -->
         <td> <?= $rmm["NM_PEMESAN"]; ?> </td>
         <td> <?= $rmm["NIK"]; ?> </td>
-        <td> <?= $rmm["JMLH_ANGGOTA"]; ?> <a href="detailpemesan.php">a</a></td>
+        <td> <?= $rmm["JMLH_ANGGOTA"]; ?> <a href="detailpemesan.php?JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">a</a></td>
         <td> <?= $rmm["TGL_PSN"]; ?> </td>
         <td>
             <a href="ubah.php?ID_PEMESAN=<?=$rmm["ID_PEMESAN"];?>">Ubah</a>

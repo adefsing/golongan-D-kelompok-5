@@ -44,17 +44,17 @@ $ubah = query ("SELECT * FROM rm WHERE ID_RM = '$idr'")[0];
     <ul>
         <li>
             <label for="NM_RM">Nama Wisata</label>
-            <input type="text" name="NM_RM" id="NM_RM" required value="<?= $ubah["NM_RM"]; ?>">
+            <input type="text" name="NM_RM" id="NM_RM" required value="<?= $ubah["NM_RM"]; ?>" autocomplete="off">
         </li>
         <br>
         <li>
             <label for="ALAMAT_RM">Alamat</label>
-            <input type="text" name="ALAMAT_RM" id="ALAMAT_RM" value="<?= $ubah["ALAMAT_RM"]; ?>">
+            <input type="text" name="ALAMAT_RM" id="ALAMAT_RM" value="<?= $ubah["ALAMAT_RM"]; ?>" autocomplete="off">
         </li>
         <br>
         <li>
             <label for="TLP_RM">Telepon</label>
-            <input type="text" name="TLP_RM" id="TLP_RM" value="<?= $ubah["TLP_RM"]; ?>">
+            <input type="text" name="TLP_RM" id="TLP_RM" value="<?= $ubah["TLP_RM"]; ?>" autocomplete="off">
         </li>
         <br>
         <li>

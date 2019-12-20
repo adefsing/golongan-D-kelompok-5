@@ -37,11 +37,11 @@ keyoword.." autocomplete="off">
         <th>Telepon</th>
         <th>Aksi</th>
     </tr>
-    <?php $a ="rm"; ?>
+    <!-- <?php $a ="rm"; ?> -->
     <?php $i = 1; ?>
     <?php foreach( $rm as $rmm ) : ?>
     <tr>
-        <td> <?= $a.$i; ?> </td>
+        <td> <?= $i; ?> </td>
         <td> <?= $rmm["NM_RM"]; ?> </td>
         <td> <?= $rmm["ALAMAT_RM"]; ?> </td>
         <td> <?= $rmm["TLP_RM"]; ?> </td>
@@ -55,6 +55,27 @@ keyoword.." autocomplete="off">
 </table>
 <br>
 <a href="tambah.php">Tambah</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(".hapus").click(function () {
+        var jawab = confirm("Anda Yakin Ingin Menghapus Data?");
+        if (jawab === true) {
+//            kita set hapus false untuk mencegah duplicate request
+            var hapus = false;
+            if (!hapus) {
+                hapus = true;
+                $.post('hapus.php', /*{id: $(this).attr('data-id')},*/
+                function (data) {
+                    alert(data);
+                });
+                hapus = false;
+            }
+        } else {
+            return false;
+        }
+    });
+</script>
 
 </body>
 </html>

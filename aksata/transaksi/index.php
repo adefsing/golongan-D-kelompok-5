@@ -7,7 +7,7 @@ $trns = query("SELECT transaksi.ID_TRNS,
                     -- transaksi.ID_PKT, 
                     paket.NM_PKT, 
                     pemesan.TGL_PSN, 
-                    transaksi.TGL_BRKT, 
+                    transaksi.TGL_PELAKSANAAN, 
                     transaksi.TMPT_JPT, 
                     -- transaksi.ID_ARM, 
                     armada.NM_ARM, 
@@ -57,8 +57,8 @@ keyoword.." autocomplete="off">
         <th>Anggota</th>
         <!-- <th>ID_PKT</th> -->
         <th>Paket</th>
-        <th>Pesan</th>
-        <th>Berangkat</th>
+        <th>Tanggal Pesan</th>
+        <th>Pelaksanaan</th>
         <th>Tempat</th>
         <!-- <th>ID_ARM</th> -->
         <th>Armada</th>
@@ -80,7 +80,7 @@ keyoword.." autocomplete="off">
         <!-- <td> <?= $trans["ID_PKT"]; ?> </td> -->
         <td> <?= $trans["NM_PKT"]; ?> <a href="detailpaket.php">detail</a></td>
         <td> <?= $trans["TGL_PSN"]; ?> </td>
-        <td> <?= $trans["TGL_BRKT"]; ?> </td>
+        <td> <?= $trans["TGL_PELAKSANAAN"]; ?> </td>
         <td> <?= $trans["TMPT_JPT"]; ?> </td>
         <!-- <td> <?= $trans["ID_ARM"]; ?> </td> -->
         <td> <?= $trans["NM_ARM"]; ?> </td>

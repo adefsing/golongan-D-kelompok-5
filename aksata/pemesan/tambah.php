@@ -41,7 +41,7 @@
         <br> -->
         <li>
             <label for="TGL_PSN">Tanggal Pesan</label>
-            <input type="text" name="TGL_PSN" id="TGL_PSN" required value="<?= date('Y-m-d');?>" >
+            <input type="text" name="TGL_PSN" id="TGL_PSN" required value="<?= date('d-m-Y');?>" >
         </li>
         <br>
         <li>
