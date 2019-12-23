@@ -66,6 +66,7 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID PAKET</th>
                                     <th>NAMA PAKET</th>
                                     <th>Action</th>
@@ -76,9 +77,11 @@
                                 $id = $_GET['id'];
                                 $query = "Select * from paket";
                                 $sql = mysqli_query($connect, $query);
+                                $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
-                                    ?>
+                                ?>
                                     <tr>
+                                        <td><?php echo $no; ?></td>
                                         <td><?php echo $data['ID_PKT']; ?></td>
                                         <td><?php echo $data['NM_PKT']; ?></td>
 
@@ -104,11 +107,13 @@
                                             </span>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php $no++;
+                                } ?>
 
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID PAKET</th>
                                     <th>NAMA PAKET</th>
 

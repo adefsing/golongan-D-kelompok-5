@@ -70,6 +70,7 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID RUMAH MAKAN</th>
                                     <th>NAMA RUMAH MAKAN</th>
                                     <th>ALAMAT RUMAH MAKAN</th>
@@ -82,9 +83,11 @@
                                 $id = $_GET['id'];
                                 $query = "Select * from rm";
                                 $sql = mysqli_query($connect, $query);
+                                $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
-                                    ?>
+                                ?>
                                     <tr>
+                                        <td><?php echo $no; ?></td>
                                         <td><?php echo $data['ID_RM']; ?></td>
                                         <td><?php echo $data['NM_RM']; ?></td>
                                         <td><?php echo $data['ALAMAT_RM']; ?></td>
@@ -111,12 +114,14 @@
                                             </span>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php $no++;
+                                } ?>
 
 
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID RUMAH MAKAN</th>
                                     <th>NAMA RUMAH MAKAN</th>
                                     <th>ALAMAT RUMAH MAKAN</th>

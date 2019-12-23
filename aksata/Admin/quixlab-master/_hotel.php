@@ -55,7 +55,7 @@
                                                                 $query = "Select * from paket";
                                                                 $sql = mysqli_query($connect, $query);
                                                                 while ($dataa = mysqli_fetch_array($sql)) {
-                                                                    ?>
+                                                                ?>
                                                                     <option><?php echo $dataa["ID_PKT"] ?></option>
                                                                 <?php } ?>
                                                             </select>
@@ -82,6 +82,7 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID HOTEL</th>
                                     <th>NAMA HOTEL</th>
                                     <th>ALAMAT HOTEL</th>
@@ -94,9 +95,11 @@
                                 $id = $_GET['id'];
                                 $query = "Select * from hotel";
                                 $sql = mysqli_query($connect, $query);
+                                $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
-                                    ?>
+                                ?>
                                     <tr>
+                                        <td><?php echo $no; ?></td>
                                         <td><?php echo $data['ID_HOTEL']; ?></td>
                                         <td><?php echo $data['NM_HOTEL']; ?></td>
                                         <td><?php echo $data['ALAMAT_HOTEL']; ?></td>
@@ -123,11 +126,13 @@
                                             </span>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php $no++;
+                                } ?>
 
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID HOTEL</th>
                                     <th>NAMA HOTEL</th>
                                     <th>ALAMAT HOTEL</th>

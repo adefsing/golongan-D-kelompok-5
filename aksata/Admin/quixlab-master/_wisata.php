@@ -70,6 +70,7 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID WISATA</th>
                                     <th>NAMA WISATA</th>
                                     <th>ALAMAT WISATA</th>
@@ -82,9 +83,11 @@
                                 $id = $_GET['id'];
                                 $query = "Select * from wisata";
                                 $sql = mysqli_query($connect, $query);
+                                $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
-                                    ?>
+                                ?>
                                     <tr>
+                                        <td><?php echo $no; ?></td>
                                         <td><?php echo $data['ID_WST']; ?></td>
                                         <td><?php echo $data['NM_WST']; ?></td>
                                         <td><?php echo $data['ALAMAT_WST']; ?></td>
@@ -111,13 +114,15 @@
                                             </span>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php $no++;
+                                } ?>
 
 
 
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID WISATA</th>
                                     <th>NAMA WISATA</th>
                                     <th>ALAMAT WISATA</th>

@@ -72,7 +72,8 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    th>ID PEMESAN</th>
+                                    <th>NO</th>
+                                    <th>ID PEMESAN</th>
                                     <th>NAMA PEMESAN</th>
                                     <th>JUMLAH ANGGOTA</th>
                                     <th>NIK</th>
@@ -85,9 +86,11 @@
                                 $id = $_GET['id'];
                                 $query = "Select * from customer";
                                 $sql = mysqli_query($connect, $query);
+                                $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
-                                    ?>
+                                ?>
                                     <tr>
+                                        <td><?php echo $no; ?></td>
                                         <td><?php echo $data['ID_PEMESAN']; ?></td>
                                         <td><?php echo $data['NAMA_PEMESAN']; ?></td>
                                         <td><?php echo $data['JUMLAH_ANGGOTA']; ?></td>
@@ -115,11 +118,13 @@
                                             </span>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php $no++;
+                                } ?>
 
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID PEMESAN</th>
                                     <th>NAMA PEMESAN</th>
                                     <th>JUMLAH ANGGOTA</th>

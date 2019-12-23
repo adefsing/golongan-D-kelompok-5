@@ -71,6 +71,7 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID ARMADA</th>
                                     <th>NAMA ARMADA</th>
                                     <th>ALAMAT ARMADA</th>
@@ -83,9 +84,11 @@
                                 $id = $_GET['id'];
                                 $query = "Select * from armada";
                                 $sql = mysqli_query($connect, $query);
+                                $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
-                                    ?>
+                                ?>
                                     <tr>
+                                        <td><?php echo $no; ?></td>
                                         <td><?php echo $data['ID_ARM']; ?></td>
                                         <td><?php echo $data['NM_ARM']; ?></td>
                                         <td><?php echo $data['ALAMAT_ARM']; ?></td>
@@ -112,13 +115,15 @@
 
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php $no++;
+                                } ?>
 
 
 
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID ARMADA</th>
                                     <th>NAMA ARMADA</th>
                                     <th>ALAMAT ARMADA</th>
