@@ -19,7 +19,6 @@ foreach( $uubah as $uubh ) :
         if(ubahdtlpsn($_POST) > 0) {
             echo "
             <script>
-                alert('data berhasil diubah');
                 document.location.href = 'detailpemesan.php?JMLH_ANGGOTA=$ang&ID_PEMESAN=$id';
             </script>
             ";

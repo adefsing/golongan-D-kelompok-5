@@ -4,6 +4,7 @@ $wst = query("SELECT * FROM wisata ORDER BY ID_WST ASC");
 $rm  = query("SELECT * FROM rm ORDER BY ID_RM ASC");
 $gt = $_GET["status"];
 $gtt = $_GET["ID_PKT"];
+$nmpkt = $_GET["NM_PKT"];
 
 // tombol search
 if(isset($_POST["cari"]) ) {
@@ -31,7 +32,7 @@ keyoword.." autocomplete="off">
 </form>
 
 <br>
-
+<label for="NM_PKT"><?= $nmpkt; ?></label>
 <table border="1" cellpadding="10" cellspacing="1">
     <tr>
     <th>Pilih Wisata</th>

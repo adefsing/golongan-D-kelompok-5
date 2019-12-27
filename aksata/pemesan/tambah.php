@@ -41,17 +41,17 @@
         <br> -->
         <li>
             <label for="TGL_PSN">Tanggal Pesan</label>
-            <input type="text" name="TGL_PSN" id="TGL_PSN" required value="<?= date('d-m-Y');?>" >
+            <input type="text" name="TGL_PSN" id="TGL_PSN" disabled autocomplete="off" value="<?= date('d-m-Y');?>" >
         </li>
         <br>
         <li>
             <label for="NM_PEMESAN">Nama Pemesan</label>
-            <input type="text" name="NM_PEMESAN" id="NM_PEMESAN" required placeholder ="isikan huruf" onkeypress="return event.charCode = 'a-z'">
+            <input type="text" name="NM_PEMESAN" id="NM_PEMESAN" autocomplete="off" required placeholder ="isikan huruf" onkeypress="return event.charCode = 'a-z'">
         </li>
         <br>
         <li>
             <label for="NIK">NIK</label>
-            <input type="text" name="NIK" id="NIK" required max = '1' placeholder="isikan angka" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input type="text" name="NIK" id="NIK" required autocomplete="off" placeholder="isikan angka" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </li>
         <br>
         <li>

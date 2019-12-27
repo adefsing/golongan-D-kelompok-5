@@ -50,21 +50,16 @@ function hapuspsn($nm) {
 
 function ubahpsn($data){
     global $connect;
-    // global $idrm;
 
     $id_pemesan = $data["ID_PEMESAN"];
     $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]); 
     $nik = htmlspecialchars($data["NIK"]);       
     $jmlh_anggota = htmlspecialchars($data["JMLH_ANGGOTA"]);
-    $tgl_psn = htmlspecialchars($data["TGL_PSN"]);
-
-    // var_dump($data);
 
     $query = "UPDATE pemesan SET 
                 NM_PEMESAN = '$nm_pemesan', 
                 NIK = '$nik',
-                JMLH_ANGGOTA = '$jmlh_anggota',
-                TGL_PSN = '$tgl_psn'
+                JMLH_ANGGOTA = '$jmlh_anggota'
                 WHERE ID_PEMESAN = '$id_pemesan'
             ";
 

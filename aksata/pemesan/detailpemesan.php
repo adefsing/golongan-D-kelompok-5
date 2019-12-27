@@ -6,7 +6,7 @@
     $ang = $_GET["JMLH_ANGGOTA"];
 
     $dtl = query("SELECT * FROM dtl_pemesan WHERE ID_PEMESAN = '$idps'");
-    $baru = query("SELECT COUNT(*) AS bauk FROM dtl_pemesan");
+    $baru = query("SELECT COUNT(*) AS bauk FROM dtl_pemesan WHERE ID_PEMESAN = '$idps'");
     foreach( $baru as $barupss ) :
     $jumlah = $barupss["bauk"];
     endforeach;
@@ -46,7 +46,7 @@
             <li>
                 <label for="NM_ANGGOTA">Nama Pemesan</label>
                 <input type="hidden" name="ID_PEMESAN" value="<?= $idps; ?>">
-                <input type="text" name="NM_ANGGOTA" id="NM_ANGGOTA" autofocus pattern="^[A-Za-z -]+$" title="masukkan hanya huruf">
+                <input type="text" name="NM_ANGGOTA" id="NM_ANGGOTA" autocomplete="off" autofocus pattern="^[A-Za-z -]+$" title="masukkan hanya huruf">
             </li>
             <li>
                 <button type="submit" name="submit" <?php if($jumlah >= $ang){ echo "disabled"; } ?>>TAMBAH</button>
@@ -56,19 +56,21 @@
 
     <table border="1" cellpadding="10" cellspacing="1">
         <tr>
-        <th>nomor</th>
-        <th>nama anggota</th>
-        <th>aksi</th>
+        <th>Nomor</th>
+        <th>Nama Anggota</th>
+        <th>Aksi</th>
         </tr>
+        <?php $i = 1; ?>
         <?php foreach( $dtl as $idpss ) : ?>
         <tr>
-        <td> <?= $idpss["DTL_PEMESAN"]; ?> </td>
+        <td> <?= $i; ?> </td>
         <td> <?= $idpss["NM_ANGGOTA"]; ?> </td>
         <td>
         <a href="ubahdetail.php?DTL_PEMESAN=<?=$idpss["DTL_PEMESAN"];?>&ID_PEMESAN=<?=$idps;?>">ubah</a>
         <a href="hapusdetail.php?DTL_PEMESAN=<?=$idpss["DTL_PEMESAN"];?>&ID_PEMESAN=<?=$idps;?>&JMLH_ANGGOTA=<?= $ang; ?>">hapus</a>
         </td>
         </tr>
+        <?php $i++; ?>
         <?php endforeach; ?>
     </table>
 </body>

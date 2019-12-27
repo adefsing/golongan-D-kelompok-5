@@ -1,14 +1,10 @@
 <?php
 require 'functions.php';
-$ps = query("SELECT ID_PEMESAN, 
-                    NM_PEMESAN, 
-                    JMLH_ANGGOTA,
-                    NIK,
-                    DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  FROM pemesan ORDER BY TGL_PSN DESC");
+$pkt = query("SELECT * FROM paket ORDER BY ID_PKT DESC");
 
 // tombol search
 if(isset($_POST["cari"]) ) {
-    $ps = caripsn ($_POST["keyword"]);
+    $pkt = caripkt ($_POST["keyword"]);
 }
 
 ?>
@@ -21,7 +17,7 @@ if(isset($_POST["cari"]) ) {
     <title>Document</title>
 </head>
 <body>
-<h1>PEMESAN</h1>
+<h1>rm</h1>
 
 <br>
 
@@ -36,27 +32,20 @@ keyoword.." autocomplete="off">
 <table border="1" cellpadding="10" cellspacing="1">
     <tr>
         <th>Nomor</th>
-        <th>Nama</th>
-        <th>NIK</th>
-        <th>Anggota</th>
-        <th>Tanggal Pesan</th>
+        <th>Paket</th>
+        <th>Detail</th>
         <th>Aksi</th>
     </tr>
-    <!-- <?php $a ="psn"; ?> -->
+
     <?php $i = 1; ?>
-    <?php foreach( $ps as $rmm ) : ?>
+    <?php foreach( $pkt as $pktt ) : ?>
     <tr>
         <td> <?= $i; ?> </td>
-        <!-- <td> <?= $rmm["ID_PEMESAN"]; ?> </td> -->
-        <td> <?= $rmm["NM_PEMESAN"]; ?> </td>
-        <td> <?= $rmm["NIK"]; ?> </td>
-        <td> <?= $rmm["JMLH_ANGGOTA"]; ?> 
-            <a href="detailpemesan.php?JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">a</a>
-        </td>
-        <td> <?= $rmm["TGL_PSN"]; ?> </td>
+        <td> <?= $pktt["NM_PKT"]; ?> </td>
+        <td> <a href="../pilihwisata/index.php?ID_PKT=<?=$pktt["ID_PKT"];?>&NM_PKT=<?=$pktt["NM_PKT"];?>&status=<?=$pktt["status"];?>">detail</a> </td>
         <td>
-            <a href="ubah.php?ID_PEMESAN=<?=$rmm["ID_PEMESAN"];?>">Ubah</a>
-            <a href="hapus.php?NIK=<?=$rmm["NIK"];?>"  onclick='return confirmation()'>Hapus</a>
+            <a href="ubah.php?ID_PKT=<?=$pktt["ID_PKT"];?>">Ubah</a>
+            <a href="hapus.php?NM_PKT=<?=$pktt["NM_PKT"];?>" onclick='return confirmation()'>Hapus</a>
         </td>
     </tr>
     <?php $i++; ?>
@@ -64,7 +53,6 @@ keyoword.." autocomplete="off">
 </table>
 <br>
 <a href="tambah.php">Tambah</a>
-
 
 <script type="text/javascript">
     function confirmation(){

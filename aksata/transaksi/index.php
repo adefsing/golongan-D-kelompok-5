@@ -1,12 +1,14 @@
 <?php
 require 'functions.php';
 $trns = query("SELECT transaksi.ID_TRNS, 
-                    -- transaksi.ID_PEMESAN, 
+                    -- transaksi.ID_PEMESAN,
+                    pemesan.ID_PEMESAN, 
                     pemesan.NM_PEMESAN, 
                     pemesan.JMLH_ANGGOTA, 
-                    -- transaksi.ID_PKT, 
+                    transaksi.ID_PKT, 
                     paket.NM_PKT, 
-                    pemesan.TGL_PSN, 
+                    paket.status,
+                    DATE_FORMAT(pemesan.TGL_PSN, '%d-%m-%Y') AS TGL_PSN,
                     transaksi.TGL_PELAKSANAAN, 
                     transaksi.TMPT_JPT, 
                     -- transaksi.ID_ARM, 
@@ -52,17 +54,13 @@ keyoword.." autocomplete="off">
 <table border="1" cellpadding="10" cellspacing="1">
     <tr>
         <th>No.</th>
-        <!-- <th>ID_PEMESAN</th> -->
         <th>Nama Pemesan</th>
         <th>Anggota</th>
-        <!-- <th>ID_PKT</th> -->
         <th>Paket</th>
         <th>Tanggal Pesan</th>
         <th>Pelaksanaan</th>
         <th>Tempat</th>
-        <!-- <th>ID_ARM</th> -->
         <th>Armada</th>
-        <!-- <th>ID_HOTEL</th> -->
         <th>Hotel</th>
         <th>Harga</th>
         <th>Bayar</th>
@@ -73,18 +71,13 @@ keyoword.." autocomplete="off">
     <?php foreach( $trns as $trans ) : ?>
     <tr>
         <td> <?= $i; ?> </td>
-        <!-- <td> <?= $trans["ID_TRNS"]; ?> </td> -->
-        <!-- <td> <?= $trans["ID_PEMESAN"]; ?> </td> -->
         <td> <?= $trans["NM_PEMESAN"]; ?> </td>
-        <td> <?= $trans["JMLH_ANGGOTA"]; ?> <a href="anggota.php">detail</a></td>
-        <!-- <td> <?= $trans["ID_PKT"]; ?> </td> -->
-        <td> <?= $trans["NM_PKT"]; ?> <a href="detailpaket.php">detail</a></td>
+        <td> <?= $trans["JMLH_ANGGOTA"]; ?> <a href="../pemesan/detailpemesan.php?JMLH_ANGGOTA=<?= $trans["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>">detail</a></td>
+        <td> <?= $trans["NM_PKT"]; ?> <a href="../pilihwisata/index.php?ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>&ID_TRNS=<?= $trans["ID_TRNS"]; ?>&ID_PKT=<?= $trans["ID_PKT"]; ?>&status=<?= $trans["status"]; ?>">detail</a></td>
         <td> <?= $trans["TGL_PSN"]; ?> </td>
         <td> <?= $trans["TGL_PELAKSANAAN"]; ?> </td>
         <td> <?= $trans["TMPT_JPT"]; ?> </td>
-        <!-- <td> <?= $trans["ID_ARM"]; ?> </td> -->
         <td> <?= $trans["NM_ARM"]; ?> </td>
-        <!-- <td> <?= $trans["ID_HOTEL"]; ?> </td> -->
         <td> <?= $trans["NM_HOTEL"]; ?> </td>
         <td> <?= $trans["HARGA"]; ?></td>
         <td> <?= $trans["BAYAR"]; ?> </td>
