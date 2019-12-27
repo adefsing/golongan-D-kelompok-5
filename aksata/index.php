@@ -52,10 +52,10 @@ https://templatemo.com/tm-535-softy-pinko
                         <ul class="nav">
                             <li><a href="#welcome" class="active">Home</a></li>
                             <li><a href="#features">About</a></li>
-                            <li><a href="#work-process">Work Process</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                            <li><a href="#pricing-plans">Products</a></li>
-                            <li><a href="#blog">Blog Entries</a></li>
+                            <li><a href="#work-process">Proses Pemesanan</a></li>
+                            <li><a href="#testimonials">Testimoni</a></li>
+                            <li><a href="#pricing-plans">Paket Liburan</a></li>
+                            <li><a href="#blog">Gallery</a></li>
                             <li><a href="#contact-us">Contact Us</a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -77,10 +77,10 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="container">
                 <div class="row">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
-                        <h1>EXPLORE INDONESIA WITH <br><strong>AKSATA</strong></h1>
-                        <h2 class="text-white">Mau Liburan Kemana?</h2>
+                        <h1><br><strong>AKSATA TOUR & TRAVEL</strong></h1>
+                        <h2 class="text-white">Agendakan Liburanmu Bersama Kami</h2>
                         <br>
-                        <a href="#features" class="main-button-slider">Pilih Paket</a>
+                        <a href="#pricing-plans" class="main-button-slider">Cek Paket Liburan Kami Yuk</a>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@ https://templatemo.com/tm-535-softy-pinko
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/featured-item-01.png" alt=""></i>
+                                    <i><img src="assets/images/hotel.png" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Hotel Bintang Lima</h5>
                                 <p>Kami akan memberikan pelayan terbaik untuk Anda</p>
@@ -123,7 +123,7 @@ https://templatemo.com/tm-535-softy-pinko
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/featured-item-01.png" alt=""></i>
+                                    <i><img src="assets/images/rm.png" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Rumah Makan Terbaik</h5>
                                 <p>Kami akan mewujudkan liburan impian Anda, keluarga serta rekan</p>
@@ -174,15 +174,16 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
                     <div class="left-heading">
-                        <h2 class="section-title">We can help you to grow your business</h2>
+                        <h2 class="section-title">Kami akan memfasilitasi liburan Anda dengan baik</h2>
                     </div>
                     <div class="left-text">
-                        <p>Aenean pretium, ipsum et porttitor auctor, metus ipsum iaculis nisi, a bibendum lectus libero vitae urna. Sed id leo eu dolor luctus congue sed eget ipsum. Nunc nec luctus libero. Etiam quis dolor elit.</p>
+                        <p>Aksata Tour & Travel akan memberikan pelayanan traveling terbaik untuk Anda, keluarga atau rekan-rekan Anda. Liburan akan terasa nyaman dan
+                        menyenangkan. </p>
                     </div>
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="assets/images/wst.png" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
             </div>
         </div>
@@ -196,9 +197,8 @@ https://templatemo.com/tm-535-softy-pinko
                 <div class="row">
                     <div class="offset-lg-3 col-lg-6">
                         <div class="info">
-                            <h1>Work Process</h1>
-                            <p>Aenean nec tempor metus. Maecenas ligula dolor, commodo in imperdiet interdum, vehicula ut ex. Donec ante diam.</p>
-                        </div>
+                            <h1>Proses Pemesanan</h1>
+                            <p>Bagaimana sih proses pemesanan paket liburan di Aksata Tour & Travel?</p>
                     </div>
                 </div>
 
@@ -207,43 +207,43 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
                             <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                            <strong>Get Ideas</strong>
-                            <span>Godard pabst prism fam cliche.</span>
+                            <strong>Pilih Paket Liburan</strong>
+                            <span>Pilih paket liburan dengan destinasi wisata mana yang akan Anda, keluarga atau rekan-rekan Anda kunjungi.</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
                             <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                            <strong>Sketch Up</strong>
-                            <span>Godard pabst prism fam cliche.</span>
+                            <strong>Tentukan Paket</strong>
+                            <span>Tentukan apakah destinasi serta fasilitas wisata yang kami sediakan sudah sesuai dengan yang Anda inginkan.</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
                             <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                            <strong>Discuss</strong>
-                            <span>Godard pabst prism fam cliche.</span>
+                            <strong>Pilihan</strong>
+                            <span>Jika paket yang tersedia belum sesuai dengan keinginan, kami menyediakan paket custom, Anda dapat mengatur liburan Anda sendiri.</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
                             <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                            <strong>Revise</strong>
-                            <span>Godard pabst prism fam cliche.</span>
+                            <strong>Meeting</strong>
+                            <span>Setelah pemilihan paket, kami akan mengadakan pertemuan untuk membicarakan kembali tentang pesanan paket Anda.</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
                             <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                            <strong>Approve</strong>
-                            <span>Godard pabst prism fam cliche.</span>
+                            <strong>Pembayaran</strong>
+                            <span>Setelah terjadi kesepakatan, Anda dapat membayar DP sejumlah 30% dari harga yang telah disepakati saat meeting.</span>
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                         <a href="#" class="mini-box">
                             <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                            <strong>Launch</strong>
-                            <span>Godard pabst prism fam cliche.</span>
+                            <strong>Keberangkatan</strong>
+                            <span>Pelunasan dapat dilakukan selambat-lambatnya H-2 keberangkatan. Dan Liburan pun siap dilaksanakan.</span>
                         </a>
                     </div>
                 </div>
@@ -260,12 +260,12 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center-heading">
-                        <h2 class="section-title">What do they say?</h2>
+                        <h2 class="section-title">Testimoni</h2>
                     </div>
                 </div>
                 <div class="offset-lg-3 col-lg-6">
                     <div class="center-text">
-                        <p>Donec tempus, sem non rutrum imperdiet, lectus orci fringilla nulla, at accumsan elit eros a turpis. Ut sagittis lectus libero.</p>
+                        <p>Apa yang mereka katakan setelah menggunakan jasa Aksata Tour & Travel?</p>
                     </div>
                 </div>
             </div>
@@ -551,12 +551,12 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center-heading">
-                        <h2 class="section-title">Talk To Us</h2>
+                        <h2 class="section-title">Hubungi Kami</h2>
                     </div>
                 </div>
                 <div class="offset-lg-3 col-lg-6">
                     <div class="center-text">
-                        <p>Maecenas pellentesque ante faucibus lectus vulputate sollicitudin. Cras feugiat hendrerit semper.</p>
+                        <p>Anda dapat mengirim pesan serta menghubungi kami dan dapatkan panawaran menarik.</p>
                     </div>
                 </div>
             </div>
@@ -565,11 +565,17 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <!-- ***** Contact Text Start ***** -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <h5 class="margin-bottom-30">Keep in touch</h5>
+                    <h5 class="margin-bottom-30">Hubungi Kami</h5>
                     <div class="contact-text">
-                        <p>110-220 Quisque diam odio, maximus ac consectetur eu, 10260
-                            <br>auctor non lorem</p>
-                        <p>You are NOT allowed to re-distribute Softy Pinko template on any template collection websites. Thank you.</p>
+                        <p>Jl. Sumatra No.21
+Sumbersari <br>
+Tlp. 0331-5442678 Fax.0331-5442678 <br> e-mail : adjasatu@gmail.com <br>
+WA: 082230391658, 081333388755 <br>
+Jember
+Jawa Timur 68121
+Indonesia</p>
+<a href="https://www.google.com/maps/dir//'-8.1762332,113.7064425'/@-8.1763982,113.7040754,17z/data=!4m6!4m5!1m0!1m3!2m2!1d113.7064425!2d-8.1762332" class="main-button-slider">Lihat Rute</a> <br>
+                        
                     </div>
                 </div>
                 <!-- ***** Contact Text End ***** -->
@@ -581,22 +587,22 @@ https://templatemo.com/tm-535-softy-pinko
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <fieldset>
-                                        <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                                        <input name="name" type="text" class="form-control" id="name" placeholder="Nama Lengkap" required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <fieldset>
-                                        <input name="email" type="email" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                                        <input name="email" type="email" class="form-control" id="email" placeholder="Alamat e-mail" required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
-                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Pesan Anda" required=""></textarea>
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
-                                        <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                                        <button type="submit" id="form-submit" class="main-button">Kirim Pesan</button>
                                     </fieldset>
                                 </div>
                             </div>
