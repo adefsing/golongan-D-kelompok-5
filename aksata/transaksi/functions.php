@@ -20,32 +20,42 @@ function query ($query) {
 
 }
 
-function jin_date_sql($date){
-	$exp = explode('/',$date);
-	if(count($exp) == 3) {
-		$date = $exp[2].'-'.$exp[1].'-'.$exp[0];
-	}
-	return $date;
-}
+// function jin_date_sql($date){
+// 	$exp = explode('/',$date);
+// 	if(count($exp) == 3) {
+// 		$date = $exp[2].'-'.$exp[1].'-'.$exp[0];
+// 	}
+// 	return $date;
+// }
 
 function tambahtrns($data) {
     global $connect;
     global $idtrns;
-    global $date;
+    // global $date;
 
     $id_pkt = htmlspecialchars($data["ID_PKT"]); 
     $id_pemesan = htmlspecialchars($data["ID_PEMESAN"]);
     $id_arm = htmlspecialchars($data["ID_ARM"]);
     $id_hotel = htmlspecialchars($data["ID_HOTEL"]);
-    $tgl_brkt = htmlspecialchars($data["TGL_BRKT"]);
+    $tgl_pelaksanaan = htmlspecialchars($data["TGL_PELAKSANAAN"]);
     $tmpt_jpt = htmlspecialchars($data["TMPT_JPT"]);
     $harga = htmlspecialchars($data["HARGA"]);
     $bayar = htmlspecialchars($data["BAYAR"]); 
 
-    $query = " INSERT INTO transaksi 
-                (ID_TRNS, ID_PKT, ID_PEMESAN, ID_ARM, ID_HOTEL, TGL_BRKT, TMPT_JPT, HARGA, BAYAR, STATUS_BAYAR)  
-                VALUES ('$idtrns', '$id_pkt', '$id_pemesan', '$id_arm', '$id_hotel', (STR_TO_DATE ('$tgl_brkt', '%d/%m/%Y')), 
-                        '$tmpt_jpt', '$harga', '$bayar', '')";
+    
+
+    if ($bayar==$harga){
+        $status_bayar = "LUNAS";
+    } else if($bayar>$harga){
+        $status_bayar = "BAYAR KELEBIHAN";
+    } else {
+        $status_bayar = "BELUM";
+    }
+
+    $query = " INSERT INTO transaksi
+    (ID_TRNS, ID_PKT, ID_PEMESAN, ID_ARM, ID_HOTEL, TGL_PELAKSANAAN, TMPT_JPT, HARGA, BAYAR, STATUS_BAYAR)  
+                VALUES ('$idtrns', '$id_pkt', '$id_pemesan', '$id_arm', '$id_hotel', '$tgl_pelaksanaan', 
+                        '$tmpt_jpt', '$harga', '$bayar', '$status_bayar')";
 
     mysqli_query($connect, $query); 
 

@@ -1,6 +1,10 @@
 <?php
 require 'functions.php';
-$ps = query("SELECT * FROM pemesan ORDER BY TGL_PSN DESC");
+$ps = query("SELECT ID_PEMESAN, 
+                    NM_PEMESAN, 
+                    JMLH_ANGGOTA,
+                    NIK,
+                    DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  FROM pemesan ORDER BY TGL_PSN DESC");
 
 // tombol search
 if(isset($_POST["cari"]) ) {
@@ -31,7 +35,7 @@ keyoword.." autocomplete="off">
 
 <table border="1" cellpadding="10" cellspacing="1">
     <tr>
-        <th>Id</th>
+        <th>Nomor</th>
         <th>Nama</th>
         <th>NIK</th>
         <th>Anggota</th>
@@ -46,11 +50,13 @@ keyoword.." autocomplete="off">
         <!-- <td> <?= $rmm["ID_PEMESAN"]; ?> </td> -->
         <td> <?= $rmm["NM_PEMESAN"]; ?> </td>
         <td> <?= $rmm["NIK"]; ?> </td>
-        <td> <?= $rmm["JMLH_ANGGOTA"]; ?> <a href="detailpemesan.php?JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">a</a></td>
+        <td> <?= $rmm["JMLH_ANGGOTA"]; ?> 
+            <a href="detailpemesan.php?JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">a</a>
+        </td>
         <td> <?= $rmm["TGL_PSN"]; ?> </td>
         <td>
             <a href="ubah.php?ID_PEMESAN=<?=$rmm["ID_PEMESAN"];?>">Ubah</a>
-            <a href="hapus.php?NIK=<?=$rmm["NIK"];?>">Hapus</a>
+            <a href="hapus.php?NIK=<?=$rmm["NIK"];?>"  onclick='return confirmation()'>Hapus</a>
         </td>
     </tr>
     <?php $i++; ?>
@@ -59,25 +65,16 @@ keyoword.." autocomplete="off">
 <br>
 <a href="tambah.php">Tambah</a>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-    $(".hapus").click(function () {
-        var jawab = confirm("Anda Yakin Ingin Menghapus Data?");
-        if (jawab === true) {
-//            kita set hapus false untuk mencegah duplicate request
-            var hapus = false;
-            if (!hapus) {
-                hapus = true;
-                $.post('hapus.php', /*{id: $(this).attr('data-id')},*/
-                function (data) {
-                    alert(data);
-                });
-                hapus = false;
-            }
-        } else {
+
+<script type="text/javascript">
+    function confirmation(){
+        if (confirm("Anda yakin ingin menghapus data?")){
+            location.href='hapus.php';
+           }
+        else {
             return false;
-        }
-    });
+           }
+    } 
 </script>
 
 </body>

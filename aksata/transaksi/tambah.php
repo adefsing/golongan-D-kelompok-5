@@ -61,22 +61,6 @@
             </select>
         </li>
         <br>
-
-<!-- jumlah anggota -->
-        <!-- <li>
-            <label for="JMLH_ANGGOTA">Jumlah Anggota</label>
-            <select>
-                    <?php
-                    $query = "SELECT * FROM pemesan ORDER BY TGL_PSN DESC";
-                    $hasil = mysqli_query($connect, $query);
-                    while ($tabel = mysqli_fetch_assoc($hasil)){
-                        echo '<option name="JMLH_ANGGOTA" value="'.$tabel["JMLH_ANGGOTA"].'">'.$tabel["JMLH_ANGGOTA"].'</option>';
-                    }
-                    // pake jquery
-                    ?>
-            </select>
-        </li> 
-        <br>-->
         
 <!-- id paket -->
         <li>
@@ -131,44 +115,27 @@
             </select>
         </li>
         <br>
-
-<!-- tanggal pesan -->
-        <!-- <li>
-            <label for="TGL_PSN">Tanggal Pesan</label>
-            <select>
-                    <?php
-                    $query = "SELECT DATE_FORMAT( TGL_PSN, '%d-%m-%Y' ) AS TGL_PSN FROM pemesan ORDER BY TGL_PSN DESC ";
-                    $hasil = mysqli_query($connect, $query);
-                    while ($tabel = mysqli_fetch_assoc($hasil)){
-                        echo '<option>'.$tabel["TGL_PSN"].'</option>';
-                    }
-                    //pake jquery
-                    ?>
-            </select>
-             INSERT INTO tanggal VALUES (STR_TO_DATE ('13-07-2013', '%d-%m-%Y'))
-        </li> 
-        <br>-->
         
 <!-- tanggal berangkat -->
         
         <li>
-            <label for="TGL_BRKT">Tanggal Berangkat</label>
-            <input type="date" name="TGL_BRKT" id="TGL_BRKT">
+            <label for="TGL_PELAKSANAAN">Tanggal Pelaksanaan</label>
+            <input type="text" name="TGL_PELAKSANAAN" id="TGL_PELAKSANAAN" autocomplete="off" required title="isikan tanggal awal sampai akhir keberangkatan">
         </li>
         <br>
         <li>
             <label for="TMPT_JPT">Tempat Jemput</label>
-            <input type="text" name="TMPT_JPT" id="TMPT_JPT">
+            <input type="text" name="TMPT_JPT" id="TMPT_JPT" autocomplete="off" required>
         </li>
         <br>
         <li>
             <label for="HARGA">Harga</label>
-            <input type="text" name="HARGA" id="HARGA" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <input type="text" name="HARGA" id="HARGA" autocomplete="off" required onkeypress="return event.charCode >= 48 && event.charCode <=57">
         </li>
         <br>
         <li>
             <label for="BAYAR">Bayar</label>
-            <input type="text" name="BAYAR" id="BAYAR" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <input type="text" name="BAYAR" id="BAYAR" autocomplete="off" required onkeypress="return event.charCode >= 48 && event.charCode <=57">
         </li>
         <br>
         <li>

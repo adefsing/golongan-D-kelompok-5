@@ -4,7 +4,12 @@ require 'functions.php';
 // ambil data di URL
 if(isset($_GET["ID_PEMESAN"])){
 $idr = $_GET["ID_PEMESAN"];
-$ubah = query ("SELECT * FROM pemesan WHERE ID_PEMESAN = '$idr'")[0];
+$ubah = query ("SELECT ID_PEMESAN, 
+                        NM_PEMESAN, 
+                        JMLH_ANGGOTA,
+                        NIK,
+                        DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  
+                        FROM pemesan WHERE ID_PEMESAN = '$idr'")[0];
 // var_dump($ubah); 
 
 // cek apakah tombol submit sudah ditekan atau belum
@@ -44,52 +49,39 @@ $ubah = query ("SELECT * FROM pemesan WHERE ID_PEMESAN = '$idr'")[0];
     <ul>
         <li>
             <label for="TGL_PSN">Tanggal Pesan</label>
-            <input type="text" name="TGL_PSN" id="TGL_PSN" value="<?= $ubah["TGL_PSN"]; ?>">
+            <input type="text" name="TGL_PSN" id="TGL_PSN" autocomplete="off" disabled value="<?= $ubah["TGL_PSN"]; ?>">
         </li>
         <br>
         <li>
             <label for="NM_PEMESAN">Nama Pemesan</label>
-            <input type="text" name="NM_PEMESAN" id="NM_PEMESAN" required value="<?= $ubah["NM_PEMESAN"]; ?>">
+            <input type="text" name="NM_PEMESAN" id="NM_PEMESAN" autocomplete="off" required value="<?= $ubah["NM_PEMESAN"]; ?>">
         </li>
         <br>
         <li>
             <label for="NIK">NIK</label>
-            <input type="text" name="NIK" id="NIK" value="<?= $ubah["NIK"]; ?>">
+            <input type="text" name="NIK" id="NIK" autocomplete="off" value="<?= $ubah["NIK"]; ?>">
         </li>
         <br>
         <li>
             <label for="JMLH_ANGGOTA">Jumlah Anggota</label>
-            <input type="text" name="JMLH_ANGGOTA" id="JMLH_ANGGOTA" value="<?= $ubah["JMLH_ANGGOTA"]; ?>">
+            <input type="text" name="JMLH_ANGGOTA" id="JMLH_ANGGOTA" autocomplete="off" value="<?= $ubah["JMLH_ANGGOTA"]; ?>">
         </li>
         <br>
         <li>
-            <button type="submit" name="submit">UBAH</button>
+            <button type="submit" name="submit"><a onclick='return confirmation()'>UBAH</a></button>
         </li>
     </ul>
-        
-
     </form>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-    $(".ubah").click(function () {
-        var jawab = confirm("Anda Yakin Ingin Mengubah Data?");
-        if (jawab === true) {
-//            kita set hapus false untuk mencegah duplicate request
-            var hapus = false;
-            if (!hapus) {
-                hapus = true;
-                $.post('ubah.php', /*{id: $(this).attr('data-id')},*/
-                function (data) {
-                    alert(data);
-                });
-                hapus = false;
-            }
-        } else {
+    <script type="text/javascript">
+    function confirmation(){
+        if (confirm("Anda yakin ingin mengubah data?")){
+            location.href='functions.php';
+           }
+        else {
             return false;
-        }
-    });
-</script> -->
-
+           }
+    } 
+</script>
 </body>
 </html>
