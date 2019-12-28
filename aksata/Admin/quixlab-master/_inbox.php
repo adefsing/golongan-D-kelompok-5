@@ -1,7 +1,20 @@
 <div class="container-fluid">
     <script src="js/jquery.min.js"></script>
 
+    <?php
 
+    if (isset($_GET['id'])) {
+
+        $id = $_GET['id'];
+
+        $sql1 = mysqli_query($connect, "DELETE FROM inbox WHERE id_inbox ='$id';");
+        if ($sql1) {
+            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=inbox'</script>";
+        } else {
+            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=inbox'</script>";
+        }
+    }
+    ?>
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -19,7 +32,7 @@
                                 <div class="col-sm-12 col-md-6">
 
                                     <label style="text-aling:right;">
-                                        <button class="btn mb-1 btn-primary btn-lg" type="button" id="btn-delete"> HAPUS DATA </button>
+                                        <button class="btn mb-1 btn-primary btn-lg" type="button" id="btn-delete"> HAPUS DATA YANG DI TANDAI </button>
 
                                     </label>
 
@@ -36,7 +49,9 @@
                                             <input type="checkbox" id="check-all">
                                         </center>
                                     </th>
+
                                     <th>NO</th>
+                                    <th>TANGGAL</th>
                                     <th>NAMA</th>
                                     <th>EMAIL</th>
                                     <th>PESAN</th>
@@ -46,45 +61,54 @@
                             </thead>
                             <tbody>
                                 <?php
-
                                 $query = "Select * from inbox";
                                 $sql = mysqli_query($connect, $query);
                                 $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
+                                ?>
+                                    <tr>
+                                        <td align="center"><input type="checkbox" name="pilih[]" class="check-item" value="<?php echo $data['id_inbox']; ?>"></td>
+                                        <td><?php echo $no; ?></td>
+                                        <td><?php echo $data['tanggal']; ?></td>
+                                        <td><?php echo $data['nama']; ?></td>
+                                        <td><?php echo $data['email']; ?></td>
+                                        <td><?php echo $data['pesan']; ?></td>
+                                        <td align="center">
 
-                                    echo '<tr>';
-                                    echo '<td align="center"><input type="checkbox" name="id_inbox[]" class="check-item" value="' . $data['id_inbox'] . '"></td>';
-                                    echo "<td><?php echo $no; ?></td>";
-                                    echo "<td>" . $data['nama'] . "</td>";
-                                    echo "<td>" . $data['email'] . "</td>";
-                                    echo "<td>" . $data['pesan'] . "</td>";
-                                    echo '<td align="center">';
-
-
-
-
-                                    if ($data['status'] == 1) {
-                                        echo '<span class="label gradient-1 rounded">Belum Terbaca</span>';
-                                    } else {
-                                        echo '<span class="label gradient-2 rounded">Sudah Terbaca</span>';
-                                    }
+                                            <?php
 
 
-                                    echo '</td>';
-                                    echo '<td align="center">';
-                                    echo '<a href="?page=pinbox&id="' . $data['id_inbox'] . '"" data-placement="top" class="btn btn-primary" title="" data-original-title="Baca">
+                                            if ($data['status'] == 1) {
+                                                echo '<span class="label gradient-1 rounded">Belum Terbaca</span>';
+                                            } else {
+                                                echo '<span class="label gradient-2 rounded">Sudah Terbaca</span>';
+                                            }
+
+                                            ?>
+
+                                        </td>
+                                        <td align="center">
+                                            <a href="?page=pinbox&id=<?php echo $data['id_inbox']; ?>" data-placement="top" class="btn btn-primary" title="" data-original-title="Baca">
                                                 BACA PESAN
-                                            </a>';
-                                    echo '</td>';
-                                    echo '</tr>';
-                                    $no++;
+                                            </a>
+                                            &nbsp;
+                                            <a href="?page=inbox&id=<?php echo $data['id_inbox']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                <button type="button" class="btn btn-danger">
+                                                    <i class="fa fa-close color-danger"></i>
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php $no++;
                                 } ?>
 
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th></th>
+
                                     <th>NO</th>
+                                    <th>TANGGAL</th>
                                     <th>NAMA</th>
                                     <th>EMAIL</th>
                                     <th>PESAN</th>
@@ -93,7 +117,7 @@
                                 </tr>
                             </tfoot>
                         </table>
-                        </form>
+
                         <script>
                             $(document).ready(function() { // Ketika halaman sudah siap (sudah selesai di load)
                                 $("#check-all").click(function() { // Ketika user men-cek checkbox all
@@ -111,6 +135,7 @@
                                 });
                             });
                         </script>
+                        </form>
                     </div>
                 </div>
             </div>

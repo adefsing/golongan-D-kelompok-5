@@ -1,8 +1,3 @@
-<?php
-
-$update = mysqli_query($connect, "UPDATE `inbox` SET `status`='0';");
-
-?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -14,6 +9,7 @@ $update = mysqli_query($connect, "UPDATE `inbox` SET `status`='0';");
                                 <?php
                                 $id  = $_GET['id'];
                                 $sql = mysqli_query($connect, "SELECT * FROM inbox WHERE id_inbox='" . $id . "'");
+                                $update = mysqli_query($connect, "UPDATE `inbox` SET `status`='0' WHERE `id_inbox`='" . $id . "'");
                                 $query = mysqli_fetch_assoc($sql);
                                 ?>
                                 <label>

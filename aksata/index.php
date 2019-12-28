@@ -580,6 +580,9 @@ https://templatemo.com/tm-535-softy-pinko
                 </div>
                 <!-- ***** Contact Text End ***** -->
                 <?php
+                $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
+
+
                 if (isset($_GET['page'])) {
                     $page = $_GET['page'];
 
@@ -599,6 +602,7 @@ https://templatemo.com/tm-535-softy-pinko
                         <form id="contact" action="?page=tmbinbx" method="post">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <input type="hidden" name="time" value="<?php echo $date->format('l , d F Y H:ia'); ?>">
                                     <fieldset>
                                         <input name="name" type="text" class="form-control" id="name" placeholder="Nama Lengkap" required="">
                                     </fieldset>
