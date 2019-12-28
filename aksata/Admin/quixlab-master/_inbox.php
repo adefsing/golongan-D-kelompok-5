@@ -68,11 +68,13 @@
                                 ?>
                                     <tr>
                                         <td align="center"><input type="checkbox" name="pilih[]" class="check-item" value="<?php echo $data['id_inbox']; ?>"></td>
-                                        <td><?php echo $no; ?></td>
+                                        <td align="center"><?php echo $no; ?></td>
                                         <td><?php echo $data['tanggal']; ?></td>
                                         <td><?php echo $data['nama']; ?></td>
                                         <td><?php echo $data['email']; ?></td>
-                                        <td><?php echo $data['pesan']; ?></td>
+                                        <td>
+                                            <div style="width: 200px;"><?php echo $data['pesan']; ?></div>
+                                        </td>
                                         <td align="center">
 
                                             <?php
