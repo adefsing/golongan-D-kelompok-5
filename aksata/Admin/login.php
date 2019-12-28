@@ -16,12 +16,15 @@
         error_reporting(0);
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $login    = mysqli_query($connect, "select * from pegawai where username='$username' and password='$password'");
+        $login    = mysqli_query($connect, "select id_adm,nm_adm,username,password,foto_adm from admin where username='$username' and password='$password'");
         $result   = mysqli_num_rows($login);
         if ($result > 0) {
             $user = mysqli_fetch_array($login);
             session_start();
             $_SESSION['username'] = $user['username'];
+            $_SESSION['nm_adm'] = $user['nm_adm'];
+            $_SESSION['id_adm'] = $user['id_adm'];
+            $_SESSION['foto_adm'] = $user['foto_adm'];
             header("location:quixlab-master/index.php?page=home");
         } else {
             echo "<script>alert('Username dan Password yang anda masukkan salah Silahkan masukkan kembali');document.location.href='login.php'</script>\n";

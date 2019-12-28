@@ -21,7 +21,7 @@ if ($username == "" || $username == NULL || empty($username)) {
     echo "<script>document.location.href='../login.php'</script>\n";
 } else {
 
-    ?>
+?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -240,13 +240,13 @@ if ($username == "" || $username == NULL || empty($username)) {
                             <li class="icons dropdown">
                                 <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                                     <span class="activity active"></span>
-                                    <img src="images/user/1.png" height="40" width="40" alt="">
+                                    <img src="images/user/<?php echo $_SESSION['foto_adm']; ?>" height="40" width="40" alt="">
                                 </div>
                                 <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                                     <div class="dropdown-content-body">
                                         <ul>
                                             <li>
-                                                <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                                <a href="?page=edit_profil&id=<?php echo $_SESSION['id_adm']; ?>"><i class="icon-user"></i> <span>Profile</span></a>
                                             </li>
                                             <li>
                                                 <a href="javascript:void()">
@@ -285,6 +285,7 @@ if ($username == "" || $username == NULL || empty($username)) {
                             </a>
                             <ul aria-expanded="false">
                                 <li><a href="?page=home">Home</a></li>
+                                <li><a href="?page=inbox">Inbox</a></li>
                                 <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                             </ul>
                         </li>
@@ -314,59 +315,68 @@ if ($username == "" || $username == NULL || empty($username)) {
         ***********************************-->
             <div class="content-body">
                 <?php
-                    if (isset($_GET['page'])) {
-                        $page = $_GET['page'];
+                if (isset($_GET['page'])) {
+                    $page = $_GET['page'];
 
-                        switch ($page) {
-                            case 'home':
-                                include "./_index.php";
-                                break;
-                            case 'paket':
-                                include "./_paket.php";
-                                break;
-                            case 'armada':
-                                include "./_armada.php";
-                                break;
-                            case 'wisata':
-                                include "./_wisata.php";
-                                break;
-                            case 'logout':
-                                include "../logout.php";
-                                break;
-                            case 'customer':
-                                include "./_customer.php";
-                                break;
-                            case 'hotel':
-                                include "./_hotel.php";
-                                break;
-                            case 'rm':
-                                include "./_rumahmakan.php";
-                                break;
-                            case 'fedit_paket':
-                                include "./_fedit_paket.php";
-                                break;
-                            case 'fedit_armada':
-                                include "./_fedit_armada.php";
-                                break;
-                            case 'fedit_wisata':
-                                include "./_fedit_wisata.php";
-                                break;
-                            case 'fedit_customer':
-                                include "./_fedit_customer.php";
-                                break;
-                            case 'fedit_hotel':
-                                include "./_fedit_hotel.php";
-                                break;
-                            case 'fedit_rm':
-                                include "./_fedit_rumahmakan.php";
-                                break;
-                            default:
-                                include "./_index.php";
-                                break;
-                        }
+                    switch ($page) {
+                        case 'home':
+                            include "./_index.php";
+                            break;
+                        case 'paket':
+                            include "./_paket.php";
+                            break;
+                        case 'armada':
+                            include "./_armada.php";
+                            break;
+                        case 'wisata':
+                            include "./_wisata.php";
+                            break;
+                        case 'logout':
+                            include "../logout.php";
+                            break;
+                        case 'customer':
+                            include "./_customer.php";
+                            break;
+                        case 'hotel':
+                            include "./_hotel.php";
+                            break;
+                        case 'rm':
+                            include "./_rumahmakan.php";
+                            break;
+                        case 'fedit_paket':
+                            include "./_fedit_paket.php";
+                            break;
+                        case 'fedit_armada':
+                            include "./_fedit_armada.php";
+                            break;
+                        case 'fedit_wisata':
+                            include "./_fedit_wisata.php";
+                            break;
+                        case 'fedit_customer':
+                            include "./_fedit_customer.php";
+                            break;
+                        case 'fedit_hotel':
+                            include "./_fedit_hotel.php";
+                            break;
+                        case 'fedit_rm':
+                            include "./_fedit_rumahmakan.php";
+                            break;
+                        case 'edit_profil':
+                            include "./_edit_profile.php";
+                            break;
+                        case 'inbox':
+                            include "./_inbox.php";
+                            break;
+                        case 'pinbox':
+                            include "./_baca_inbox.php";
+                            break;
+                        default:
+                            include "./_index.php";
+                            break;
                     }
-                    ?>
-                    <!-- #/ container -->
+                }
+                ?>
+                <!-- #/ container -->
             </div>
             <!--**********************************
             Content body end
@@ -396,6 +406,7 @@ if ($username == "" || $username == NULL || empty($username)) {
         <script src="js/custom.min.js"></script>
         <script src="js/settings.js"></script>
         <script src="js/gleek.js"></script>
+        <script src="js/jquery.min.js"></script>
         <script src="js/styleSwitcher.js"></script>
 
         <!-- Chartjs -->

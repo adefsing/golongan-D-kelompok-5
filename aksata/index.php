@@ -573,11 +573,24 @@ https://templatemo.com/tm-535-softy-pinko
                     </div>
                 </div>
                 <!-- ***** Contact Text End ***** -->
+                <?php
+                if (isset($_GET['page'])) {
+                    $page = $_GET['page'];
 
+                    switch ($page) {
+                        case 'tmbinbx':
+                            include "_tambah_inbox.php";
+                            break;
+                        default:
+                            include "index.php";
+                            break;
+                    }
+                }
+                ?>
                 <!-- ***** Contact Form Start ***** -->
                 <div class="col-lg-8 col-md-6 col-sm-12">
                     <div class="contact-form">
-                        <form id="contact" action="" method="get">
+                        <form id="contact" action="?page=tmbinbx" method="post">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <fieldset>
@@ -596,7 +609,7 @@ https://templatemo.com/tm-535-softy-pinko
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
-                                        <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                                        <button type="submit" name="simpan" id="form-submit" class="main-button">Send Message</button>
                                     </fieldset>
                                 </div>
                             </div>

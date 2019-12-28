@@ -49,7 +49,6 @@ div.dataTables_wrapper div.dataTables_filter input {
     margin-left: 0.5em;
     display: inline-block;
     width: auto;
-    border: 1px solid #ced4da;
 }
 
 div.dataTables_wrapper div.dataTables_info {
