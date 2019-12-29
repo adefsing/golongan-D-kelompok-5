@@ -26,11 +26,19 @@
                                 </label>
                             </div>
 
-                            <div class="col-sm-12 col-md-6">
-                                <label style="text-aling:right;">
+                            <div class="col-sm-12">
+                                <label style="text-align:left;">
 
-                                    <button type="button" class="btn mb-1 btn-primary btn-lg" data-toggle="modal" data-target="#tambahmodal" data-whatever="@getbootstrap">TAMBAH DATA</button>
+                                    <a><button type="button" class="btn mb-1 btn-primary btn-lg" data-toggle="modal" data-target="#tambahmodal" data-whatever="@getbootstrap">TAMBAH DATA</button>
+                                    </a>
 
+
+
+                                </label>
+                                <label style="text-align:right;">
+
+                                    <a href="_report_paket.php"><button type="button" class="btn mb-1 btn-primary btn-lg">CETAK DATA</button>
+                                    </a>
 
 
                                 </label>

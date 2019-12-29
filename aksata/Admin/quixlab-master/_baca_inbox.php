@@ -14,6 +14,7 @@
                                 ?>
                                 <label>
                                     <h4>Pesan Dari <b><?= $query['nama']; ?></b> </h4>
+                                    <?= $query['tanggal']; ?>
                                 </label>
                             </div>
 
