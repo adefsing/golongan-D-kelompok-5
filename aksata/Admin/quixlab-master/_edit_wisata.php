@@ -10,8 +10,8 @@ if (isset($_POST['Esubmit'])) {
     $sql = mysqli_query($connect, "UPDATE wisata SET  NM_WST = '$nm_wisata' ,ALAMAT_WST = '$alamat',TLP_WST = '$tlp' WHERE ID_WST = '$id'");
 
     if ($sql) {
-        echo "<script>alert('Data wisata Berhasil Di Ubah');document.location.href='index.php?page=wisata'</script>";
+        echo "<script>alert('Data berhasil diubah');document.location.href='index.php?page=wisata'</script>";
     } else {
-        echo "<script>alert('Data Gagal Di Ubah');document.location.href='index.php?page=wisata'</script>";
+        echo "<script>alert('Data gagal diubah');document.location.href='index.php?page=wisata'</script>";
     }
 }

@@ -21,8 +21,8 @@ if (isset($_POST['submit'])) {
     $sql = mysqli_query($connect, "INSERT INTO wisata (ID_WST,NM_WST,ALAMAT_WST,TLP_WST) values ('$id_wst','$nm_wisata','$alamat','$tlp')");
 
     if ($sql) {
-        echo "<script>alert('Data Berhasil Di Inputkan');document.location.href='index.php?page=wisata'</script>";
+        echo "<script>alert('Data berhasil ditambahkan');document.location.href='index.php?page=wisata'</script>";
     } else {
-        echo "<script>alert('Data Gagal Dimasukkan');document.location.href='index.php?page=wisata'</script>";
+        echo "<script>alert('Data gagal ditambahkan');document.location.href='index.php?page=wisata'</script>";
     }
 }

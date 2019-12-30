@@ -7,9 +7,9 @@
 
         $sql1 = mysqli_query($connect, "DELETE FROM armada WHERE ID_ARM ='$id';");
         if ($sql1) {
-            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=armada'</script>";
+            echo "<script>alert('Data berhasil dihapus');document.location.href='index.php?page=armada'</script>";
         } else {
-            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=armada'</script>";
+            echo "<script>alert('Data gagal dihapus');document.location.href='index.php?page=armada'</script>";
         }
     }
     ?>
@@ -112,7 +112,7 @@
 
 
                                                 &nbsp;
-                                                <a href="?page=armada&id=<?= $data['ID_ARM']; ?>" title="hapus" onclick="return confirm('Anda yakin mau menghapus data ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                <a href="?page=armada&id=<?= $data['ID_ARM']; ?>" title="hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
                                                     <button type="button" class="btn btn-danger">
                                                         <i class="fa fa-close color-danger"></i>
                                                     </button>
