@@ -1,8 +1,8 @@
 <?php
 require 'functions.php';
-$nm = $_GET["NM_PKT"];
+$data = $_GET["ID_PKT"];
 
-if (hapuspkt($nm) > 0 ){
+if (hapuspkt($data) > 0 ){
     echo "
             <script>
                 alert('data berhasil dihapus');

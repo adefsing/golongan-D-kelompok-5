@@ -47,7 +47,7 @@ keyoword.." autocomplete="off">
                         WHERE pkt_wst.ID_PKT = paket.ID_PKT AND pkt_wst.ID_WST = wisata.ID_WST AND pkt_wst.ID_PKT = '$gt_pkt'");
         ?>
         
-        <input type="checkbox" name="ID_WST[]" value="<?=$wstt["ID_WST"];?>" disabled
+        <input type="checkbox" name="ID_WST[]" value="<?=$wstt["ID_WST"];?>" 
             <?php
             foreach($checked_wst as $checked_wstt) :
                 
@@ -71,7 +71,7 @@ keyoword.." autocomplete="off">
                         WHERE pkt_rm.ID_PKT = paket.ID_PKT AND pkt_rm.ID_RM = rm.ID_RM AND pkt_rm.ID_PKT = '$gt_pkt'");
         ?>
         
-        <input type="checkbox" name="ID_RM[]" value="<?=$rmm["ID_RM"];?>" disabled
+        <input type="checkbox" name="ID_RM[]" value="<?=$rmm["ID_RM"];?>" 
             <?php
             foreach($checked_rm as $checked_rmm) :
                 
@@ -89,8 +89,7 @@ keyoword.." autocomplete="off">
     </td>
 
 </tr>
-
 </table>
-<a href="pilihwisata_ubah.php?ID_PKT=<?=$pktt["ID_PKT"];?>&NM_PKT=<?=$pktt["NM_PKT"];?>">Ubah</a>
+
 </body>
 </html>
