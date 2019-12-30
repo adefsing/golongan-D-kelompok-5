@@ -123,7 +123,3 @@ function caritrns($keyword){
 
     return query($query);
 }
-
-
-
-?>
