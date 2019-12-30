@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Des 2019 pada 13.08
+-- Waktu pembuatan: 29 Des 2019 pada 15.51
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.3.6
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `aksataa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `ID_ADM` varchar(5) DEFAULT NULL,
+  `NM_ADM` varchar(20) DEFAULT NULL,
+  `USERNAME` varchar(20) DEFAULT NULL,
+  `PASSWD` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`ID_ADM`, `NM_ADM`, `USERNAME`, `PASSWD`) VALUES
+('adm01', 'Lasdiyono', 'admin', 'admin1234');
 
 -- --------------------------------------------------------
 
@@ -44,35 +64,7 @@ INSERT INTO `armada` (`ID_ARM`, `NM_ARM`, `ALAMAT_ARM`, `TLP_ARM`) VALUES
 ('arm02', 'Bus Maxi 77 Trans', 'Jalan Brawijaya Nomor 8, Jember', '081332542271'),
 ('arm03', 'Bus Megah Transport', 'Jalan Sultan Agung Nomor 44, Arjasa, Jember', '08125255484'),
 ('arm04', 'Bus Akas Asri', 'Jalan Arowana 79, Gebang, Jember', '0331482307'),
-('arm05', 'Bus Eka Kapti', 'Jalan Ki S Mangunsarkoro, Rambipuji, Jember', '0331754162'),
-('arm06', 'Bus Subur Jaya', 'Jalan Pemuda Nomor37, Rembang, Jawa Tengah', '0295693952'),
-('arm07', 'Bus Pandawa 87', 'Jalan K.H. Hasyim Ashari Nomor102, Bugulkidul, Pas', '03435643603'),
-('arm08', 'Bus Citra Dewi', 'Jalan Tirtomoyo Km 2 Nomor305, Semarang, Jawa Teng', '0298712100'),
-('arm09', 'Bus Purnayasa', 'Jalan Merdeka VI Nomor 15, Denpasar, Bali', '03614745441'),
-('arm10', 'Bus Akas N1', 'Jalan Dharmawangsa Nomor48, Rambipuji, Jember', '');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `dtl_armada`
---
-
-CREATE TABLE `dtl_armada` (
-  `DTL_ARM` char(6) NOT NULL,
-  `ID_ARM` char(5) NOT NULL,
-  `SEAT` int(2) DEFAULT NULL,
-  `HARGA` int(8) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `dtl_armada`
---
-
-INSERT INTO `dtl_armada` (`DTL_ARM`, `ID_ARM`, `SEAT`, `HARGA`) VALUES
-('aarm1', 'arm01', 58, 5000000),
-('aarm2', 'arm01', 42, 4500000),
-('aarm3', 'arm01', 30, 4000000),
-('aarm4', 'arm02', 42, 5000000);
+('arm05', 'Bus Eka Kapti', 'Jalan Ki S Mangunsarkoro, Rambipuji, Jember', '0331754162');
 
 -- --------------------------------------------------------
 
@@ -91,34 +83,31 @@ CREATE TABLE `dtl_pemesan` (
 --
 
 INSERT INTO `dtl_pemesan` (`DTL_PEMESAN`, `ID_PEMESAN`, `NM_ANGGOTA`) VALUES
-('dps1', 'psn01', 'yosef'),
-('dps2', 'psn01', 'dika'),
-('dps3', 'psn01', 'emil'),
-('dps4', 'psn01', 'widya');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `entity_10`
---
-
-CREATE TABLE `entity_10` (
-  `ID_RM` char(4) NOT NULL,
-  `ID_TRNS` int(2) NOT NULL,
-  `ID_PKT` char(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `entity_11`
---
-
-CREATE TABLE `entity_11` (
-  `ID_PKT` char(5) NOT NULL,
-  `ID_WST` char(5) NOT NULL,
-  `ID_TRNS` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+('dps01', 'psn01', 'DENOK SRI WAHYUATI'),
+('dps02', 'psn01', 'Widji utami s'),
+('dps03', 'psn01', 'Hamami'),
+('dps04', 'psn01', 'Aulia Purdaningsih '),
+('dps05', 'psn01', 'SOFYAN HADI KURNIAWAN '),
+('dps06', 'psn01', 'TOMY SULISTIO'),
+('dps07', 'psn01', 'TATING NUR INDAH RINI'),
+('dps08', 'psn01', 'ANITA RAHAYU NINGSIH '),
+('dps09', 'psn01', 'JANATUL FIRDAUS'),
+('dps10', 'psn01', 'AIDA WARDATUSH '),
+('dps11', 'psn01', 'SUDARTI'),
+('dps12', 'psn01', 'HUSNUL KHOTIMAH'),
+('dps13', 'psn01', 'DJUNAIDI'),
+('dps14', 'psn01', 'SITI NURJANAH '),
+('dps15', 'psn01', 'NETTY DASMAWATI W'),
+('dps16', 'psn01', 'LANGGENG RESMININGSIH'),
+('dps17', 'psn01', 'YETTININGSIH'),
+('dps18', 'psn01', 'IDA SRI HARTIAH'),
+('dps19', 'psn01', 'PASHA CATRA AMRULLAH'),
+('dps20', 'psn01', 'Sri pudyastuti k '),
+('dps21', 'psn01', 'PUJI HASTUTIK '),
+('dps22', 'psn01', 'IIN SULISTIANINGTIAS'),
+('dps23', 'psn01', 'didin'),
+('dps24', 'psn03', 'nurlaita'),
+('dps25', 'psn03', 'didin');
 
 -- --------------------------------------------------------
 
@@ -151,7 +140,7 @@ INSERT INTO `hotel` (`ID_HOTEL`, `NM_HOTEL`, `ALAMAT_HOTEL`, `TLP_HOTEL`) VALUES
 
 CREATE TABLE `paket` (
   `ID_PKT` char(5) NOT NULL,
-  `NM_PKT` varchar(20) DEFAULT NULL
+  `NM_PKT` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -161,7 +150,8 @@ CREATE TABLE `paket` (
 INSERT INTO `paket` (`ID_PKT`, `NM_PKT`) VALUES
 ('pkt01', 'BALI CRUISE TOUR'),
 ('pkt02', 'BALI EXOTIC TOUR'),
-('pkt03', 'Custom');
+('pkt03', 'Paket dinda tegal gede'),
+('pkt04', 'Paket keluarga nurlaita');
 
 -- --------------------------------------------------------
 
@@ -174,6 +164,7 @@ CREATE TABLE `pemesan` (
   `NM_PEMESAN` varchar(30) DEFAULT NULL,
   `JMLH_ANGGOTA` int(2) DEFAULT NULL,
   `NIK` char(17) NOT NULL,
+  `ALAMAT_PEMESAN` varchar(50) NOT NULL,
   `TGL_PSN` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -181,8 +172,38 @@ CREATE TABLE `pemesan` (
 -- Dumping data untuk tabel `pemesan`
 --
 
-INSERT INTO `pemesan` (`ID_PEMESAN`, `NM_PEMESAN`, `JMLH_ANGGOTA`, `NIK`, `TGL_PSN`) VALUES
-('psn01', 'Denok Sri Wahyuati', 23, '2895792065982', '2019-12-09');
+INSERT INTO `pemesan` (`ID_PEMESAN`, `NM_PEMESAN`, `JMLH_ANGGOTA`, `NIK`, `ALAMAT_PEMESAN`, `TGL_PSN`) VALUES
+('psn01', 'Denok Sri Wahyuati', 23, '3509147928640003', 'SDN Kepatihan 2 Jember', '2019-06-01'),
+('psn02', 'Dinda Ayu', 30, '3509172018990001', 'Perumahan Tegal Gede Jember', '2019-07-03'),
+('psn03', 'Nurlaita', 15, '3509175307000004', 'Klompangan, Ajung', '2019-11-04'),
+('psn04', 'Mohammad Ainun A', 20, '3509190704990003', 'Jl Teuku Umar Gg 7 No 112', '2019-11-12');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pkt_rm`
+--
+
+CREATE TABLE `pkt_rm` (
+  `ID_PKT` char(5) NOT NULL,
+  `ID_RM` char(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pkt_rm`
+--
+
+INSERT INTO `pkt_rm` (`ID_PKT`, `ID_RM`) VALUES
+('pkt01', 'rm01'),
+('pkt01', 'rm03'),
+('pkt01', 'rm05'),
+('pkt01', 'rm06'),
+('pkt01', 'rm07'),
+('pkt02', 'rm02'),
+('pkt02', 'rm03'),
+('pkt02', 'rm04'),
+('pkt02', 'rm05'),
+('pkt02', 'rm07');
 
 -- --------------------------------------------------------
 
@@ -191,9 +212,30 @@ INSERT INTO `pemesan` (`ID_PEMESAN`, `NM_PEMESAN`, `JMLH_ANGGOTA`, `NIK`, `TGL_P
 --
 
 CREATE TABLE `pkt_wst` (
-  `ID_WST` char(5) NOT NULL,
-  `ID_PKT` char(5) NOT NULL
+  `ID_PKT` char(5) NOT NULL,
+  `ID_WST` char(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pkt_wst`
+--
+
+INSERT INTO `pkt_wst` (`ID_PKT`, `ID_WST`) VALUES
+('pkt01', 'wst01'),
+('pkt02', 'wst01'),
+('pkt02', 'wst02'),
+('pkt01', 'wst03'),
+('pkt02', 'wst03'),
+('pkt01', 'wst04'),
+('pkt02', 'wst04'),
+('pkt01', 'wst05'),
+('pkt02', 'wst05'),
+('pkt01', 'wst06'),
+('pkt02', 'wst07'),
+('pkt02', 'wst08'),
+('pkt02', 'wst09'),
+('pkt02', 'wst10'),
+('pkt01', 'wst11');
 
 -- --------------------------------------------------------
 
@@ -213,11 +255,13 @@ CREATE TABLE `rm` (
 --
 
 INSERT INTO `rm` (`ID_RM`, `NM_RM`, `ALAMAT_RM`, `TLP_RM`) VALUES
-('rm01', 'RM Amdani Bwi', NULL, NULL),
-('rm02', 'IAM Bali', NULL, NULL),
-('rm03', 'Lacosta Lovina', NULL, NULL),
-('rm04', 'RM Ulundanu', NULL, NULL),
-('rm05', 'RM Lokal Seririt', NULL, NULL);
+('rm01', 'Bounty Cruise Nusa Lembongan', 'Jl. Wahana Tirta I, Denpasar', '0361726666'),
+('rm02', 'RM Pantai Jimbaran', 'Jimbaran, Kabupaten Badung', NULL),
+('rm03', 'RM Ulundanu', 'Danau Beratan, Candikuning, Tabanan Regency', NULL),
+('rm04', 'RM Lokal Seririt', 'Kabupaten Buleleng', NULL),
+('rm05', 'RM Lokal Pantai Pandawa', 'Pantai Pandawa', NULL),
+('rm06', 'RM Secret Garden', 'Jl. Raya Denpasar Bedugul km. 36, Mekarsari, Taban', '03682033363'),
+('rm07', 'RM Lokal Singaraja', 'Banyuasri, Kec. Buleleng, Kabupaten Buleleng', NULL);
 
 -- --------------------------------------------------------
 
@@ -231,19 +275,22 @@ CREATE TABLE `transaksi` (
   `ID_PEMESAN` char(5) NOT NULL,
   `ID_ARM` char(5) NOT NULL,
   `ID_HOTEL` char(5) NOT NULL,
-  `TGL_BRKT` date DEFAULT NULL,
+  `TGL_PELAKSANAAN` varchar(20) DEFAULT NULL,
   `TMPT_JPT` varchar(50) DEFAULT NULL,
   `HARGA` int(9) NOT NULL,
   `BAYAR` int(9) NOT NULL,
-  `STATUS_BAYAR` varchar(11) NOT NULL
+  `STATUS_BAYAR` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `transaksi`
 --
 
-INSERT INTO `transaksi` (`ID_TRNS`, `ID_PKT`, `ID_PEMESAN`, `ID_ARM`, `ID_HOTEL`, `TGL_BRKT`, `TMPT_JPT`, `HARGA`, `BAYAR`, `STATUS_BAYAR`) VALUES
-(1, 'pkt01', 'psn01', 'arm01', 'htl01', '2020-01-31', 'SDN Kepatihan 2 Jember', 30000000, 20000000, 'BELUM');
+INSERT INTO `transaksi` (`ID_TRNS`, `ID_PKT`, `ID_PEMESAN`, `ID_ARM`, `ID_HOTEL`, `TGL_PELAKSANAAN`, `TMPT_JPT`, `HARGA`, `BAYAR`, `STATUS_BAYAR`) VALUES
+(1, 'pkt02', 'psn01', 'arm01', 'htl01', '9 - 13 Juli 2019', 'SDN Kepatihan 2 Jember', 162725000, 162725000, 'LUNAS'),
+(2, 'pkt03', 'psn02', 'arm02', 'htl03', '16 - 18 Agustus 2019', 'Perumahan Tegal Gede Jember 	', 45000000, 45000000, 'LUNAS'),
+(3, 'pkt04', 'psn03', 'arm01', 'htl02', '24-26 Desember 2019', 'Masjid Klompangan, Ajung', 16500000, 16500000, 'LUNAS'),
+(4, 'pkt01', 'psn04', 'arm03', 'htl02', '30-1 Desember 3019', 'Hotel Flambooyan', 24000000, 24000000, 'LUNAS');
 
 -- --------------------------------------------------------
 
@@ -262,33 +309,9 @@ CREATE TABLE `transfer` (
 --
 
 INSERT INTO `transfer` (`ID_TRNS`, `NOMINAL`, `TGL_TRANSFER`) VALUES
-(1, 20000000, '2019-12-09');
-
---
--- Trigger `transfer`
---
-DELIMITER $$
-CREATE TRIGGER `cek_hapus` AFTER DELETE ON `transfer` FOR EACH ROW BEGIN
-	UPDATE transaksi SET BAYAR = BAYAR-OLD.NOMINAL
-    WHERE ID_TRNS = OLD.ID_TRNS;
-    UPDATE transaksi SET STATUS_BAYAR = 'LUNAS'
-    WHERE BAYAR >= HARGA;
-    UPDATE transaksi SET STATUS_BAYAR = 'BELUM'
-    WHERE BAYAR < HARGA;
-END
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `cek_tambah` AFTER INSERT ON `transfer` FOR EACH ROW BEGIN 
-	UPDATE transaksi SET BAYAR = BAYAR+NEW.NOMINAL 
-    WHERE ID_TRNS = NEW.ID_TRNS;
-    UPDATE transaksi SET STATUS_BAYAR = 'LUNAS'
-    WHERE BAYAR >= HARGA;
-    UPDATE transaksi SET STATUS_BAYAR = 'BELUM'
-    WHERE BAYAR < HARGA;
-END
-$$
-DELIMITER ;
+(1, 20000000, '2019-12-09'),
+(1, 2000000, '2019-12-10'),
+(1, 8000000, '2019-12-10');
 
 -- --------------------------------------------------------
 
@@ -311,7 +334,14 @@ INSERT INTO `wisata` (`ID_WST`, `NM_WST`, `ALAMAT_WST`, `TLP_WST`) VALUES
 ('wst01', 'Pantai Sanur', NULL, NULL),
 ('wst02', 'Pantai Pandawa', NULL, NULL),
 ('wst03', 'Pantai Jimbaran', NULL, NULL),
-('wst04', 'Bedugul', NULL, NULL);
+('wst04', 'Pura Ulun Danu Beratan Bedugul', 'Danau Beratan, Candikuning, Baturiti', '0368-2033143'),
+('wst05', 'TEMAN JOGER Luwus', 'Jl. Mekarsari - Baturiti Bedugul No.16', '0368-2033324'),
+('wst06', 'Pantai Lovina', NULL, NULL),
+('wst07', 'Krisna Water Sports', 'Jalan Seririt - Singaraja, Buleleng', '08113973311'),
+('wst08', 'Pantai Tanjung Benoa', NULL, NULL),
+('wst09', 'Puja Mandala', 'Jalan Nusa Dua, Kuta Selatan, Badung', '0361-771010'),
+('wst10', 'Secret Garden Village', 'Jl. Raya Denpasar Bedugul km. 36, Tabanan', '0368203336'),
+('wst11', 'Nusa Lembongan', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -324,34 +354,11 @@ ALTER TABLE `armada`
   ADD PRIMARY KEY (`ID_ARM`);
 
 --
--- Indeks untuk tabel `dtl_armada`
---
-ALTER TABLE `dtl_armada`
-  ADD PRIMARY KEY (`DTL_ARM`),
-  ADD KEY `FK_ARMADA` (`ID_ARM`);
-
---
 -- Indeks untuk tabel `dtl_pemesan`
 --
 ALTER TABLE `dtl_pemesan`
   ADD PRIMARY KEY (`DTL_PEMESAN`),
   ADD KEY `FK_PEMESAN` (`ID_PEMESAN`);
-
---
--- Indeks untuk tabel `entity_10`
---
-ALTER TABLE `entity_10`
-  ADD KEY `FK_RELATIONSHIP_10` (`ID_PKT`),
-  ADD KEY `FK_RELATIONSHIP_8` (`ID_RM`),
-  ADD KEY `FK_RELATIONSHIP_9` (`ID_TRNS`);
-
---
--- Indeks untuk tabel `entity_11`
---
-ALTER TABLE `entity_11`
-  ADD KEY `FK_RELATIONSHIP_11` (`ID_PKT`),
-  ADD KEY `FK_RELATIONSHIP_12` (`ID_WST`),
-  ADD KEY `FK_RELATIONSHIP_13` (`ID_TRNS`);
 
 --
 -- Indeks untuk tabel `hotel`
@@ -370,6 +377,13 @@ ALTER TABLE `paket`
 --
 ALTER TABLE `pemesan`
   ADD PRIMARY KEY (`ID_PEMESAN`);
+
+--
+-- Indeks untuk tabel `pkt_rm`
+--
+ALTER TABLE `pkt_rm`
+  ADD KEY `ID_RM` (`ID_RM`),
+  ADD KEY `ID_PKT` (`ID_PKT`);
 
 --
 -- Indeks untuk tabel `pkt_wst`
@@ -405,32 +419,17 @@ ALTER TABLE `wisata`
 --
 
 --
--- Ketidakleluasaan untuk tabel `dtl_armada`
---
-ALTER TABLE `dtl_armada`
-  ADD CONSTRAINT `FK_ARMADA` FOREIGN KEY (`ID_ARM`) REFERENCES `armada` (`ID_ARM`);
-
---
 -- Ketidakleluasaan untuk tabel `dtl_pemesan`
 --
 ALTER TABLE `dtl_pemesan`
   ADD CONSTRAINT `FK_PEMESAN` FOREIGN KEY (`ID_PEMESAN`) REFERENCES `pemesan` (`ID_PEMESAN`);
 
 --
--- Ketidakleluasaan untuk tabel `entity_10`
+-- Ketidakleluasaan untuk tabel `pkt_rm`
 --
-ALTER TABLE `entity_10`
-  ADD CONSTRAINT `FK_RELATIONSHIP_10` FOREIGN KEY (`ID_PKT`) REFERENCES `paket` (`ID_PKT`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_8` FOREIGN KEY (`ID_RM`) REFERENCES `rm` (`ID_RM`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_9` FOREIGN KEY (`ID_TRNS`) REFERENCES `transaksi` (`ID_TRNS`);
-
---
--- Ketidakleluasaan untuk tabel `entity_11`
---
-ALTER TABLE `entity_11`
-  ADD CONSTRAINT `FK_RELATIONSHIP_11` FOREIGN KEY (`ID_PKT`) REFERENCES `paket` (`ID_PKT`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_12` FOREIGN KEY (`ID_WST`) REFERENCES `wisata` (`ID_WST`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_13` FOREIGN KEY (`ID_TRNS`) REFERENCES `transaksi` (`ID_TRNS`);
+ALTER TABLE `pkt_rm`
+  ADD CONSTRAINT `pkt_rm_ibfk_1` FOREIGN KEY (`ID_PKT`) REFERENCES `paket` (`ID_PKT`),
+  ADD CONSTRAINT `pkt_rm_ibfk_2` FOREIGN KEY (`ID_RM`) REFERENCES `rm` (`ID_RM`);
 
 --
 -- Ketidakleluasaan untuk tabel `pkt_wst`

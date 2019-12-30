@@ -45,7 +45,7 @@ keyoword.." autocomplete="off">
         <td> <a href="pilihwisata.php?ID_PKT=<?=$pktt["ID_PKT"];?>&NM_PKT=<?=$pktt["NM_PKT"];?>">detail</a> </td>
         <td>
             <a href="ubah.php?ID_PKT=<?=$pktt["ID_PKT"];?>">Ubah</a>
-            <a href="hapus.php?NM_PKT=<?=$pktt["NM_PKT"];?>" onclick='return confirmation()'>Hapus</a>
+            <a href="hapus.php?ID_PKT=<?=$pktt["ID_PKT"];?>" onclick='return confirmation()'>Hapus</a>
         </td>
     </tr>
     <?php $i++; ?>

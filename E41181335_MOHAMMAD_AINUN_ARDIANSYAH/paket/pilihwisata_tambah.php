@@ -40,6 +40,7 @@
     <form action="" method="post">
     <label for="NM_PKT"><?= $gtnm; ?></label>
     <label for="ID_PKT"><?= $gtidpk; ?></label>
+    <input type="hidden" name="ID_PKT" value="<?= $gtidpk; ?>">
     <table border="1" cellpadding="10" cellspacing="1">
     <tr>
         <th>Pilih Wisata</th>
@@ -49,19 +50,17 @@
     <tr>
         <td>
             <?php foreach( $wst as $wstt ) : ?>
-            <input type="checkbox" name="ID_WST[]" value="ID_WST">
+            <input type="checkbox" name="ID_WST[]" value="<?= $wstt["ID_WST"]; ?>">
                 <?= $wstt["NM_WST"]; ?>
             </input>
-            <input type="hidden" name="ID_PKT[]" value="<?= $gtidpk; ?>">
             <br><br>
             <?php endforeach; ?>
         </td>
         <td>
         <?php foreach( $rm as $rmm ) : ?>
-            <input type="checkbox" name="ID_RM[]" value="ID_RM">
+            <input type="checkbox" name="ID_RM[]" value="<?= $rmm["ID_RM"]; ?>">
                 <?= $rmm["NM_RM"]; ?>
             </input>
-            <input type="hidden" name="ID_PKT[]" value="<?= $gtidpk; ?>">
             <br><br>
         <?php endforeach; ?>
         </td>

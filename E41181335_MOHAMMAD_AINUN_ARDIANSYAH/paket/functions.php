@@ -53,8 +53,20 @@ function tambahpkt($data) {
 
 function hapuspkt($nm) {
     global $connect;
-    mysqli_query($connect, "DELETE FROM paket WHERE NM_PKT = '$nm'");
+    
+    mysqli_query($connect, "DELETE FROM pkt_wst WHERE ID_PKT = '$nm'");
+    mysqli_query($connect, "DELETE FROM paket WHERE ID_PKT = '$nm'");
     return mysqli_affected_rows($connect);
+}
+
+function tambahpilihwst($data){
+    global $connect;
+    $pkt = $data["ID_PKT"];
+    foreach ($_POST['ID_WST'] as $wst) {
+    $query = "INSERT INTO pkt_wst VALUES('$pkt','$wst')";
+        mysqli_query($connect, $query);
+      }
+    return mysqli_affected_rows($connect);  
 }
 
 function ubahpkt($data){
