@@ -34,6 +34,13 @@
 
 
                                 </label>
+                                <label style="text-align:right;">
+
+                                    <a href="_report_rumahmakan.php?id=<?php echo $_SESSION['username']; ?>"><button type="button" class="btn mb-1 btn-primary btn-lg">CETAK DATA PDF</button>
+                                    </a>
+
+
+                                </label>
                                 <div class="modal fade" id="tambahmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">

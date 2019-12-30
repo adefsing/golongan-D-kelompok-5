@@ -6,9 +6,9 @@ include "../../koneksi.php";
 
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
-$harga    = mysqli_query($connect, "select SUM(HARGA_DEAL) AS total from transaksi");
-$jmlt     = mysqli_query($connect, "select COUNT(NMR_TRNS) AS jmlt from transaksi");
-$jmlp     = mysqli_query($connect, "select COUNT(ID_CUST) AS jmlp from customer");
+$harga    = mysqli_query($connect, "select SUM(HARGA) AS total from transaksi");
+$jmlt     = mysqli_query($connect, "select COUNT(ID_TRNS) AS jmlt from transaksi");
+$jmlp     = mysqli_query($connect, "select COUNT(ID_PEMESAN) AS jmlp from pemesan");
 $row      = mysqli_fetch_array($harga);
 $row2     = mysqli_fetch_array($jmlt);
 $row3     = mysqli_fetch_array($jmlp);
