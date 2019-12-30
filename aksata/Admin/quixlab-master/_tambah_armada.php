@@ -21,8 +21,8 @@ if (isset($_POST['submit'])) {
     $sql = mysqli_query($connect, "INSERT INTO armada (ID_ARM,NM_ARM,ALAMAT_ARM,TLP_ARM) values ('$id_arm','$nm_armada','$alamat','$tlp')");
 
     if ($sql) {
-        echo "<script>alert('Data Berhasil Di Inputkan');document.location.href='index.php?page=armada'</script>";
+        echo "<script>alert('Data berhasil ditambahkan');document.location.href='index.php?page=armada'</script>";
     } else {
-        echo "<script>alert('Data Gagal Dimasukkan');document.location.href='index.php?page=armada'</script>";
+        echo "<script>alert('Data gagal ditambahkan');document.location.href='index.php?page=armada'</script>";
     }
 }

@@ -7,9 +7,9 @@
 
         $sql1 = mysqli_query($connect, "DELETE FROM hotel WHERE ID_HOTEL ='$id';");
         if ($sql1) {
-            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=hotel'</script>";
+            echo "<script>alert('Data berhasil dihapus');document.location.href='index.php?page=hotel'</script>";
         } else {
-            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=hotel'</script>";
+            echo "<script>alert('Data gagal dihapus');document.location.href='index.php?page=hotel'</script>";
         }
     }
     ?>
@@ -83,7 +83,7 @@
                             <thead>
                                 <tr>
                                     <th>NO</th>
-                                    <th>ID HOTEL</th>
+                                    <!-- <th>ID HOTEL</th> -->
                                     <th>NAMA HOTEL</th>
                                     <th>ALAMAT HOTEL</th>
                                     <th>TLP_HOTEL</th>
@@ -99,15 +99,15 @@
                                 while ($data = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
-                                        <td><?php echo $no; ?></td>
-                                        <td><?php echo $data['ID_HOTEL']; ?></td>
-                                        <td><?php echo $data['NM_HOTEL']; ?></td>
-                                        <td><?php echo $data['ALAMAT_HOTEL']; ?></td>
-                                        <td><?php echo $data['TLP_HOTEL']; ?></td>
+                                        <td><?= $no; ?></td>
+                                        <!-- <td><?= $data['ID_HOTEL']; ?></td> -->
+                                        <td><?= $data['NM_HOTEL']; ?></td>
+                                        <td><?= $data['ALAMAT_HOTEL']; ?></td>
+                                        <td><?= $data['TLP_HOTEL']; ?></td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_hotel&id=<?php echo $data['ID_HOTEL']; ?>" data-placement="top" title="">
+                                                    <a href="?page=fedit_hotel&id=<?= $data['ID_HOTEL']; ?>" data-placement="top" title="">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -116,7 +116,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=hotel&id=<?php echo $data['ID_HOTEL']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="?page=hotel&id=<?= $data['ID_HOTEL']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>

@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     if ($row > 0) {
         $id_HL = autonumber($HL_id, 2, 3);
     } else {
-        $id_HL = 'HL001';
+        $id_HL = 'htl01';
     }
 
     $sql = mysqli_query($connect, "INSERT INTO hotel (ID_HOTEL,ID_PKT,NM_HOTEL,ALAMAT_HOTEL,TLP_HOTEL) values ('$id_HL','$id_paket','$nm_hotel','$alamat','$tlp')");

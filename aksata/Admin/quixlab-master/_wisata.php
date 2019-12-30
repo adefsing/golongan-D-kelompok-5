@@ -7,9 +7,9 @@
 
         $sql1 = mysqli_query($connect, "DELETE FROM wisata WHERE ID_WST ='$id';");
         if ($sql1) {
-            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=wisata'</script>";
+            echo "<script>alert('Data berhasil dihapus');document.location.href='index.php?page=wisata'</script>";
         } else {
-            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=wisata'</script>";
+            echo "<script>alert('Data gagal dihapus');document.location.href='index.php?page=wisata'</script>";
         }
     }
     ?>
@@ -49,10 +49,10 @@
                                                         <div class="form-group col ml-auto">
                                                             <label class="col-form-label">Nama Wisata</label>
                                                             <input type="text" name="nm_wisata" class="form-control input-default" placeholder="Nama wisata">
-                                                            <label class="col-form-label">Telepon Wisata</label>
-                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon Wisata">
-                                                            <label class="col-form-label">Alamat Wisata</label>
-                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Wisata" style="height:125px;"></textarea>
+                                                            <label class="col-form-label">Telepon</label>
+                                                            <input type="text" name="tlp" class="form-control input-default"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon">
+                                                            <label class="col-form-label">Alamat</label>
+                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat" style="height:125px;"></textarea>
                                                         </div>
                                                     </div>
                                             </div>
@@ -70,12 +70,12 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID WISATA</th>
+                                    <th>NO.</th>
+                                    <!-- <th>ID WISATA</th> -->
                                     <th>NAMA WISATA</th>
-                                    <th>ALAMAT WISATA</th>
-                                    <th>TLP_WISATA</th>
-                                    <th>Action</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -87,15 +87,15 @@
                                 while ($data = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
-                                        <td><?php echo $no; ?></td>
-                                        <td><?php echo $data['ID_WST']; ?></td>
-                                        <td><?php echo $data['NM_WST']; ?></td>
-                                        <td><?php echo $data['ALAMAT_WST']; ?></td>
-                                        <td><?php echo $data['TLP_WST']; ?></td>
+                                        <td><?= $no; ?></td>
+                                        <!-- <td><?= $data['ID_WST']; ?></td> -->
+                                        <td><?= $data['NM_WST']; ?></td>
+                                        <td><?= $data['ALAMAT_WST']; ?></td>
+                                        <td><?= $data['TLP_WST']; ?></td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_wisata&id=<?php echo $data['ID_WST']; ?>" data-placement="top" title="" data-original-title="Edit">
+                                                    <a href="?page=fedit_wisata&id=<?php echo $data['ID_WST']; ?>" data-placement="top" title="ubah" data-original-title="Edit">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -104,7 +104,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=wisata&id=<?php echo $data['ID_WST']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="?page=wisata&id=<?php echo $data['ID_WST']; ?>" title="hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -122,11 +122,11 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID WISATA</th>
+                                    <th>NO.</th>
+                                    <!-- <th>ID WISATA</th> -->
                                     <th>NAMA WISATA</th>
-                                    <th>ALAMAT WISATA</th>
-                                    <th>TLP_WISATA</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>

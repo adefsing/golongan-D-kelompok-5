@@ -10,7 +10,7 @@ $tlp  = $_POST['tlp'];
 $sql = mysqli_query($connect, "UPDATE armada SET  NM_ARM = '$nm_armada' ,ALAMAT_ARM = '$alamat',TLP_ARM = '$tlp' WHERE ID_ARM = '$id'");
 
 if ($sql) {
-    echo "<script>alert('Data armada Berhasil Di Ubah');document.location.href='index.php?page=armada'</script>";
+    echo "<script>alert('Data berhasil diubah');document.location.href='index.php?page=armada'</script>";
 } else {
-    echo "<script>alert('Data Gagal Di Ubah');document.location.href='index.php?page=armada'</script>";
+    echo "<script>alert('Data Gagal diubah');document.location.href='index.php?page=armada'</script>";
 }
