@@ -55,8 +55,10 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
                         <td><?php echo $data['tanggal']; ?></td>
                         <td><?php echo $data['nama']; ?></td>
                         <td><?php echo $data['email']; ?></td>
-                        <td>
-                            <div class="pesan"><?php echo $data['pesan']; ?></div>
+                        <td class="pesan">
+                            <div>
+                                <p><?php echo $data['pesan']; ?></p>
+                            </div>
                         </td>
                     </tr>
                 <?php $no++;

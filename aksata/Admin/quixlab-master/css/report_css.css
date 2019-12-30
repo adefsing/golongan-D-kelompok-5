@@ -108,8 +108,8 @@ table .no {
     width: 20px;
 }
 
-table td.pesan {
-    width: 100px;
+table .pesan {
+    width: 150px;
 }
 
 table td {
