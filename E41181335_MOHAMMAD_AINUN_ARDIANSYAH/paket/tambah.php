@@ -7,7 +7,7 @@
             echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'index.php';
+                document.location.href = 'pilihwisata_tambah.php?NM_PKT=".$_POST['NM_PKT']."&ID_PKT=".$_POST['ID_PKT']."';
             </script>
             ";
         } else {
@@ -33,12 +33,8 @@
     <h1>Tambah Data</h1>
 
     <form action="" method="post">
+    <input type="hidden" name="ID_PKT" id="ID_PKT" value="<?=$idpkt;?>">
     <ul>
-        <!-- <li>
-            <label for="ID_WST">ID</label>
-            <input type="text" name="ID_WST" id="ID_WST" value="<?=$idwst;?>" required disabled>
-        </li>
-        <br> -->
         <li>
             <label for="NM_PKT">Nama Paket</label>
             <input type="text" name="NM_PKT" id="NM_PKT" required autocomplete="off">

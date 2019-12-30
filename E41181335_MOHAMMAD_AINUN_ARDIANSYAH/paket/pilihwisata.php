@@ -2,8 +2,7 @@
 require 'functions.php';
 $wst = query("SELECT * FROM wisata ORDER BY ID_WST ASC");
 $rm  = query("SELECT * FROM rm ORDER BY ID_RM ASC");
-$gt = $_GET["status"];
-$gtt = $_GET["ID_PKT"];
+$gt_pkt = $_GET["ID_PKT"];
 $nmpkt = $_GET["NM_PKT"];
 
 // tombol search
@@ -33,27 +32,44 @@ keyoword.." autocomplete="off">
 
 <br>
 <label for="NM_PKT"><?= $nmpkt; ?></label>
+<label for="ID_PKT"><?= $idpkt; ?></label>
 <table border="1" cellpadding="10" cellspacing="1">
     <tr>
-    <th>Pilih Wisata</th>
-    <th>Pilih Rumah Makan</th>
+        <th>Pilih Wisata</th>
+        <th>Pilih Rumah Makan</th>
     </tr>
+
+    <!-- <tr>
+        <td>
+            <?php foreach( $wst as $wstt ) : ?>
+            <input type="checkbox" name="ID_WST" value="ID_WST">
+                <?= $wstt["NM_WST"]; ?>
+            </input>
+            <br><br>
+            <?php endforeach; ?>
+        </td>
+        <td>
+        <?php foreach( $rm as $rmm ) : ?>
+            <input type="checkbox" name="ID_RM" value="ID_RM">
+                <?= $rmm["NM_RM"]; ?>
+            </input>
+            <br><br>
+        <?php endforeach; ?>
+        </td>
+    </tr> -->
 <tr>
     <td>
     <?php foreach( $wst as $wstt ) : 
         $ws =  $wstt["ID_WST"];
-        $jhdg = query("SELECT paket.NM_PKT, wisata.ID_WST, wisata.NM_WST FROM pkt_wst, paket, wisata 
-                        WHERE pkt_wst.ID_PKT = paket.ID_PKT AND pkt_wst.ID_WST = wisata.ID_WST AND pkt_wst.ID_PKT = '$gtt'");
+        $checked_wst = query("SELECT paket.NM_PKT, wisata.ID_WST, wisata.NM_WST FROM pkt_wst, paket, wisata 
+                        WHERE pkt_wst.ID_PKT = paket.ID_PKT AND pkt_wst.ID_WST = wisata.ID_WST AND pkt_wst.ID_PKT = '$gt_pkt'");
         ?>
         
-        <input type="checkbox" 
-            name="ID_WST[]"<?php if($gt==0){
-                echo "disabled";
-            }?> value="<?=$wstt["ID_WST"];?>"
+        <input type="checkbox" name="ID_WST[]" value="<?=$wstt["ID_WST"];?>" disabled
             <?php
-            foreach($jhdg as $jhdgg) :
+            foreach($checked_wst as $checked_wstt) :
                 
-                if ($ws == $jhdgg["ID_WST"]) {
+                if ($ws == $checked_wstt["ID_WST"]) {
                     echo "checked";
                 }
                 endforeach;
@@ -68,19 +84,16 @@ keyoword.." autocomplete="off">
 
     <td>
     <?php foreach( $rm as $rmm ) : 
-        $iidrm =  $rmm["ID_RM"];
-        $jhgd = query("SELECT paket.NM_PKT, rm.ID_RM, rm.NM_RM FROM pkt_rm, paket, rm 
-                        WHERE pkt_rm.ID_PKT = paket.ID_PKT AND pkt_rm.ID_RM = rm.ID_RM AND pkt_rm.ID_PKT = '$gtt'");
+        $r =  $rmm["ID_RM"];
+        $checked_rm = query("SELECT paket.NM_PKT, rm.ID_RM, rm.NM_RM FROM pkt_rm, paket, rm 
+                        WHERE pkt_rm.ID_PKT = paket.ID_PKT AND pkt_rm.ID_RM = rm.ID_RM AND pkt_rm.ID_PKT = '$gt_pkt'");
         ?>
         
-        <input type="checkbox" 
-            name="ID_RM[]"<?php if($gt==0){
-                echo "disabled";
-            }?> value="<?=$rmm["ID_RM"];?>"
+        <input type="checkbox" name="ID_RM[]" value="<?=$rmm["ID_RM"];?>" disabled
             <?php
-            foreach($jhgd as $jhgdd) :
+            foreach($checked_rm as $checked_rmm) :
                 
-                if ($iidrm == $jhgdd["ID_RM"]) {
+                if ($r == $checked_rmm["ID_RM"]) {
                     echo "checked";
                 }
                 endforeach;

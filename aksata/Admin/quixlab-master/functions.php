@@ -30,7 +30,7 @@ function tambaharm($data) {
     global $connect;
     global $idarm;
 
-    // $id_wst = htmlspecialchars($data["ID_WST"]);
+    
     $nm_arm = htmlspecialchars($data["NM_ARM"]);        
     $alamat_arm = htmlspecialchars($data["ALAMAT_ARM"]);
     $tlp_arm = htmlspecialchars($data["TLP_ARM"]); 

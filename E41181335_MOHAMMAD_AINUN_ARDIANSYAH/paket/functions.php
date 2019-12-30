@@ -26,6 +26,19 @@ function query ($query) {
 
 }
 
+// function tambahpilihwst($data){
+//     $pkt = $_POST["ID_PKT"];
+//     $jumlah_dipilih = count($pkt);
+//     $wst = $_POST["ID_WST"];
+//     $jmlh_dipilih = count($wst)
+ 
+//     for ($x=0; $x<$jumlah_dipilih; $x++){
+//         for ($y=0; $y<$jmlh_dipilih; $y++){
+// 	        mysql_query("INSERT INTO pkt_wst values('$pkt[$x]','$wst[$y]')");
+//         }
+//     }
+// }
+
 function tambahpkt($data) {
     global $connect;
     global $idpkt;
