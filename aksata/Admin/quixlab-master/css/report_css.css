@@ -108,6 +108,10 @@ table .no {
     width: 20px;
 }
 
+table td.pesan {
+    width: 100px;
+}
+
 table td {
     padding: 20px;
     text-align: left;

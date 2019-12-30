@@ -9,7 +9,7 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
 
 <head>
     <meta charset="utf-8">
-    <title>Laporan Data Hotel</title>
+    <title>Laporan Data Inbox</title>
     <link rel="stylesheet" href="css/report_css.css" media="all" />
 </head>
 
@@ -18,7 +18,7 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
         <div id="logo">
             <img src="images/logoa.png">
         </div>
-        <h1>LAPORAN DATA HOTEL</h1>
+        <h1>LAPORAN DATA INBOX</h1>
         <div id="company" class="clearfix">
             PT. AKSATA DILAS JAYA<br /> JL. Sumatra 21,<br /> Jember,<br /> Tlp/Fax (0331) 5442678 <br />
             <a href="mailto:adjaduasatu@gmail.com">adjaduasatu@gmail.com</a>
@@ -56,7 +56,7 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
                         <td><?php echo $data['nama']; ?></td>
                         <td><?php echo $data['email']; ?></td>
                         <td>
-                            <div style="width: 80px;"><?php echo $data['pesan']; ?></div>
+                            <div class="pesan"><?php echo $data['pesan']; ?></div>
                         </td>
                     </tr>
                 <?php $no++;
