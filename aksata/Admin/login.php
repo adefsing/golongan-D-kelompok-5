@@ -18,6 +18,7 @@
         $password = $_POST['password'];
         $login    = mysqli_query($connect, "SELECT id_adm,nm_adm,username,password,foto_adm FROM admin WHERE username='$username' and password='$password'");
         $result   = mysqli_num_rows($login);
+
         if ($result > 0) {
             $user = mysqli_fetch_array($login);
             session_start();

@@ -9,7 +9,7 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
 
 <head>
     <meta charset="utf-8">
-    <title>Laporan Data Paket</title>
+    <title>Laporan Data Wisata</title>
     <link rel="stylesheet" href="css/report_css.css" media="all" />
 </head>
 
@@ -18,7 +18,7 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
         <div id="logo">
             <img src="images/logoa.png">
         </div>
-        <h1>LAPORAN DATA PAKET</h1>
+        <h1>LAPORAN DATA WISATA</h1>
         <div id="company" class="clearfix">
             PT. AKSATA DILAS JAYA<br /> JL. Sumatra 21,<br /> Jember,<br /> Tlp/Fax (0331) 5442678 <br />
             <a href="mailto:adjaduasatu@gmail.com">adjaduasatu@gmail.com</a>
@@ -35,23 +35,27 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
 
                 <tr>
                     <th class="no">NO</th>
-                    <th>ID PAKET</th>
-                    <th>NAMA PAKET</th>
+                    <th>ID WISATA</th>
+                    <th>NAMA WISATA</th>
+                    <th>ALAMAT WISATA</th>
+                    <th>TLP_WISATA</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 include "../../koneksi.php";
 
-                $query = "Select * from paket";
+                $query = "Select * from wisata";
                 $sql = mysqli_query($connect, $query);
                 $no = 1;
                 while ($data = mysqli_fetch_array($sql)) {
                 ?>
                     <tr>
                         <td><?php echo $no; ?></td>
-                        <td><?php echo $data['ID_PKT']; ?></td>
-                        <td><?php echo $data['NM_PKT']; ?></td>
+                        <td><?php echo $data['ID_WST']; ?></td>
+                        <td><?php echo $data['NM_WST']; ?></td>
+                        <td><?php echo $data['ALAMAT_WST']; ?></td>
+                        <td><?php echo $data['TLP_WST']; ?></td>
                     </tr>
                 <?php $no++;
                 } ?>
@@ -63,7 +67,7 @@ $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
         </div>
     </main>
     <footer>
-        aksata tour & travel 2019.
+        aksata tour & travel 2019
     </footer>
 </body>
 
@@ -82,5 +86,5 @@ $dompdf->set_paper('A4', 'landscape');
 $dompdf->set_option('defaultMediaType', 'all');
 $dompdf->set_option('isFontSubsettingEnabled', true);
 $dompdf->render();
-$dompdf->stream("laporan-paket-pdf");
+$dompdf->stream("laporan-wisata-pdf");
 ?>
