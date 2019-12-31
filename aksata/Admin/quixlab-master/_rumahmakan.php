@@ -7,9 +7,9 @@
 
         $sql1 = mysqli_query($connect, "DELETE FROM rm WHERE ID_RM ='$id';");
         if ($sql1) {
-            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=rm'</script>";
+            echo "<script>alert('Data berhasil dihapus');document.location.href='index.php?page=rm'</script>";
         } else {
-            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=rm'</script>";
+            echo "<script>alert('Data gagal dihapus');document.location.href='index.php?page=rm'</script>";
         }
     }
     ?>
@@ -54,11 +54,11 @@
                                                     <div class="row">
                                                         <div class="form-group col ml-auto">
                                                             <label class="col-form-label">Nama Rumah Makan</label>
-                                                            <input type="text" name="nm_rm" class="form-control input-default" placeholder="Nama rm">
-                                                            <label class="col-form-label">Telepon Rumah Makan</label>
-                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon Rumah Makan">
-                                                            <label class="col-form-label">Alamat Rumah Makan</label>
-                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Rumah Makan" style="height:125px;"></textarea>
+                                                            <input type="text" name="nm_rm" autocomplete="off" class="form-control input-default" placeholder="Nama rumah makan">
+                                                            <label class="col-form-label">Telepon</label>
+                                                            <input type="text" name="tlp" autocomplete="off" class="form-control input-default" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon">
+                                                            <label class="col-form-label">Alamat</label>
+                                                            <textarea type="text" name="alamat" autocomplete="off" class="form-control input-default" placeholder="Alamat" style="height:125px;"></textarea>
                                                         </div>
                                                     </div>
                                             </div>
@@ -77,32 +77,30 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID RUMAH MAKAN</th>
+                                    <th>NO.</th>
                                     <th>NAMA RUMAH MAKAN</th>
-                                    <th>ALAMAT RUMAH MAKAN</th>
-                                    <th>TLP_RUMAH MAKAN</th>
-                                    <th>Action</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $id = $_GET['id'];
-                                $query = "Select * from rm";
+                                $query = "SELECT * FROM rm";
                                 $sql = mysqli_query($connect, $query);
                                 $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
                                         <td><?php echo $no; ?></td>
-                                        <td><?php echo $data['ID_RM']; ?></td>
                                         <td><?php echo $data['NM_RM']; ?></td>
                                         <td><?php echo $data['ALAMAT_RM']; ?></td>
                                         <td><?php echo $data['TLP_RM']; ?></td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_rm&id=<?php echo $data['ID_RM']; ?>" data-placement="top" title="">
+                                                    <a href="?page=fedit_rm&id=<?php echo $data['ID_RM']; ?>" data-placement="top" title="ubah">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -111,7 +109,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=rm&id=<?php echo $data['ID_RM']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="?page=rm&id=<?php echo $data['ID_RM']; ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -128,11 +126,10 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID RUMAH MAKAN</th>
+                                    <th>NO.</th>
                                     <th>NAMA RUMAH MAKAN</th>
-                                    <th>ALAMAT RUMAH MAKAN</th>
-                                    <th>TLP_RUMAH MAKAN</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>

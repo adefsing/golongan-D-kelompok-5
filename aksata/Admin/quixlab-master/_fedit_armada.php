@@ -37,13 +37,13 @@
                                 <script type="text/javascript">
                                     function confirmation(){
                                         if (confirm("Anda yakin ingin mengubah data?")){
-                                            location.href='_edit_armada.php';
+                                            location.href='_edit_rm.php';
                                         }
                                         else {
                                             return false;
                                         }
                                     } 
-</script>
+                                </script>
 
                             </form>
                         </div>
