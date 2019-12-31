@@ -3,11 +3,17 @@
 $connect    = mysqli_connect("localhost", "root", "", "aksataa");
 
 // auto increment
-$query = "SELECT max(ID_TRNS) as maxid FROM transaksi";
+$query = "SELECT max(ID_PEMESAN) as maxid FROM pemesan";
 $hasil = mysqli_query($connect, $query);
 $dataa = mysqli_fetch_array($hasil);
-$idtrns = $dataa['maxid'];
-$idtrns++;
+$idpsn = $dataa['maxid'];
+
+$noUrut = (int) substr($idpsn, 3, 3);
+
+$noUrut++;
+
+$char = "psn";
+$idpsn = $char . sprintf("%02s", $noUrut);
 
 function query($query)
 {
@@ -20,73 +26,44 @@ function query($query)
     return $rows;
 }
 
-// function jin_date_sql($date){
-// 	$exp = explode('/',$date);
-// 	if(count($exp) == 3) {
-// 		$date = $exp[2].'-'.$exp[1].'-'.$exp[0];
-// 	}
-// 	return $date;
-// }
-
-function tambahtrns($data)
+function tambahpsn($data)
 {
     global $connect;
-    global $idtrns;
-    // global $date;
+    global $idpsn;
+    $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);
+    $jmlh_anggota = htmlspecialchars($data["JMLH_ANGGOTA"]);
+    $nik = htmlspecialchars($data["NIK"]);
+    $tgl_psn = date('Y-m-d');
 
-    $id_pkt = htmlspecialchars($data["ID_PKT"]);
-    $id_pemesan = htmlspecialchars($data["ID_PEMESAN"]);
-    $id_arm = htmlspecialchars($data["ID_ARM"]);
-    $id_hotel = htmlspecialchars($data["ID_HOTEL"]);
-    $tgl_pelaksanaan = htmlspecialchars($data["TGL_PELAKSANAAN"]);
-    $tmpt_jpt = htmlspecialchars($data["TMPT_JPT"]);
-    $harga = htmlspecialchars($data["HARGA"]);
-    $bayar = htmlspecialchars($data["BAYAR"]);
-
-
-
-    if ($bayar == $harga) {
-        $status_bayar = "LUNAS";
-    } else if ($bayar > $harga) {
-        $status_bayar = "BAYAR KELEBIHAN";
-    } else {
-        $status_bayar = "BELUM";
-    }
-
-    $query = " INSERT INTO transaksi
-    (ID_TRNS, ID_PKT, ID_PEMESAN, ID_ARM, ID_HOTEL, TGL_PELAKSANAAN, TMPT_JPT, HARGA, BAYAR, STATUS_BAYAR)  
-                VALUES ('$idtrns', '$id_pkt', '$id_pemesan', '$id_arm', '$id_hotel', '$tgl_pelaksanaan', 
-                        '$tmpt_jpt', '$harga', '$bayar', '$status_bayar')";
-
+    $query = "INSERT INTO pemesan VALUES 
+                ('$idpsn', '$nm_pemesan', '$jmlh_anggota', '$nik', '$tgl_psn')";
     mysqli_query($connect, $query);
 
     return mysqli_affected_rows($connect);
 }
 
-function hapustrns($nm)
+function hapuspsn($nm)
 {
     global $connect;
-    mysqli_query($connect, "DELETE FROM transaksi WHERE ID_TRNS = '$nm'");
+    $nik = htmlspecialchars($nm);
+    mysqli_query($connect, "DELETE FROM pemesan WHERE NIK = '$nik'");
     return mysqli_affected_rows($connect);
 }
 
-function ubahrm($data)
+function ubahpsn($data)
 {
     global $connect;
-    // global $idrm;
 
-    $id_rm = $data["ID_RM"];
-    $nm_rm = htmlspecialchars($data["NM_RM"]);
-    $alamat_rm = htmlspecialchars($data["ALAMAT_RM"]);
-    $tlp_rm = htmlspecialchars($data["TLP_RM"]);
+    $id_pemesan = $data["ID_PEMESAN"];
+    $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);
+    $nik = htmlspecialchars($data["NIK"]);
+    $jmlh_anggota = htmlspecialchars($data["JMLH_ANGGOTA"]);
 
-    // var_dump($data);
-
-    $query = "UPDATE rm SET 
-                NM_RM = '$nm_rm', 
-                ALAMAT_RM = '$alamat_rm',
-                TLP_RM = '$tlp_rm' 
-                WHERE ID_RM = '$id_rm'
+    $query = "UPDATE pemesan SET 
+                NM_PEMESAN = '$nm_pemesan', 
+                NIK = '$nik',
+                JMLH_ANGGOTA = '$jmlh_anggota'
+                WHERE ID_PEMESAN = '$id_pemesan'
             ";
 
     mysqli_query($connect, $query);
@@ -94,35 +71,64 @@ function ubahrm($data)
     return mysqli_affected_rows($connect);
 }
 
-function caritrns($keyword)
+function caripsn($keyword)
 {
-    $query = "SELECT transaksi.ID_TRNS,
-                    pemesan.NM_PEMESAN, 
-                    pemesan.JMLH_ANGGOTA, 
-                    paket.NM_PKT, 
-                    pemesan.TGL_PSN, 
-                    transaksi.TGL_BRKT, 
-                    transaksi.TMPT_JPT, 
-                    armada.NM_ARM, 
-                    hotel.NM_HOTEL,
-                    transaksi.HARGA,
-                    transaksi.BAYAR,
-                    transaksi.STATUS_BAYAR
-                FROM (((transaksi INNER JOIN paket ON transaksi.ID_PKT = paket.ID_PKT) 
-                    INNER JOIN pemesan ON transaksi.ID_PEMESAN = pemesan.ID_PEMESAN) 
-                    INNER JOIN armada ON transaksi.ID_ARM = armada.ID_ARM) 
-                    INNER JOIN hotel ON transaksi.ID_HOTEL = hotel.ID_HOTEL 
+    $query = "SELECT * FROM pemesan
                 WHERE 
-                    ID_TRNS LIKE '%$keyword%' OR
-                    NM_PEMESAN LIKE '%$keyword%' OR
-                    JMLH_ANGGOTA LIKE '%$keyword%' OR
-                    NM_PKT LIKE '%$keyword%' OR
-                    TMPT_JPT LIKE '%$keyword%' OR
-                    HARGA LIKE '%$keyword%' OR
-                    BAYAR LIKE '%$keyword%' OR
-                    NM_ARM LIKE '%$keyword%' OR
-                    NM_HOTEL LIKE '%$keyword%' ";
-
+                NM_PEMESAN LIKE '%$keyword%' OR
+                JMLH_ANGGOTA LIKE '%$keyword%' ";
 
     return query($query);
+}
+
+$query2 = "SELECT max(DTL_PEMESAN) as maxid FROM dtl_pemesan";
+$hasil2 = mysqli_query($connect, $query2);
+$dataa2 = mysqli_fetch_array($hasil2);
+$idpsn2 = $dataa2['maxid'];
+
+$noUrut2 = (int) substr($idpsn2, 3, 3);
+
+$noUrut2++;
+
+$char2 = "dps";
+$idpsn2 = $char2 . sprintf("%02s", $noUrut2);
+
+function tambahdtlpsn($data)
+{
+    global $connect;
+    global $idpsn2;
+    $nm_anggota = htmlspecialchars($data["NM_ANGGOTA"]);
+    $idps = htmlspecialchars($data["ID_PEMESAN"]);
+
+    $query = "INSERT INTO dtl_pemesan VALUES 
+                ('$idpsn2', '$idps', '$nm_anggota')";
+    mysqli_query($connect, $query);
+
+    return mysqli_affected_rows($connect);
+}
+
+function ubahdtlpsn($data)
+{
+    global $connect;
+
+    $nm_anggota = htmlspecialchars($data["NM_ANGGOTA"]);
+    // $idps = htmlspecialchars($data["ID_PEMESAN"]); 
+    $iddps = htmlspecialchars($data["DTL_PEMESAN"]);
+
+    $query = "UPDATE dtl_pemesan SET 
+                NM_ANGGOTA = '$nm_anggota'
+                WHERE DTL_PEMESAN = '$iddps'
+            ";
+
+    mysqli_query($connect, $query);
+
+    return mysqli_affected_rows($connect);
+}
+
+function hapusdtlpsn($nm)
+{
+    global $connect;
+    $dtl_pemesan = htmlspecialchars($nm);
+    mysqli_query($connect, "DELETE FROM dtl_pemesan WHERE DTL_PEMESAN = '$dtl_pemesan'");
+    return mysqli_affected_rows($connect);
 }

@@ -248,6 +248,7 @@ if ($username == "" || $username == NULL || empty($username)) {
         ***********************************-->
             <div class="content-body">
                 <?php
+                require 'functions.php';
                 if (isset($_GET['page'])) {
                     $page = $_GET['page'];
 
@@ -302,6 +303,15 @@ if ($username == "" || $username == NULL || empty($username)) {
                             break;
                         case 'pinbox':
                             include "./_baca_inbox.php";
+                            break;
+                        case 'hapusdetail':
+                            include "./_hapusdetail.php";
+                            break;
+                        case 'ubahdetail':
+                            include "./_ubahdetail.php";
+                            break;
+                        case 'detailpemesan':
+                            include "./_detail_pemesan.php";
                             break;
                         default:
                             include "./_index.php";

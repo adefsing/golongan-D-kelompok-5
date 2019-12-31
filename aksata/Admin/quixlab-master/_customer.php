@@ -1,17 +1,11 @@
 <div class="container-fluid">
     <?php
 
-    if (isset($_GET['id'])) {
-
-        $id = $_GET['id'];
-
-        $sql1 = mysqli_query($connect, "DELETE FROM pemesan WHERE ID_PEMESAN ='$id';");
-        if ($sql1) {
-            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=customer'</script>";
-        } else {
-            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=customer'</script>";
-        }
-    }
+    $ps = query("SELECT ID_PEMESAN, 
+                    NM_PEMESAN, 
+                    JMLH_ANGGOTA,
+                    NIK,
+                    DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  FROM pemesan ORDER BY TGL_PSN DESC");
     ?>
 
     <div class="row">
@@ -60,7 +54,7 @@
                                                             <label class="col-form-label">NIK</label>
                                                             <input type="text" name="nik" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
                                                             <label class="col-form-label">Tanggal Pesan</label>
-                                                            <input type="date" name="tanggal" class="form-control input-default" placeholder="">
+                                                            <input type="date" name="tanggal" class="form-control input-default" value="<?= date('d-m-Y'); ?>" placeholder="">
                                                         </div>
                                                     </div>
                                             </div>
@@ -80,33 +74,30 @@
                             <thead>
                                 <tr>
                                     <th>NO</th>
-                                    <th>ID PEMESAN</th>
-                                    <th>NAMA PEMESAN</th>
-                                    <th>JUMLAH ANGGOTA</th>
+                                    <th>Nama</th>
                                     <th>NIK</th>
-                                    <th>TANGGAL PESAN</th>
+                                    <th>Anggota</th>
+                                    <th>Tanggal Pesan</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                $id = $_GET['id'];
-                                $query = "Select * from customer";
-                                $sql = mysqli_query($connect, $query);
-                                $no = 1;
-                                while ($data = mysqli_fetch_array($sql)) {
-                                ?>
+                                <!-- <?php $a = "psn"; ?> -->
+                                <?php $i = 1; ?>
+                                <?php foreach ($ps as $rmm) : ?>
                                     <tr>
-                                        <td><?php echo $no; ?></td>
-                                        <td><?php echo $data['ID_PEMESAN']; ?></td>
-                                        <td><?php echo $data['NAMA_PEMESAN']; ?></td>
-                                        <td><?php echo $data['JUMLAH_ANGGOTA']; ?></td>
-                                        <td><?php echo $data['NIK']; ?></td>
-                                        <td><?php echo $data['TGL_PSN']; ?></td>
+                                        <td> <?= $i; ?> </td>
+                                        <!-- <td> <?= $rmm["ID_PEMESAN"]; ?> </td> -->
+                                        <td> <?= $rmm["NM_PEMESAN"]; ?> </td>
+                                        <td> <?= $rmm["NIK"]; ?> </td>
+                                        <td> <?= $rmm["JMLH_ANGGOTA"]; ?>
+                                            &nbsp; &nbsp; <a style="color: white;" class="btn btn-success" href="index.php?page=detailpemesan&JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">Detail</a>
+                                        </td>
+                                        <td> <?= $rmm["TGL_PSN"]; ?> </td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_customer&id=<?php echo $data['ID_PEMESAN']; ?>" data-placement="top" title="">
+                                                    <a href="?page=fedit_customer&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>" data-placement="top" title="">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -115,7 +106,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=customer&id=<?php echo $data['ID_PEMESAN']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="hapus.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -125,22 +116,22 @@
                                             </span>
                                         </td>
                                     </tr>
-                                <?php $no++;
-                                } ?>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
 
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>NO</th>
-                                    <th>ID PEMESAN</th>
-                                    <th>NAMA PEMESAN</th>
-                                    <th>JUMLAH ANGGOTA</th>
+                                    <th>Nama</th>
                                     <th>NIK</th>
-                                    <th>TANGGAL PESAN</th>
+                                    <th>Anggota</th>
+                                    <th>Tanggal Pesan</th>
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>
                         </table>
+
                     </div>
                 </div>
             </div>

@@ -127,5 +127,3 @@ function hapusdtlpsn($nm) {
     mysqli_query($connect, "DELETE FROM dtl_pemesan WHERE DTL_PEMESAN = '$dtl_pemesan'");
     return mysqli_affected_rows($connect);
 }
-
-?>
