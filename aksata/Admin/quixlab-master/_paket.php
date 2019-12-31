@@ -74,29 +74,29 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID PAKET</th>
+                                    <th>NO.</th>
+                                    <!-- <th>ID PAKET</th> -->
                                     <th>NAMA PAKET</th>
-                                    <th>Action</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $id = $_GET['id'];
-                                $query = "Select * from paket";
+                                $query = "SELECT * FROM paket ORDER BY ID_PKT DESC";
                                 $sql = mysqli_query($connect, $query);
                                 $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
                                         <td><?php echo $no; ?></td>
-                                        <td><?php echo $data['ID_PKT']; ?></td>
+                                        <!-- <td><?php echo $data['ID_PKT']; ?></td> -->
                                         <td><?php echo $data['NM_PKT']; ?></td>
 
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_paket&id=<?php echo $data['ID_PKT']; ?>" data-placement="top" title="" data-original-title="Edit">
+                                                    <a href="?page=fedit_paket&id=<?php echo $data['ID_PKT']; ?>" data-placement="top" title="ubah" data-original-title="Edit">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -105,7 +105,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=paket&id=<?php echo $data['ID_PKT']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="?page=paket&id=<?php echo $data['ID_PKT']; ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -121,8 +121,8 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID PAKET</th>
+                                    <th>NO.</th>
+                                    <!-- <th>ID PAKET</th> -->
                                     <th>NAMA PAKET</th>
 
                                     <th>ACTION</th>

@@ -25,7 +25,7 @@
                                         <label class="col-form-label">Telepon</label>
                                         <input type="text" name="tlp" value="<?= $data['TLP_WST']; ?>" class="form-control input-default" title="isikan hanya angka" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon">
                                         <label class="col-form-label">Alamat</label>
-                                        <textarea type="text" name="alamat" value="<?= $data['ALAMAT_WST']; ?>" class="form-control input-default" placeholder="Alamat" style="height:125px;"></textarea>
+                                        <textarea type="text" name="alamat" value="<?= $data['ALAMAT_WST']; ?>" class="form-control input-default" placeholder="Alamat" style="height:125px;"><?= $data['ALAMAT_WST']; ?></textarea>
 
                                     </div>
                                 </div>

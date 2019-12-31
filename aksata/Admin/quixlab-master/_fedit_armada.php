@@ -12,7 +12,7 @@
                             </div>
                             <?php
                             $id = $_GET['id'];
-                            $query = "Select * from armada where ID_ARM = '$id'";
+                            $query = "SELECT * FROM armada WHERE ID_ARM = '$id'";
                             $sql = mysqli_query($connect, $query);
                             $data = mysqli_fetch_array($sql)
                             ?>
@@ -25,7 +25,7 @@
                                         <label class="col-form-label">Telepon</label>
                                         <input type="text" name="tlp" value="<?php echo $data['TLP_ARM']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telpon Armada">
                                         <label class="col-form-label">Alamat</label>
-                                        <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Armada" style="height:125px;"><?php echo $data['ALAMAT_ARM']; ?></textarea>
+                                        <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Armada" value="<?php echo $data['ALAMAT_ARM']; ?>" style="height:125px;"><?php echo $data['ALAMAT_ARM']; ?></textarea>
 
                                     </div>
                                 </div>

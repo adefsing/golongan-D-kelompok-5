@@ -9,8 +9,8 @@ if (isset($_POST['Esubmit'])) {
     $sql = mysqli_query($connect, "UPDATE paket SET  NM_PKT = '$nm_paket' WHERE ID_PKT = '$id'");
 
     if ($sql) {
-        echo "<script>alert('Data paket Berhasil Di Ubah');document.location.href='index.php?page=paket'</script>";
+        echo "<script>alert('Data berhasil diubah');document.location.href='index.php?page=paket'</script>";
     } else {
-        echo "<script>alert('Data Gagal Di Ubah');document.location.href='index.php?page=paket'</script>";
+        echo "<script>alert('Data gagal diubah');document.location.href='index.php?page=paket'</script>";
     }
 }

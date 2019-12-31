@@ -26,19 +26,6 @@ function query ($query) {
 
 }
 
-// function tambahpilihwst($data){
-//     $pkt = $_POST["ID_PKT"];
-//     $jumlah_dipilih = count($pkt);
-//     $wst = $_POST["ID_WST"];
-//     $jmlh_dipilih = count($wst)
- 
-//     for ($x=0; $x<$jumlah_dipilih; $x++){
-//         for ($y=0; $y<$jmlh_dipilih; $y++){
-// 	        mysql_query("INSERT INTO pkt_wst values('$pkt[$x]','$wst[$y]')");
-//         }
-//     }
-// }
-
 function tambahpkt($data) {
     global $connect;
     global $idpkt;
@@ -55,17 +42,22 @@ function hapuspkt($nm) {
     global $connect;
     
     mysqli_query($connect, "DELETE FROM pkt_wst WHERE ID_PKT = '$nm'");
+    mysqli_query($connect, "DELETE FROM pkt_rm WHERE ID_PKT = '$nm'");
     mysqli_query($connect, "DELETE FROM paket WHERE ID_PKT = '$nm'");
     return mysqli_affected_rows($connect);
 }
 
 function tambahpilihwst($data){
     global $connect;
-    $pkt = $data["ID_PKT"];
+    $pkt = $data["ID_PKT"]; 
     foreach ($_POST['ID_WST'] as $wst) {
     $query = "INSERT INTO pkt_wst VALUES('$pkt','$wst')";
         mysqli_query($connect, $query);
       }
+    foreach ($_POST['ID_RM'] as $rm) {
+        $query = "INSERT INTO pkt_rm VALUES('$pkt','$rm')";
+            mysqli_query($connect, $query);
+          }
     return mysqli_affected_rows($connect);  
 }
 
@@ -83,7 +75,28 @@ function ubahpkt($data){
     mysqli_query($connect, $query); 
 
     return mysqli_affected_rows($connect);
+}
 
+function ubahpilihwisata($data){
+    global $connect;
+
+    $pkt = $data["ID_PKT"];
+    $query = "DELETE FROM pkt_wst WHERE ID_PKT = '$pkt'";
+        mysqli_query($connect, $query);
+
+    $querya = "DELETE FROM pkt_rm WHERE ID_PKT = '$pkt'";
+        mysqli_query($connect, $querya);
+
+    foreach ($_POST['ID_WST'] as $wst) {
+    $query1 = "INSERT INTO pkt_wst VALUES('$pkt','$wst')";
+        mysqli_query($connect, $query1);
+      }
+    
+    foreach ($_POST['ID_RM'] as $rm) {
+        $query1a = "INSERT INTO pkt_rm VALUES('$pkt','$rm')";
+        mysqli_query($connect, $query1a);
+          }
+    return mysqli_affected_rows($connect); 
 }
 
 function caripkt($keyword){

@@ -5,9 +5,22 @@ $rm  = query("SELECT * FROM rm ORDER BY ID_RM ASC");
 $gt_pkt = $_GET["ID_PKT"];
 $nmpkt = $_GET["NM_PKT"];
 
-// tombol search
-if(isset($_POST["cari"]) ) {
-    $rm = carirm ($_POST["keyword"]);
+if( isset($_POST["submit"]) ) {
+    if(ubahpilihwisata($_POST) > 0) {
+        echo "
+        <script>
+            alert('data berhasil ditambahkan');
+            document.location.href = 'pilihwisata.php?ID_PKT=$gt_pkt&NM_PKT=$nmpkt';
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('data gagal ditambahkan');
+            document.location.href = 'pilihwisata_ubah.php?ID_PKT=$gt_pkt&NM_PKT=$nmpkt';
+        </script>
+        ";
+    }
 }
 
 ?>
@@ -23,16 +36,11 @@ if(isset($_POST["cari"]) ) {
 <h1>atur sendiri paket liburanmu!</h1>
 
 <br>
-
-<form action="" method="post">
-<input type="text" name="keyword" size="35" placeholder="masukkan 
-keyoword.." autocomplete="off">
-<button type="submit" name="cari">Cari</button>
-</form>
-
 <br>
+<form action="" method="post">
 <label for="NM_PKT"><?= $nmpkt; ?></label>
-<label for="ID_PKT"><?= $idpkt; ?></label>
+<label for="ID_PKT"><?= $gt_pkt; ?></label>
+<input type="hidden" name="ID_PKT" value="<?= $gt_pkt; ?>">
 <table border="1" cellpadding="10" cellspacing="1">
     <tr>
         <th>Pilih Wisata</th>
@@ -90,6 +98,7 @@ keyoword.." autocomplete="off">
 
 </tr>
 </table>
-
+<button type="submit" name="submit">UBAH</button>
+</form>
 </body>
 </html>

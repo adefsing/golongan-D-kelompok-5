@@ -55,7 +55,7 @@
                                                             <label class="col-form-label">Nama Hotel</label>
                                                             <input type="text" name="nm_hotel" class="form-control input-default" placeholder="Nama hotel">
 
-                                                            <label>Pilih Paket</label>
+                                                            <!-- <label>Pilih Paket</label>
                                                             <select name="id_paket" class="form-control">
                                                                 <option selected="selected">Choose...</option>
                                                                 <?php
@@ -65,12 +65,12 @@
                                                                 ?>
                                                                     <option><?php echo $dataa["ID_PKT"] ?></option>
                                                                 <?php } ?>
-                                                            </select>
+                                                            </select> -->
 
-                                                            <label class="col-form-label">Telepon Hotel</label>
-                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon Hotel">
-                                                            <label class="col-form-label">Alamat Hotel</label>
-                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Hotel" style="height:125px;"></textarea>
+                                                            <label class="col-form-label">Telepon</label>
+                                                            <input type="text" name="tlp" class="form-control input-default" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon">
+                                                            <label class="col-form-label">Alamat</label>
+                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat" style="height:125px;"></textarea>
                                                         </div>
                                                     </div>
                                             </div>
@@ -89,32 +89,30 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
-                                    <!-- <th>ID HOTEL</th> -->
+                                    <th>NO.</th>
                                     <th>NAMA HOTEL</th>
-                                    <th>ALAMAT HOTEL</th>
-                                    <th>TLP_HOTEL</th>
-                                    <th>Action</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $id = $_GET['id'];
-                                $query = "Select * from hotel";
+                                $query = "SELECT * FROM hotel";
                                 $sql = mysqli_query($connect, $query);
                                 $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
                                         <td><?= $no; ?></td>
-                                        <!-- <td><?= $data['ID_HOTEL']; ?></td> -->
                                         <td><?= $data['NM_HOTEL']; ?></td>
                                         <td><?= $data['ALAMAT_HOTEL']; ?></td>
                                         <td><?= $data['TLP_HOTEL']; ?></td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_hotel&id=<?= $data['ID_HOTEL']; ?>" data-placement="top" title="">
+                                                    <a href="?page=fedit_hotel&id=<?= $data['ID_HOTEL']; ?>" data-placement="top" title="ubah">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -123,7 +121,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=hotel&id=<?= $data['ID_HOTEL']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="?page=hotel&id=<?= $data['ID_HOTEL']; ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -139,11 +137,10 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID HOTEL</th>
+                                    <th>NO.</th>
                                     <th>NAMA HOTEL</th>
-                                    <th>ALAMAT HOTEL</th>
-                                    <th>TLP_HOTEL</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>
