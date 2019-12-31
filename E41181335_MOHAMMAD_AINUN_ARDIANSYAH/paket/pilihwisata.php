@@ -91,6 +91,6 @@ keyoword.." autocomplete="off">
 </tr>
 
 </table>
-<a href="pilihwisata_ubah.php?ID_PKT=<?=$pktt["ID_PKT"];?>&NM_PKT=<?=$pktt["NM_PKT"];?>">Ubah</a>
+<a href="pilihwisata_ubah.php?ID_PKT=<?=$gt_pkt;?>&NM_PKT=<?=$nmpkt;?>">Ubah</a>
 </body>
 </html>
