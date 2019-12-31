@@ -12,7 +12,7 @@
                             </div>
                             <?php
                             $id = $_GET['id'];
-                            $query = "Select * from hotel where ID_HOTEL = '$id'";
+                            $query = "SELECT * FROM hotel WHERE ID_HOTEL = '$id'";
                             $sql = mysqli_query($connect, $query);
                             $data = mysqli_fetch_array($sql)
                             ?>
@@ -22,28 +22,27 @@
                                     <div class="form-group col ml-auto">
                                         <label class="col-form-label">Nama Hotel</label>
                                         <input type="text" name="nm_hotel" value="<?php echo $data['NM_HOTEL']; ?>" class="form-control input-default" placeholder="Nama hotel">
-                                        <label>Pilih Paket</label>
-                                        <select name="id_paket" class="form-control">
-                                            <option selected="selected"><?php echo $data["ID_PKT"] ?></option>
-                                            <?php
-                                            $query = "Select * from paket";
-                                            $sql = mysqli_query($connect, $query);
-                                            while ($dataa = mysqli_fetch_array($sql)) {
-                                                ?>
-                                                <option><?php echo $dataa["ID_PKT"] ?></option>
-                                            <?php } ?>
-                                        </select>
-                                        <label class="col-form-label">Telepon Hotel</label>
-                                        <input type="text" name="tlp" value="<?php echo $data['TLP_HOTEL']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telpon Hotel">
-                                        <label class="col-form-label">Alamat Hotel</label>
-                                        <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Hotel" style="height:125px;"><?php echo $data['ALAMAT_HOTEL']; ?></textarea>
+                                        <label class="col-form-label">Telepon</label>
+                                        <input type="text" name="tlp" value="<?php echo $data['TLP_HOTEL']; ?>" class="form-control input-default" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon">
+                                        <label class="col-form-label">Alamat</label>
+                                        <textarea type="text" name="alamat" class="form-control input-default" value="<?php echo $data['ALAMAT_HOTEL']; ?>" placeholder="Alamat" style="height:125px;"><?php echo $data['ALAMAT_HOTEL']; ?></textarea>
 
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <a href="?page=hotel" class="btn btn-secondary" style="color:white;">Kembali</a>
-                                    <button type="submit" name="Esubmit" class="btn btn-primary">Simpan</button>
+                                    <button type="submit" name="Esubmit" class="btn btn-primary" onclick='return confirmation()'>Simpan</button>
                                 </div>
+                                <script type="text/javascript">
+                                    function confirmation(){
+                                        if (confirm("Anda yakin ingin mengubah data?")){
+                                            location.href='_edit_hotel.php';
+                                        }
+                                        else {
+                                            return false;
+                                        }
+                                    } 
+                                </script>
                             </form>
 
                         </div>
