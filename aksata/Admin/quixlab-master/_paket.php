@@ -74,23 +74,23 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID PAKET</th>
+                                    <th>NO.</th>
+                                    <!-- <th>ID PAKET</th> -->
                                     <th>NAMA PAKET</th>
-                                    <th>Action</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $id = $_GET['id'];
-                                $query = "Select * from paket";
+                                $query = "SELECT * FROM paket ORDER BY ID_PKT DESC";
                                 $sql = mysqli_query($connect, $query);
                                 $no = 1;
                                 while ($data = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
                                         <td><?php echo $no; ?></td>
-                                        <td><?php echo $data['ID_PKT']; ?></td>
+                                        <!-- <td><?php echo $data['ID_PKT']; ?></td> -->
                                         <td><?php echo $data['NM_PKT']; ?></td>
 
                                         <td>
@@ -121,8 +121,8 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>ID PAKET</th>
+                                    <th>NO.</th>
+                                    <!-- <th>ID PAKET</th> -->
                                     <th>NAMA PAKET</th>
 
                                     <th>ACTION</th>
