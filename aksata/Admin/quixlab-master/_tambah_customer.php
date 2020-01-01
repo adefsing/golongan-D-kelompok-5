@@ -2,12 +2,14 @@
 include "../../koneksi.php";
 if (isset($_POST['submit'])) {
 
-    $nm_pemesan = $_POST['nm_pemsan'];
+    $nm_pemesan = $_POST['nama_pemesan'];
     $jml = $_POST['jml'];
     $nik  = $_POST['nik'];
-    $tgl  = $_POST['tgl'];
+    $alamat = $_POST['alamat'];
+    $tlp = $_POST["tlp"];
+    $tgl  = date('Y-m-d');
 
-    $data = mysqli_query($connect, "select ID_PEMESAN from pemesan ORDER BY ID_PEMESAN DESC LIMIT 1");
+    $data = mysqli_query($connect, "SELECT ID_PEMESAN FROM pemesan ORDER BY ID_PEMESAN DESC LIMIT 1");
     while ($admin_data = mysqli_fetch_array($data)) {
         $cust_id = $admin_data['ID_PEMESAN'];
     }
@@ -19,12 +21,11 @@ if (isset($_POST['submit'])) {
         $id_pemesan = 'psn01';
     }
 
-    $sql = mysqli_query($connect, "INSERT INTO pemesan (ID_PEMESAN,NM_PEMESAN,JMLH_ANGGOTA,TGL_PSN) 
-    values ('$id_pemesan','$nm_pemesan','$jml','$tgl')");
+    $sql = mysqli_query($connect, "INSERT INTO pemesan VALUES ('$id_pemesan', '$nm_pemesan', '$jml', '$nik', '$alamat', '$tlp', '$tgl')");
 
     if ($sql) {
-        echo "<script>alert('Data Berhasil Di Inputkan');document.location.href='index.php?page=customer'</script>";
+        echo "<script>alert('Data berhasil ditambahkan');document.location.href='index.php?page=customer'</script>";
     } else {
-        echo "<script>alert('Data Gagal Dimasukkan');document.location.href='index.php?page=customer'</script>";
+        echo "<script>alert('Data gagal ditambahkan');document.location.href='index.php?page=customer'</script>";
     }
 }
