@@ -11,7 +11,7 @@ a {
 
 body {
     position: relative;
-    width: 21cm;
+    width: 17cm;
     height: 29.7cm;
     margin: 0 auto;
     color: #001028;
@@ -97,7 +97,7 @@ table td {
 }
 
 table th {
-    padding: 5px 20px;
+    padding: 5px 9px 5px 9px;
     color: #5D6975;
     white-space: nowrap;
     font-weight: normal;
@@ -105,7 +105,11 @@ table th {
 
 table .no {
     text-align: center;
-    width: 20px;
+    width: 5px;
+}
+
+table .th {
+    text-align: center;
 }
 
 table .pesan {
@@ -113,8 +117,8 @@ table .pesan {
 }
 
 table td {
-    padding: 20px;
-    text-align: left;
+    padding: 10px;
+    text-align: center;
 }
 
 table td.service,
@@ -131,6 +135,7 @@ table td.total {
 table td.grand {
     border-top: 1px solid #5D6975;
     ;
+    text-align: left;
 }
 
 table td.hi {

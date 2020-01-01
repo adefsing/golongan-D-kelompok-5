@@ -327,6 +327,9 @@ if ($username == "" || $username == NULL || empty($username)) {
                         case 'transaksi':
                             include "./_transaksi.php";
                             break;
+                        case 'ubahtransaksi':
+                            include "./_ubah_transaksi.php";
+                            break;
                         default:
                             include "./_index.php";
                             break;

@@ -24,6 +24,24 @@
                     INNER JOIN hotel ON transaksi.ID_HOTEL = hotel.ID_HOTEL 
                     ORDER BY transaksi.ID_TRNS DESC");
 
+    if (isset($_POST["submit"])) {
+        if (tambahtrns($_POST) > 0) {
+            echo "
+            <script>
+                alert('data berhasil ditambahkan');
+                document.location.href = 'index.php?page=transaksi';
+            </script>
+            ";
+        } else {
+            echo "
+            <script>
+                alert('data gagal ditambahkan');
+                document.location.href = 'index.php?page=transaksi';
+            </script>
+            ";
+        }
+    }
+
 
     ?>
 
@@ -63,15 +81,80 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="post" action="_tambah_rm.php" enctype="multipart/form-data">
+                                                <form method="post" action="" enctype="multipart/form-data">
                                                     <div class="row">
                                                         <div class="form-group col ml-auto">
-                                                            <label class="col-form-label">Nama Rumah Makan</label>
-                                                            <input type="text" name="nm_rm" class="form-control input-default" placeholder="Nama rm">
-                                                            <label class="col-form-label">Telepon Rumah Makan</label>
-                                                            <input type="text" name="tlp" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon Rumah Makan">
-                                                            <label class="col-form-label">Alamat Rumah Makan</label>
-                                                            <textarea type="text" name="alamat" class="form-control input-default" placeholder="Alamat Rumah Makan" style="height:125px;"></textarea>
+                                                            <form action="" method="post">
+
+                                                                <label class="col-form-label" for="ID_PEMESAN">Nama Pemesan</label>
+                                                                <select class="form-control" name="ID_PEMESAN" id="ID_PEMESAN">
+                                                                    <?php
+                                                                    $query = "SELECT * FROM pemesan ORDER BY TGL_PSN DESC";
+                                                                    $hasil = mysqli_query($connect, $query);
+                                                                    $jumlah = mysqli_num_rows($hasil);
+                                                                    $urut = 0;
+                                                                    while ($row = mysqli_fetch_array($hasil)) { ?>
+                                                                        <option name="ID_PEMESAN" value="<?= $row["ID_PEMESAN"]; ?>">
+                                                                            <?= $row["NM_PEMESAN"]; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+
+                                                                <label class="col-form-label" for="ID_PKT">Paket</label>
+                                                                <select class="form-control" name="ID_PKT" id="ID_PKT">
+                                                                    <?php
+                                                                    $query = "SELECT * FROM paket ORDER BY ID_PKT ASC";
+                                                                    $hasil = mysqli_query($connect, $query);
+                                                                    $jumlah = mysqli_num_rows($hasil);
+                                                                    $urut = 0;
+                                                                    while ($row = mysqli_fetch_array($hasil)) { ?>
+                                                                        <option name="ID_PKT" value="<?= $row["ID_PKT"]; ?>">
+                                                                            <?= $row["NM_PKT"]; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+
+                                                                <label class="col-form-label" for="ID_ARM">Armada</label>
+                                                                <select class="form-control" name="ID_ARM" id="ID_ARM">
+                                                                    <?php
+                                                                    $query = "SELECT * FROM armada";
+                                                                    $hasil = mysqli_query($connect, $query);
+                                                                    $jumlah = mysqli_num_rows($hasil);
+                                                                    $urut = 0;
+                                                                    while ($row = mysqli_fetch_array($hasil)) { ?>
+                                                                        <option name="ID_ARM" value="<?= $row["ID_ARM"]; ?>">
+                                                                            <?= $row["NM_ARM"]; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+
+                                                                <label class="col-form-label" for="ID_HOTEL">Hotel</label>
+                                                                <select class="form-control" name="ID_HOTEL" id="ID_HOTEL">
+                                                                    <?php
+                                                                    $query = "SELECT * FROM hotel";
+                                                                    $hasil = mysqli_query($connect, $query);
+                                                                    $jumlah = mysqli_num_rows($hasil);
+                                                                    $urut = 0;
+                                                                    while ($row = mysqli_fetch_assoc($hasil)) { ?>
+                                                                        <option name="ID_HOTEL" value="<?= $row["ID_HOTEL"]; ?>">
+                                                                            <?= $row["NM_HOTEL"]; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+
+                                                                <label class="col-form-label" for="TGL_PELAKSANAAN">Tanggal Pelaksanaan</label>
+                                                                <input type="date" class="form-control input-default" name="TGL_PELAKSANAAN" id="TGL_PELAKSANAAN" autocomplete="off" required title="isikan tanggal awal sampai akhir keberangkatan">
+
+                                                                <label class="col-form-label" for="TMPT_JPT">Tempat Jemput</label>
+                                                                <input type="text" class="form-control input-default" name="TMPT_JPT" id="TMPT_JPT" autocomplete="off" required>
+
+                                                                <label class="col-form-label" for="HARGA">Harga</label>
+                                                                <input type="text" class="form-control input-default" name="HARGA" id="HARGA" autocomplete="off" required title="isikan hanya angka" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+
+                                                                <label class="col-form-label" for="BAYAR">Bayar</label>
+                                                                <input type="text" class="form-control input-default" name="BAYAR" id="BAYAR" autocomplete="off" required title="isikan hanya angka" onkeypress="return event.charCode >= 48 && event.charCode <=57">
+
+
                                                         </div>
                                                     </div>
                                             </div>
@@ -101,7 +184,7 @@
                                     <th>Hotel</th>
                                     <th>Harga</th>
                                     <th>Bayar</th>
-
+                                    <th>Invoice</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -114,8 +197,8 @@
                                     <tr>
                                         <td><?php echo $no; ?></td>
                                         <td> <?= $trans["NM_PEMESAN"]; ?> </td>
-                                        <td> <?= $trans["JMLH_ANGGOTA"]; ?> <a href="../pemesan/detailpemesan.php?JMLH_ANGGOTA=<?= $trans["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>">detail</a></td>
-                                        <td> <?= $trans["NM_PKT"]; ?> <a href="../pilihwisata/index.php?ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>&ID_TRNS=<?= $trans["ID_TRNS"]; ?>&ID_PKT=<?= $trans["ID_PKT"]; ?>&status=<?= $trans["status"]; ?>">detail</a></td>
+                                        <td> <?= $trans["JMLH_ANGGOTA"]; ?> <a tyle="color: white;" class="btn btn-success" href="index.php?page=detailpemesan&JMLH_ANGGOTA=<?= $trans["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>">detail</a></td>
+                                        <td> <?= $trans["NM_PKT"]; ?> <a tyle="color: white;" class="btn btn-success" href="index.php?page=detailpaket&ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>&ID_TRNS=<?= $trans["ID_TRNS"]; ?>&ID_PKT=<?= $trans["ID_PKT"]; ?>&status=<?= $trans["status"]; ?>">detail</a></td>
                                         <td> <?= $trans["TGL_PSN"]; ?> </td>
                                         <td> <?= $trans["TGL_PELAKSANAAN"]; ?> </td>
                                         <td> <?= $trans["TMPT_JPT"]; ?> </td>
@@ -123,10 +206,11 @@
                                         <td> <?= $trans["NM_HOTEL"]; ?> </td>
                                         <td> <?= $trans["HARGA"]; ?></td>
                                         <td> <?= $trans["BAYAR"]; ?> </td>
+                                        <td><a style="color: white;" class="btn btn-success" href="_invoice.php?id=<?php echo $_SESSION['username']; ?>&JMLH_ANGGOTA=<?= $trans["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>&TGL_PELAKSANAAN=<?= $trans["TGL_PELAKSANAAN"]; ?>&NM_PKT=<?= $trans["NM_PKT"]; ?>&ID_TRANS=<?= $trans["ID_TRANS"]; ?>&HARGA=<?= $trans["HARGA"]; ?>&NM_PEMESAN=<?= $trans["NM_PEMESAN"]; ?>">Cetak Invoice PDF</a></td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="ubah.php?ID_TRNS=<?= $trans["ID_TRNS"]; ?>" data-placement="top" title="">
+                                                    <a href="index.php?page=ubahtransaksi&ID_TRNS=<?= $trans["ID_TRNS"]; ?>" data-placement="top" title="">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -135,7 +219,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="hapus.php?ID_TRNS=<?= $trans["ID_TRNS"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="_hapus_transaksi.php?ID_TRNS=<?= $trans["ID_TRNS"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -162,7 +246,7 @@
                                     <th>Hotel</th>
                                     <th>Harga</th>
                                     <th>Bayar</th>
-
+                                    <th>Invoice</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>

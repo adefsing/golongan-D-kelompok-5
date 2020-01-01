@@ -116,7 +116,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="_hapus_paket.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
+                                                    <a href="_hapus_pemesan.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
