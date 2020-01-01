@@ -168,7 +168,7 @@ if ($username == "" || $username == NULL || empty($username)) {
                                                 <a href="?page=edit_profil&id=<?php echo $_SESSION['id_adm']; ?>"><i class="icon-user"></i> <span>Profile</span></a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void()">
+                                                <a href="?page=inbox">
                                                     <i class="icon-envelope-open"></i> <span>Inbox</span>
                                                     <div class="badge  badge-pill gradient-1"><?php echo $message; ?></div>
                                                 </a>
@@ -249,6 +249,8 @@ if ($username == "" || $username == NULL || empty($username)) {
             <div class="content-body">
                 <?php
                 require 'functions.php';
+
+
                 if (isset($_GET['page'])) {
                     $page = $_GET['page'];
 

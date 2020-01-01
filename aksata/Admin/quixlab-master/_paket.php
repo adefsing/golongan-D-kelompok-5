@@ -1,17 +1,7 @@
 <div class="container-fluid">
     <?php
 
-    if (isset($_GET['id'])) {
-
-        $id = $_GET['id'];
-
-        $sql1 = mysqli_query($connect, "DELETE FROM paket WHERE  ID_PKT='$id';");
-        if ($sql1) {
-            echo "<script>alert('Data Berhasil Di Hapus');document.location.href='index.php?page=paket'</script>";
-        } else {
-            echo "<script>alert('Data Gagal Di Hapus');document.location.href='index.php?page=paket'</script>";
-        }
-    }
+    $pkt = query("SELECT * FROM paket ORDER BY ID_PKT DESC");
     ?>
 
     <div class="row">
@@ -26,11 +16,10 @@
                                 </label>
                             </div>
 
-                            <div class="col-sm-12">
-                                <label style="text-align:left;">
+                            <div class="col-sm-12 col-md-6">
+                                <label style="text-aling:right;">
 
-                                    <a><button type="button" class="btn mb-1 btn-primary btn-lg" data-toggle="modal" data-target="#tambahmodal" data-whatever="@getbootstrap">TAMBAH DATA</button>
-                                    </a>
+                                    <button type="button" class="btn mb-1 btn-primary btn-lg" data-toggle="modal" data-target="#tambahmodal" data-whatever="@getbootstrap">TAMBAH DATA</button>
 
 
 
@@ -54,8 +43,9 @@
                                                 <form method="post" action="_tambah_paket.php" enctype="multipart/form-data">
                                                     <div class="row">
                                                         <div class="form-group col ml-auto">
+                                                            <input type="hidden" name="ID_PKT" id="ID_PKT" value="<?= $idpkt; ?>">
                                                             <label class="col-form-label">Nama Paket</label>
-                                                            <input type="text" name="nm_paket" class="form-control input-default" placeholder="Nama Paket">
+                                                            <input type="text" name="NM_PKT" id="NM_PKT" class="form-control input-default" autocomplete="off" placeholder="Nama Paket">
                                                         </div>
                                                     </div>
                                             </div>
@@ -75,28 +65,26 @@
                             <thead>
                                 <tr>
                                     <th>NO.</th>
-                                    <!-- <th>ID PAKET</th> -->
-                                    <th>NAMA PAKET</th>
+                                    <th>Paket</th>
+                                    <th>Detail</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                $id = $_GET['id'];
-                                $query = "SELECT * FROM paket ORDER BY ID_PKT DESC";
-                                $sql = mysqli_query($connect, $query);
-                                $no = 1;
-                                while ($data = mysqli_fetch_array($sql)) {
-                                ?>
-                                    <tr>
-                                        <td><?php echo $no; ?></td>
-                                        <!-- <td><?php echo $data['ID_PKT']; ?></td> -->
-                                        <td><?php echo $data['NM_PKT']; ?></td>
 
+                                <?php $i = 1; ?>
+                                <?php foreach ($pkt as $pktt) : ?>
+                                    <tr>
+                                        <td> <?= $i; ?> </td>
+
+                                        <td> <?= $pktt["NM_PKT"]; ?> </td>
+                                        <td>
+                                            &nbsp; &nbsp; <a style="color: white;" title="detail nama paket" class="btn btn-success" href="pilihwisata.php?ID_PKT=<?= $pktt["ID_PKT"]; ?>&NM_PKT=<?= $pktt["NM_PKT"]; ?>">Detail</a>
+                                        </td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_paket&id=<?php echo $data['ID_PKT']; ?>" data-placement="top" title="ubah" data-original-title="Edit">
+                                                    <a href="ubah.php?ID_PKT=<?= $pktt["ID_PKT"]; ?>" data-placement="top" title="ubah">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -105,7 +93,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=paket&id=<?php echo $data['ID_PKT']; ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
+                                                    <a href="hapus.php?ID_PKT=<?= $pktt["ID_PKT"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -115,20 +103,20 @@
                                             </span>
                                         </td>
                                     </tr>
-                                <?php $no++;
-                                } ?>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
 
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>NO.</th>
-                                    <!-- <th>ID PAKET</th> -->
-                                    <th>NAMA PAKET</th>
-
+                                    <th>Paket</th>
+                                    <th>Detail</th>
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>
                         </table>
+
                     </div>
                 </div>
             </div>

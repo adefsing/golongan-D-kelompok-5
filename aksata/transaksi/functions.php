@@ -20,18 +20,9 @@ function query ($query) {
 
 }
 
-// function jin_date_sql($date){
-// 	$exp = explode('/',$date);
-// 	if(count($exp) == 3) {
-// 		$date = $exp[2].'-'.$exp[1].'-'.$exp[0];
-// 	}
-// 	return $date;
-// }
-
 function tambahtrns($data) {
     global $connect;
     global $idtrns;
-    // global $date;
 
     $id_pkt = htmlspecialchars($data["ID_PKT"]); 
     $id_pemesan = htmlspecialchars($data["ID_PEMESAN"]);
@@ -68,22 +59,38 @@ function hapustrns($nm) {
     return mysqli_affected_rows($connect);
 }
 
-function ubahrm($data){
+function ubahtrns($data){
     global $connect;
-    // global $idrm;
 
-    $id_rm = $data["ID_RM"];
-    $nm_rm = htmlspecialchars($data["NM_RM"]);        
-    $alamat_rm = htmlspecialchars($data["ALAMAT_RM"]);
-    $tlp_rm = htmlspecialchars($data["TLP_RM"]); 
+    $id_trns = $data["ID_TRNS"];
+    $id_pkt = htmlspecialchars($data["ID_PKT"]);
+    $id_pemesan = htmlspecialchars($data["ID_PEMESAN"]);
+    $id_arm = htmlspecialchars($data["ID_ARM"]);
+    $id_hotel = htmlspecialchars($data["ID_HOTEL"]);
+    $tgl_pelaksanaan = htmlspecialchars($data["TGL_PELAKSANAAN"]);
+    $tmpt_jpt = htmlspecialchars($data["TMPT_JPT"]);
+    $harga = htmlspecialchars($data["HARGA"]);
+    $bayar = htmlspecialchars($data["BAYAR"]); 
 
-    // var_dump($data);
+    if ($bayar==$harga){
+        $status_bayar = "LUNAS";
+    } else if($bayar>$harga){
+        $status_bayar = "BAYAR KELEBIHAN";
+    } else {
+        $status_bayar = "BELUM";
+    }
 
-    $query = "UPDATE rm SET 
-                NM_RM = '$nm_rm', 
-                ALAMAT_RM = '$alamat_rm',
-                TLP_RM = '$tlp_rm' 
-                WHERE ID_RM = '$id_rm'
+    $query = "UPDATE transaksi SET 
+                ID_PKT = '$id_pkt',
+                ID_PEMESAN = '$id_pemesan',
+                ID_ARM = '$id_arm',
+                ID_HOTEL = '$id_hotel',
+                TGL_PELAKSANAAN = '$tgl_pelaksanaan',
+                TMPT_JPT = '$tmpt_jpt',
+                HARGA = '$harga',
+                BAYAR = '$bayar',
+                STATUS_BAYAR = '$status_bayar'
+                WHERE ID_TRNS = '$id_trns'
             ";
 
     mysqli_query($connect, $query); 
@@ -123,3 +130,7 @@ function caritrns($keyword){
 
     return query($query);
 }
+
+
+
+?>

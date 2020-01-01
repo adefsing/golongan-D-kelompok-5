@@ -25,6 +25,8 @@ https://templatemo.com/tm-535-softy-pinko
 </head>
 
 <body>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-0f88c670-6e7a-442e-8f96-57fdf2008845"></div>
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
@@ -99,7 +101,7 @@ https://templatemo.com/tm-535-softy-pinko
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/featured-item-01.png" alt=""></i>
+                                    <i><img src="assets/images/wisata.png" width="50px" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Wisata Yang Menarik</h5>
                                 <p>Kami akan mengantar Anda ke tempat wisata yang Anda inginkan</p>
@@ -111,7 +113,7 @@ https://templatemo.com/tm-535-softy-pinko
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/hotel.png" alt=""></i>
+                                    <i><img src="assets/images/hotel1.png" width="40px" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Hotel Bintang Lima</h5>
                                 <p>Kami akan memberikan pelayan terbaik untuk Anda</p>
@@ -123,7 +125,7 @@ https://templatemo.com/tm-535-softy-pinko
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                             <div class="features-small-item">
                                 <div class="icon">
-                                    <i><img src="assets/images/rm.png" alt=""></i>
+                                    <i><img src="assets/images/rm1.png" width="50px" alt=""></i>
                                 </div>
                                 <h5 class="features-title">Rumah Makan Terbaik</h5>
                                 <p>Kami akan mewujudkan liburan impian Anda, keluarga serta rekan</p>
@@ -142,7 +144,7 @@ https://templatemo.com/tm-535-softy-pinko
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/left-image a.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="slider\img\logo.png" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
@@ -183,7 +185,7 @@ https://templatemo.com/tm-535-softy-pinko
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/wst.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="assets/images/fasilitas.png" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
             </div>
         </div>

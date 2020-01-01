@@ -133,6 +133,13 @@ table td.grand {
     ;
 }
 
+table td.hi {
+    border-top: 1px solid rgb(72, 74, 75);
+    ;
+    text-align: center;
+    font-size: 1.2em;
+}
+
 #notices .notice {
     color: #5D6975;
     font-size: 1.2em;

@@ -6,8 +6,8 @@ $trns = query("SELECT transaksi.ID_TRNS,
                     pemesan.NM_PEMESAN, 
                     pemesan.JMLH_ANGGOTA, 
                     transaksi.ID_PKT, 
+                    paket.ID_PKT,
                     paket.NM_PKT, 
-                    paket.status,
                     DATE_FORMAT(pemesan.TGL_PSN, '%d-%m-%Y') AS TGL_PSN,
                     transaksi.TGL_PELAKSANAAN, 
                     transaksi.TMPT_JPT, 
@@ -73,7 +73,7 @@ keyoword.." autocomplete="off">
         <td> <?= $i; ?> </td>
         <td> <?= $trans["NM_PEMESAN"]; ?> </td>
         <td> <?= $trans["JMLH_ANGGOTA"]; ?> <a href="../pemesan/detailpemesan.php?JMLH_ANGGOTA=<?= $trans["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>">detail</a></td>
-        <td> <?= $trans["NM_PKT"]; ?> <a href="../pilihwisata/index.php?ID_PEMESAN=<?= $trans["ID_PEMESAN"]; ?>&ID_TRNS=<?= $trans["ID_TRNS"]; ?>&ID_PKT=<?= $trans["ID_PKT"]; ?>&status=<?= $trans["status"]; ?>">detail</a></td>
+        <td> <?= $trans["NM_PKT"]; ?> <a href="../paket/pilihwisata.php?ID_PKT=<?= $trans["ID_PKT"]; ?>&NM_PKT=<?= $trans["NM_PKT"]; ?>">detail</a></td>
         <td> <?= $trans["TGL_PSN"]; ?> </td>
         <td> <?= $trans["TGL_PELAKSANAAN"]; ?> </td>
         <td> <?= $trans["TMPT_JPT"]; ?> </td>
@@ -83,8 +83,8 @@ keyoword.." autocomplete="off">
         <td> <?= $trans["BAYAR"]; ?> </td>
         <td> <?= $trans["STATUS_BAYAR"]; ?> </td>
         <td>
-            <a href="ubah.php?ID_RM=<?=$trans["ID_RM"];?>">Ubah</a>
-            <a href="hapus.php?ID_TRNS=<?=$trans["ID_TRNS"];?>">Hapus</a>
+            <a href="ubah.php?ID_TRNS=<?=$trans["ID_TRNS"];?>">Ubah</a>
+            <a href="hapus.php?ID_TRNS=<?=$trans["ID_TRNS"];?>" onclick='return confirmation()'>Hapus</a>
         </td>
     </tr>
     <?php $i++; ?>
@@ -92,6 +92,17 @@ keyoword.." autocomplete="off">
 </table>
 <br>
 <a href="tambah.php">Tambah</a>
+
+<script type="text/javascript">
+    function confirmation(){
+        if (confirm("Anda yakin ingin menghapus data?")){
+            location.href='hapus.php';
+           }
+        else {
+            return false;
+           }
+    } 
+</script>
 
 </body>
 </html>

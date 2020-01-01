@@ -37,14 +37,6 @@
 
     <form action="" method="post">
     <ul>
-<!-- id trns -->
-        <li>
-            <label for="ID_TRNS">ID</label>
-            <input type="text" name="ID_TRNS" id="ID_TRNS" value="<?=$idtrns;?>" disabled>
-        </li>
-        <br>
-
-<!-- id pemesan -->
         <li>
             <label for="ID_PEMESAN">Nama Pemesan</label>
             <select name="ID_PEMESAN" id="ID_PEMESAN">
@@ -62,7 +54,6 @@
         </li>
         <br>
         
-<!-- id paket -->
         <li>
             <label for="ID_PKT">Paket</label>
             <select name="ID_PKT" id="ID_PKT">
@@ -80,7 +71,6 @@
         </li>
         <br>
 
-<!-- id armada -->
         <li>
             <label for="ID_ARM">Armada</label>
             <select name="ID_ARM" id="ID_ARM">
@@ -98,7 +88,6 @@
         </li>
         <br>
 
-<!-- nama hotel -->
         <li>
             <label for="ID_HOTEL">Hotel</label>
             <select name="ID_HOTEL" id="ID_HOTEL">
@@ -116,8 +105,6 @@
         </li>
         <br>
         
-<!-- tanggal berangkat -->
-        
         <li>
             <label for="TGL_PELAKSANAAN">Tanggal Pelaksanaan</label>
             <input type="text" name="TGL_PELAKSANAAN" id="TGL_PELAKSANAAN" autocomplete="off" required title="isikan tanggal awal sampai akhir keberangkatan">
@@ -130,12 +117,12 @@
         <br>
         <li>
             <label for="HARGA">Harga</label>
-            <input type="text" name="HARGA" id="HARGA" autocomplete="off" required onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <input type="text" name="HARGA" id="HARGA" autocomplete="off" required title="isikan hanya angka" onkeypress="return event.charCode >= 48 && event.charCode <=57">
         </li>
         <br>
         <li>
             <label for="BAYAR">Bayar</label>
-            <input type="text" name="BAYAR" id="BAYAR" autocomplete="off" required onkeypress="return event.charCode >= 48 && event.charCode <=57">
+            <input type="text" name="BAYAR" id="BAYAR" autocomplete="off" required title="isikan hanya angka" onkeypress="return event.charCode >= 48 && event.charCode <=57">
         </li>
         <br>
         <li>
@@ -146,18 +133,5 @@
         
 
     </form>
-    <!-- <script>
-function hanyaAngka(evt) {
-		  var charCode = (evt.which) ? evt.which : event.keyCode
-		   if (charCode > 31 && (charCode < 48 || charCode > 57))
- 
-		    return false;
-		  return true;
-		}
-</script>   -->
-
-
-
-
 </body>
 </html>
