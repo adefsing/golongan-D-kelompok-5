@@ -203,7 +203,7 @@ if ($username == "" || $username == NULL || empty($username)) {
                             <ul aria-expanded="false">
                                 <li><a href="?page=home">Home</a></li>
                                 <li><a href="?page=inbox">Inbox</a></li>
-                                <li><a href="?page=#">Transaksi</a></li>
+                                <li><a href="?page=transaksi">Transaksi</a></li>
                                 <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                             </ul>
                         </li>
@@ -314,6 +314,18 @@ if ($username == "" || $username == NULL || empty($username)) {
                             break;
                         case 'detailpemesan':
                             include "./_detail_pemesan.php";
+                            break;
+                        case 'detailpaket':
+                            include "./_detail_paket.php";
+                            break;
+                        case 'detailpaketubah':
+                            include "./_detail_paket_ubah.php";
+                            break;
+                        case 'hapuspaket':
+                            include "./_hapuspaket.php";
+                            break;
+                        case 'transaksi':
+                            include "./_transaksi.php";
                             break;
                         default:
                             include "./_index.php";

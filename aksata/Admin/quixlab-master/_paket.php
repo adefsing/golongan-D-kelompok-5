@@ -2,6 +2,7 @@
     <?php
 
     $pkt = query("SELECT * FROM paket ORDER BY ID_PKT DESC");
+
     ?>
 
     <div class="row">
@@ -79,12 +80,12 @@
 
                                         <td> <?= $pktt["NM_PKT"]; ?> </td>
                                         <td>
-                                            &nbsp; &nbsp; <a style="color: white;" title="detail nama paket" class="btn btn-success" href="pilihwisata.php?ID_PKT=<?= $pktt["ID_PKT"]; ?>&NM_PKT=<?= $pktt["NM_PKT"]; ?>">Detail</a>
+                                            &nbsp; &nbsp; <a style="color: white;" title="detail nama paket" class="btn btn-success" href="index.php?page=detailpaket&ID_PKT=<?= $pktt["ID_PKT"]; ?>&NM_PKT=<?= $pktt["NM_PKT"]; ?>">Detail</a>
                                         </td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="ubah.php?ID_PKT=<?= $pktt["ID_PKT"]; ?>" data-placement="top" title="ubah">
+                                                    <a href="?page=fedit_paket&ID_PKT=<?= $pktt["ID_PKT"]; ?>" data-placement="top" title="ubah">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>

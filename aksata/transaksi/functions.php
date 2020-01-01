@@ -4,9 +4,9 @@ $connect    = mysqli_connect("localhost", "root", "", "aksataa");
 
 // auto increment
 $query = "SELECT max(ID_TRNS) as maxid FROM transaksi";
-$hasil = mysqli_query($connect,$query);
-$dataa = mysqli_fetch_array($hasil);
-$idtrns = $dataa['maxid'];
+$hasil3 = mysqli_query($connect,$query);
+$dataa3 = mysqli_fetch_array($hasil3);
+$idtrns = $dataa3['maxid'];
 $idtrns++;
 
 function query ($query) {
@@ -130,7 +130,3 @@ function caritrns($keyword){
 
     return query($query);
 }
-
-
-
-?>

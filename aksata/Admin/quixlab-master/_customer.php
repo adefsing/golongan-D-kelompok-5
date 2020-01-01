@@ -82,6 +82,7 @@
                                     <th>NO.</th>
                                     <th>NAMA</th>
                                     <th>ANGGOTA</th>
+                                    <th>DETAIL</th>
                                     <th>NIK</th>
                                     <th>ALAMAT</th>
                                     <th>TELEPON</th>
@@ -97,9 +98,8 @@
                                         <td> <?= $i; ?> </td>
                                         <!-- <td> <?= $rmm["ID_PEMESAN"]; ?> </td> -->
                                         <td> <?= $rmm["NM_PEMESAN"]; ?> </td>
-                                        <td> <?= $rmm["JMLH_ANGGOTA"]; ?>
-                                            &nbsp; &nbsp; <a style="color: white;" title="detail nama anggota" class="btn btn-success" href="index.php?page=detailpemesan&JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">Detail</a>
-                                        </td>
+                                        <td> <?= $rmm["JMLH_ANGGOTA"]; ?></td>
+                                        <td><a style="color: white;" title="detail nama anggota" class="btn btn-success" href="index.php?page=detailpemesan&JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">Detail</a></td>
                                         <td> <?= $rmm["NIK"]; ?> </td>
                                         <td> <?= $rmm["ALAMAT_PEMESAN"]; ?> </td>
                                         <td> <?= $rmm["TLP_PEMESAN"]; ?> </td>
@@ -116,7 +116,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="hapus.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
+                                                    <a href="_hapus_paket.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -135,6 +135,7 @@
                                     <th>NO.</th>
                                     <th>NAMA</th>
                                     <th>ANGGOTA</th>
+                                    <th>DETAIL</th>
                                     <th>NIK</th>
                                     <th>ALAMAT</th>
                                     <th>TELEPON</th>

@@ -1,14 +1,13 @@
 <div class="container-fluid">
     <?php
-    require 'functions.php';
     $trns = query("SELECT transaksi.ID_TRNS, 
                     -- transaksi.ID_PEMESAN,
                     pemesan.ID_PEMESAN, 
                     pemesan.NM_PEMESAN, 
                     pemesan.JMLH_ANGGOTA, 
                     transaksi.ID_PKT, 
+                    paket.ID_PKT,
                     paket.NM_PKT, 
-                    paket.status,
                     DATE_FORMAT(pemesan.TGL_PSN, '%d-%m-%Y') AS TGL_PSN,
                     transaksi.TGL_PELAKSANAAN, 
                     transaksi.TMPT_JPT, 
@@ -25,10 +24,6 @@
                     INNER JOIN hotel ON transaksi.ID_HOTEL = hotel.ID_HOTEL 
                     ORDER BY transaksi.ID_TRNS DESC");
 
-    // tombol search
-    if (isset($_POST["cari"])) {
-        $trns = caritrns($_POST["keyword"]);
-    }
 
     ?>
 
@@ -106,7 +101,7 @@
                                     <th>Hotel</th>
                                     <th>Harga</th>
                                     <th>Bayar</th>
-                                    <th>Status</th>
+
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -131,7 +126,7 @@
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_rm&id=<?= $trans["ID_RM"]; ?>" data-placement="top" title="">
+                                                    <a href="ubah.php?ID_TRNS=<?= $trans["ID_TRNS"]; ?>" data-placement="top" title="">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -140,7 +135,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="?page=rm&id=<?= $trans["ID_TRNS"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="hapus.php?ID_TRNS=<?= $trans["ID_TRNS"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -150,7 +145,7 @@
                                             </span>
                                         </td>
                                     </tr>
-                                    <?php $i++; ?>
+                                    <?php $no++; ?>
                                 <?php endforeach; ?>
 
                             </tbody>
@@ -167,7 +162,7 @@
                                     <th>Hotel</th>
                                     <th>Harga</th>
                                     <th>Bayar</th>
-                                    <th>Status</th>
+
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
