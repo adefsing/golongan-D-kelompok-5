@@ -1,5 +1,6 @@
 <div class="container-fluid">
     <?php
+    require 'function.php';
 
     if (isset($_GET['id'])) {
 
@@ -102,7 +103,7 @@
                                         <td>
 
                                             <div class="btn-group mr-2 mb-2">
-                                                <a href="?page=fedit_testimoni&id=<?= $data['ID_TESTI']; ?>" data-placement="top" title="ubah" data-original-title="Edit">
+                                                <a href="?page=_fedit_testimoni&id=<?= $data['ID_TESTI']; ?>" data-placement="top" title="ubah" data-original-title="Edit">
                                                     <button type="button" class="btn btn-primary">
                                                         <i class="fa fa-pencil color-muted m-r-5"></i>
                                                     </button>
