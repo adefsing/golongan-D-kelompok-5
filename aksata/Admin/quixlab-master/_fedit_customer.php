@@ -58,7 +58,7 @@
                                         <label class="col-form-label">NIK</label>
                                         <input type="text" name="NIK" value="<?php echo $ubah['NIK']; ?>" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
                                         <label class="col-form-label">Alamat</label>
-                                        <textarea type="text" name="ALAMAT_PEMESAN" class="form-control input-default" value="<?php echo $ubah['ALAMAT_PEMESAN']; ?>" placeholder="Alamat" style="height:125px;"><?php echo $ubah['ALAMAT_PEMESAN']; ?></textarea>
+                                        <textarea type="text" name="ALAMAT_PEMESAN" value="<?php echo $ubah['ALAMAT_PEMESAN']; ?>" class="form-control input-default" placeholder="Alamat" style="height:125px;"><?php echo $ubah['ALAMAT_PEMESAN']; ?></textarea>
                                         <label class="col-form-label">Telepon</label>
                                         <input type="text" name="TLP_PEMESAN" value="<?php echo $ubah['TLP_PEMESAN']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="TELEPON">
                                         <label class="col-form-label">Tanggal Pesan</label>
@@ -67,7 +67,18 @@
                                 </div>
                                 <div class="modal-footer">
                                     <a href="?page=customer" class="btn btn-secondary" style="color:white;">Kembali</a>
-                                    <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="submit" name="submit" class="btn btn-primary" onclick='return confirmation()'>Simpan</button>
+                                    
+                                    <script type="text/javascript">
+                                    function confirmation(){
+                                        if (confirm("Anda yakin ingin mengubah data?")){
+                                            location.href='functions.php';
+                                        }
+                                        else {
+                                            return false;
+                                        }
+                                    } 
+                                </script>
                                 </div>
                             </form>
 
