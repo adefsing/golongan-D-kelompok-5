@@ -31,10 +31,10 @@
                             <form method="post" action="_delete_inbox.php" id="form-delete">
                                 <div class="col-sm-12 col-md-6">
 
-                                    <label style="text-aling:right;">
+                                    <!-- <label style="text-aling:right;">
                                         <button class="btn mb-1 btn-primary btn-lg" type="button" id="btn-delete"> HAPUS DATA YANG DI TANDAI </button>
 
-                                    </label>
+                                    </label> -->
                                     <label style="text-align:right;">
 
                                         <a href="_report_inbox.php?id=<?php echo $_SESSION['username']; ?>"><button type="button" class="btn mb-1 btn-primary btn-lg">CETAK DATA PDF</button>
@@ -51,11 +51,11 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>
+                                    <!-- <th>
                                         <center>
                                             <input type="checkbox" id="check-all">
                                         </center>
-                                    </th>
+                                    </th> -->
 
                                     <th>NO</th>
                                     <th>TANGGAL</th>
@@ -74,7 +74,7 @@
                                 while ($data = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
-                                        <td align="center"><input type="checkbox" name="pilih[]" class="check-item" value="<?php echo $data['id_inbox']; ?>"></td>
+                                        <!-- <td align="center"><input type="checkbox" name="pilih[]" class="check-item" value="<?php echo $data['id_inbox']; ?>"></td> -->
                                         <td align="center"><?php echo $no; ?></td>
                                         <td><?php echo $data['tanggal']; ?></td>
                                         <td><?php echo $data['nama']; ?></td>
@@ -114,7 +114,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th></th>
+                                    <!-- <th></th> -->
 
                                     <th>NO</th>
                                     <th>TANGGAL</th>
