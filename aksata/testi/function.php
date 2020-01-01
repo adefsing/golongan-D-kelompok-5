@@ -2,8 +2,18 @@
 
 $connect    = mysqli_connect("localhost", "root", "", "aksataa");
 
-\
+// auto increment
+$query = "SELECT max(ID_TESTI) as maxid FROM testimoni";
+$hasil = mysqli_query($connect, $query);
+$dataa = mysqli_fetch_array($hasil);
+$idhtl = $dataa['maxid'];
 
+$noUrut = (int) substr($idhtl, 3, 3);
+
+$noUrut++;
+
+$char = "hl";
+$idhtl = $char . sprintf("%03s", $noUrut);
 
 function query ($query) {
     global $connect;
@@ -18,15 +28,15 @@ function query ($query) {
 
 function tambahtesti($data) {
     global $connect;
-    
+    global $idhtl;
 
-    
+    // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);        
     $isi_testi = htmlspecialchars($data["ISI_TESTI"]);
     $foto = htmlspecialblobs($data["FOTO"]); 
 
     $query = "INSERT INTO testimoni VALUES 
-                ('$nm_pemesan', '$isi_testi', '$foto')";
+                ('$id_testi', '$nm_pemesan', '$isi_testi', '$foto')";
     mysqli_query($connect, $query); 
 
     return mysqli_affected_rows($connect);
@@ -38,19 +48,22 @@ function hapustesti($nm) {
     return mysqli_affected_rows($connect);
 }
 
-function ubahTESTI($data){
+function ubahtesti($data){
     global $connect;
-    
+    // global $idwst;
+
+    $id_testi = $data["ID_TESTI"];
     $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);        
     $isi_testi = htmlspecialchars($data["ISI_TESTI"]);
     $foto = htmlspecialblobs($data["FOTO"]); 
 
-  
+    // var_dump($data);
 
-    $query = "UPDATE testimoni SET  
+    $query = "UPDATE testimoni SET 
+                NM_PEMESAN = '$nm_pemesan', 
                 ISI_TESTI = '$isi_testi',
                 FOTO = '$foto' 
-                WHERE NM_PEMESAN = '$nm_pemesan'
+                WHERE ID_TESTI = '$id_testi'
             ";
 
     mysqli_query($connect, $query); 
@@ -65,7 +78,6 @@ function caritesti($keyword){
                 NM_PEMESAN LIKE '%$keyword%' OR
                 ISI_TESTI LIKE '%$keyword%' OR
                 FOTO LIKE '%$keyword%'";
-
     return query($query);
 }
 
