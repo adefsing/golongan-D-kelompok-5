@@ -249,6 +249,8 @@ if ($username == "" || $username == NULL || empty($username)) {
             <div class="content-body">
                 <?php
                 require 'functions.php';
+
+
                 if (isset($_GET['page'])) {
                     $page = $_GET['page'];
 

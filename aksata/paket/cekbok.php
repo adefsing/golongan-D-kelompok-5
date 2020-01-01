@@ -25,7 +25,7 @@
        
     $checkedVideo = sizeof($videoCheckBox);
        
-    foreach($i=0;$i<$checkedVideo;$i++) {
+    foreach ($i=0;$i<$checkedVideo;$i++;) {
         $videoId = $videoCheckBox[$i];
         $queryVideo = mysqli_query($con,"INSERT INTO cekbok(hari) VALUES ('$videoId')");  
     }
