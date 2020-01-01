@@ -5,6 +5,8 @@
                     NM_PEMESAN, 
                     JMLH_ANGGOTA,
                     NIK,
+                    ALAMAT_PEMESAN,
+                    TLP_PEMESAN,
                     DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  FROM pemesan ORDER BY TGL_PSN DESC");
     ?>
 
@@ -48,13 +50,17 @@
                                                     <div class="row">
                                                         <div class="form-group col ml-auto">
                                                             <label class="col-form-label">Nama Pemesan</label>
-                                                            <input type="text" name="nama_pemesan" class="form-control input-default" placeholder="Nama customer">
+                                                            <input type="text" name="nama_pemesan" class="form-control input-default" autocomplete="off" placeholder="Nama pemesan">
                                                             <label class="col-form-label">Jumlah Anggota</label>
-                                                            <input type="text" name="jml" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
+                                                            <input type="text" name="jml" class="form-control input-default" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
                                                             <label class="col-form-label">NIK</label>
-                                                            <input type="text" name="nik" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
+                                                            <input type="text" name="nik" class="form-control input-default" maxlength="25" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
+                                                            <label class="col-form-label">Alamat</label>
+                                                            <textarea type="text" name="alamat" class="form-control input-default" autocomplete="off" placeholder="Alamat" style="height:125px;"></textarea>
+                                                            <label class="col-form-label">Telepon</label>
+                                                            <input type="text" name="tlp" title="isikan hanya angka" class="form-control input-default" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Telepon">
                                                             <label class="col-form-label">Tanggal Pesan</label>
-                                                            <input type="date" name="tanggal" class="form-control input-default" value="<?= date('d-m-Y'); ?>" placeholder="">
+                                                            <input type="text" name="tanggal" class="form-control input-default" value="<?= date('d-m-Y'); ?>" maxlength="10" placeholder=""></input>
                                                         </div>
                                                     </div>
                                             </div>
@@ -73,11 +79,13 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>Nama</th>
+                                    <th>NO.</th>
+                                    <th>NAMA</th>
+                                    <th>ANGGOTA</th>
                                     <th>NIK</th>
-                                    <th>Anggota</th>
-                                    <th>Tanggal Pesan</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
+                                    <th>TANGGAL PESAN</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
@@ -89,15 +97,17 @@
                                         <td> <?= $i; ?> </td>
                                         <!-- <td> <?= $rmm["ID_PEMESAN"]; ?> </td> -->
                                         <td> <?= $rmm["NM_PEMESAN"]; ?> </td>
-                                        <td> <?= $rmm["NIK"]; ?> </td>
                                         <td> <?= $rmm["JMLH_ANGGOTA"]; ?>
-                                            &nbsp; &nbsp; <a style="color: white;" class="btn btn-success" href="index.php?page=detailpemesan&JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">Detail</a>
+                                            &nbsp; &nbsp; <a style="color: white;" title="detail nama anggota" class="btn btn-success" href="index.php?page=detailpemesan&JMLH_ANGGOTA=<?= $rmm["JMLH_ANGGOTA"]; ?>&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>">Detail</a>
                                         </td>
+                                        <td> <?= $rmm["NIK"]; ?> </td>
+                                        <td> <?= $rmm["ALAMAT_PEMESAN"]; ?> </td>
+                                        <td> <?= $rmm["TLP_PEMESAN"]; ?> </td>
                                         <td> <?= $rmm["TGL_PSN"]; ?> </td>
                                         <td>
                                             <span>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="?page=fedit_customer&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>" data-placement="top" title="">
+                                                    <a href="?page=fedit_customer&ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>" data-placement="top" title="ubah">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="fa fa-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -106,7 +116,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="hapus.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus">
+                                                    <a href="hapus.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
@@ -122,11 +132,13 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>Nama</th>
+                                    <th>NO.</th>
+                                    <th>NAMA</th>
+                                    <th>ANGGOTA</th>
                                     <th>NIK</th>
-                                    <th>Anggota</th>
-                                    <th>Tanggal Pesan</th>
+                                    <th>ALAMAT</th>
+                                    <th>TELEPON</th>
+                                    <th>TANGGAL PESAN</th>
                                     <th>ACTION</th>
                                 </tr>
                             </tfoot>

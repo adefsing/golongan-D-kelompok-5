@@ -19,6 +19,8 @@
                         NM_PEMESAN, 
                         JMLH_ANGGOTA,
                         NIK,
+                        ALAMAT_PEMESAN,
+                        TLP_PEMESAN,
                         DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  
                         FROM pemesan WHERE ID_PEMESAN = '$idr'")[0];
                                 // var_dump($ubah); 
@@ -55,8 +57,12 @@
                                         <input type="text" name="JMLH_ANGGOTA" value="<?php echo $ubah['JMLH_ANGGOTA']; ?>" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
                                         <label class="col-form-label">NIK</label>
                                         <input type="text" name="NIK" value="<?php echo $ubah['NIK']; ?>" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
+                                        <label class="col-form-label">Alamat</label>
+                                        <textarea type="text" name="ALAMAT_PEMESAN" class="form-control input-default" value="<?php echo $ubah['ALAMAT_PEMESAN']; ?>" placeholder="Alamat" style="height:125px;"><?php echo $ubah['ALAMAT_PEMESAN']; ?></textarea>
+                                        <label class="col-form-label">Telepon</label>
+                                        <input type="text" name="TLP_PEMESAN" value="<?php echo $ubah['TLP_PEMESAN']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="TELEPON">
                                         <label class="col-form-label">Tanggal Pesan</label>
-                                        <input type="date" name="TGL_PSN" value="<?php echo $ubah['TGL_PSN']; ?>" class="form-control input-default" placeholder="">
+                                        <input type="text" name="TGL_PSN" value="<?php echo $ubah['TGL_PSN']; ?>" maxlength="10" class="form-control input-default" placeholder="">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
