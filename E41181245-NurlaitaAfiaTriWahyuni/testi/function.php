@@ -6,9 +6,9 @@ $connect    = mysqli_connect("localhost", "root", "", "aksataa");
 $query = "SELECT max(ID_TESTI) as maxid FROM testimoni";
 $hasil = mysqli_query($connect, $query);
 $dataa = mysqli_fetch_array($hasil);
-$id_testi = $dataa['maxid'];
+$idhtl = $dataa['maxid'];
 
-$noUrut = (int) substr($id_testi, 3, 3);
+$noUrut = (int) substr($idhtl, 3, 3);
 
 $noUrut++;
 
@@ -28,12 +28,12 @@ function query ($query) {
 
 function tambahtesti($data) {
     global $connect;
-    global $id_testi;
+    global $idhtl;
 
     // $id_wst = htmlspecialchars($data["ID_WST"]);
     $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);        
     $isi_testi = htmlspecialchars($data["ISI_TESTI"]);
-    $foto = htmlspecialchars($data["FOTO"]); 
+    $foto = htmlspecialblobs($data["FOTO"]); 
 
     $query = "INSERT INTO testimoni VALUES 
                 ('$id_testi', '$nm_pemesan', '$isi_testi', '$foto')";
@@ -55,7 +55,7 @@ function ubahtesti($data){
     $id_testi = $data["ID_TESTI"];
     $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);        
     $isi_testi = htmlspecialchars($data["ISI_TESTI"]);
-    $foto = htmlspecialchar($data["FOTO"]); 
+    $foto = htmlspecialblobs($data["FOTO"]); 
 
     // var_dump($data);
 

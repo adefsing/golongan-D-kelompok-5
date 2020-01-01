@@ -12,7 +12,7 @@ if (isset($_POST['Esubmit'])) {
     $sql = mysqli_query($connect, "UPDATE pemesan SET NM_PEMESAN  = '$nm_pemesan',
                                                     JMLH_ANGGOTA = '$jmlh_anggota',
                                                     NIK = '$nik',
-                                                    ALAMAT_PEMESAN = '$alamat',
+                                                    ALAMAT_PEMESAN = '$alamat',                                                    
                                                     TLP_PEMESAN = '$tlp' WHERE ID_PEMESAN = '$id'");
 
     if ($sql) {

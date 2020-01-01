@@ -58,11 +58,15 @@ function ubahpsn($data)
     $nm_pemesan = htmlspecialchars($data["NM_PEMESAN"]);
     $nik = htmlspecialchars($data["NIK"]);
     $jmlh_anggota = htmlspecialchars($data["JMLH_ANGGOTA"]);
+    $tlp_pemesan = htmlspecialchars($data["TLP_PEMESAN"]);
+    $alamat_pemesan = htmlspecialchars($data["ALAMAT_PEMESAN"]);
 
     $query = "UPDATE pemesan SET 
                 NM_PEMESAN = '$nm_pemesan', 
                 NIK = '$nik',
-                JMLH_ANGGOTA = '$jmlh_anggota'
+                JMLH_ANGGOTA = '$jmlh_anggota',
+                TLP_PEMESAN = '$tlp_pemesan',
+                ALAMAT_PEMESAN = '$alamat_pemesan'
                 WHERE ID_PEMESAN = '$id_pemesan'
             ";
 
