@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Des 2019 pada 15.51
+-- Waktu pembuatan: 02 Jan 2020 pada 05.32
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.3.6
 
@@ -32,15 +32,17 @@ CREATE TABLE `admin` (
   `ID_ADM` varchar(5) DEFAULT NULL,
   `NM_ADM` varchar(20) DEFAULT NULL,
   `USERNAME` varchar(20) DEFAULT NULL,
-  `PASSWD` varchar(20) DEFAULT NULL
+  `PASSWORD` varchar(20) DEFAULT NULL,
+  `foto_adm` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`ID_ADM`, `NM_ADM`, `USERNAME`, `PASSWD`) VALUES
-('adm01', 'Lasdiyono', 'admin', 'admin1234');
+INSERT INTO `admin` (`ID_ADM`, `NM_ADM`, `USERNAME`, `PASSWORD`, `foto_adm`) VALUES
+('adm01', 'Lasdiyono', 'admin', 'admin1234', NULL),
+('adm02', 'admin', 'admin', 'admin', '25122019181749Ajem.jpg');
 
 -- --------------------------------------------------------
 
@@ -60,11 +62,31 @@ CREATE TABLE `armada` (
 --
 
 INSERT INTO `armada` (`ID_ARM`, `NM_ARM`, `ALAMAT_ARM`, `TLP_ARM`) VALUES
-('arm01', 'Bus Inds 88', 'Jalan Brawijaya 67B, Jember', '082230725758'),
+('arm01', 'Bus Inds 88', 'Jl Brawijaya 67B, Jember', '082230725758'),
 ('arm02', 'Bus Maxi 77 Trans', 'Jalan Brawijaya Nomor 8, Jember', '081332542271'),
 ('arm03', 'Bus Megah Transport', 'Jalan Sultan Agung Nomor 44, Arjasa, Jember', '08125255484'),
 ('arm04', 'Bus Akas Asri', 'Jalan Arowana 79, Gebang, Jember', '0331482307'),
 ('arm05', 'Bus Eka Kapti', 'Jalan Ki S Mangunsarkoro, Rambipuji, Jember', '0331754162');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `cekbok`
+--
+
+CREATE TABLE `cekbok` (
+  `hari` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `cekbok`
+--
+
+INSERT INTO `cekbok` (`hari`) VALUES
+(''),
+(''),
+(''),
+('');
 
 -- --------------------------------------------------------
 
@@ -107,7 +129,21 @@ INSERT INTO `dtl_pemesan` (`DTL_PEMESAN`, `ID_PEMESAN`, `NM_ANGGOTA`) VALUES
 ('dps22', 'psn01', 'IIN SULISTIANINGTIAS'),
 ('dps23', 'psn01', 'didin'),
 ('dps24', 'psn03', 'nurlaita'),
-('dps25', 'psn03', 'didin');
+('dps26', 'psn04', 'mohammad ainun a'),
+('dps27', 'psn03', 'yuyun'),
+('dps28', 'psn03', 'taufan'),
+('dps29', 'psn03', 'zahra'),
+('dps30', 'psn03', 'afif'),
+('dps31', 'psn03', 'eny'),
+('dps32', 'psn03', 'hafiz'),
+('dps33', 'psn03', 'sudjari'),
+('dps34', 'psn03', 'agil'),
+('dps35', 'psn03', 'rara'),
+('dps36', 'psn03', 'dodo'),
+('dps37', 'psn03', 'gibran'),
+('dps38', 'psn03', 'sri winarni'),
+('dps39', 'psn03', 'sauji'),
+('dps40', 'psn03', 'tika');
 
 -- --------------------------------------------------------
 
@@ -151,7 +187,7 @@ INSERT INTO `paket` (`ID_PKT`, `NM_PKT`) VALUES
 ('pkt01', 'BALI CRUISE TOUR'),
 ('pkt02', 'BALI EXOTIC TOUR'),
 ('pkt03', 'Paket dinda tegal gede'),
-('pkt04', 'Paket keluarga nurlaita');
+('pkt04', 'Paket keluarga lita');
 
 -- --------------------------------------------------------
 
@@ -165,6 +201,7 @@ CREATE TABLE `pemesan` (
   `JMLH_ANGGOTA` int(2) DEFAULT NULL,
   `NIK` char(17) NOT NULL,
   `ALAMAT_PEMESAN` varchar(50) NOT NULL,
+  `TLP_PEMESAN` varchar(13) NOT NULL,
   `TGL_PSN` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -172,11 +209,12 @@ CREATE TABLE `pemesan` (
 -- Dumping data untuk tabel `pemesan`
 --
 
-INSERT INTO `pemesan` (`ID_PEMESAN`, `NM_PEMESAN`, `JMLH_ANGGOTA`, `NIK`, `ALAMAT_PEMESAN`, `TGL_PSN`) VALUES
-('psn01', 'Denok Sri Wahyuati', 23, '3509147928640003', 'SDN Kepatihan 2 Jember', '2019-06-01'),
-('psn02', 'Dinda Ayu', 30, '3509172018990001', 'Perumahan Tegal Gede Jember', '2019-07-03'),
-('psn03', 'Nurlaita', 15, '3509175307000004', 'Klompangan, Ajung', '2019-11-04'),
-('psn04', 'Mohammad Ainun A', 20, '3509190704990003', 'Jl Teuku Umar Gg 7 No 112', '2019-11-12');
+INSERT INTO `pemesan` (`ID_PEMESAN`, `NM_PEMESAN`, `JMLH_ANGGOTA`, `NIK`, `ALAMAT_PEMESAN`, `TLP_PEMESAN`, `TGL_PSN`) VALUES
+('psn01', 'Denok Sri Wahyuati', 23, '3509147928640003', 'SDN Kepatihan 2 Jember', '0', '2019-06-01'),
+('psn02', 'Dinda Ayu', 30, '3509172018990001', 'Perumahan Tegal Gede Jember', '0', '2019-07-03'),
+('psn03', 'Nurlaita', 15, '3509175307000004', 'Klompangan, Ajung', '085336096676', '2019-11-04'),
+('psn04', 'Mohammad Ainun A', 20, '3509190704990003', 'Jl Teuku Umar Gg 7 No 112', '08978333856', '2019-11-12'),
+('psn05', 'bjdfhjhgh', 90, '02397592375998', 'jalan jalan', '2147483647', '2020-01-01');
 
 -- --------------------------------------------------------
 
@@ -201,9 +239,15 @@ INSERT INTO `pkt_rm` (`ID_PKT`, `ID_RM`) VALUES
 ('pkt01', 'rm07'),
 ('pkt02', 'rm02'),
 ('pkt02', 'rm03'),
-('pkt02', 'rm04'),
 ('pkt02', 'rm05'),
-('pkt02', 'rm07');
+('pkt02', 'rm07'),
+('pkt04', 'rm03'),
+('pkt04', 'rm04'),
+('pkt04', 'rm06'),
+('pkt04', 'rm07'),
+('pkt03', 'rm03'),
+('pkt03', 'rm05'),
+('pkt03', 'rm06');
 
 -- --------------------------------------------------------
 
@@ -223,13 +267,21 @@ CREATE TABLE `pkt_wst` (
 INSERT INTO `pkt_wst` (`ID_PKT`, `ID_WST`) VALUES
 ('pkt01', 'wst01'),
 ('pkt02', 'wst01'),
+('pkt03', 'wst01'),
+('pkt04', 'wst01'),
 ('pkt02', 'wst02'),
+('pkt03', 'wst02'),
+('pkt04', 'wst02'),
 ('pkt01', 'wst03'),
 ('pkt02', 'wst03'),
+('pkt03', 'wst03'),
 ('pkt01', 'wst04'),
 ('pkt02', 'wst04'),
+('pkt03', 'wst04'),
+('pkt04', 'wst04'),
 ('pkt01', 'wst05'),
 ('pkt02', 'wst05'),
+('pkt04', 'wst05'),
 ('pkt01', 'wst06'),
 ('pkt02', 'wst07'),
 ('pkt02', 'wst08'),
@@ -334,7 +386,7 @@ INSERT INTO `wisata` (`ID_WST`, `NM_WST`, `ALAMAT_WST`, `TLP_WST`) VALUES
 ('wst01', 'Pantai Sanur', NULL, NULL),
 ('wst02', 'Pantai Pandawa', NULL, NULL),
 ('wst03', 'Pantai Jimbaran', NULL, NULL),
-('wst04', 'Pura Ulun Danu Beratan Bedugul', 'Danau Beratan, Candikuning, Baturiti', '0368-2033143'),
+('wst04', 'Pura Ulun Danu Beratan Bedugul', 'Danau Beratan, Candi kuning, Baturiti', '0368-2033143'),
 ('wst05', 'TEMAN JOGER Luwus', 'Jl. Mekarsari - Baturiti Bedugul No.16', '0368-2033324'),
 ('wst06', 'Pantai Lovina', NULL, NULL),
 ('wst07', 'Krisna Water Sports', 'Jalan Seririt - Singaraja, Buleleng', '08113973311'),
