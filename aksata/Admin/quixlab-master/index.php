@@ -221,21 +221,7 @@ if ($username == "" || $username == NULL || empty($username)) {
                                 <li><a href="?page=rm">Rumah Makan</a></li>
                             </ul>
                         </li>
-                        <li class="nav-label"><b>Forms Template</b></li>
-                        <li>
-                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                                <i class="icon-speedometer menu-icon"></i><span class="nav-text">Forms Template</span>
-                            </a>
-                            <ul aria-expanded="false">
-                                <li><a href="?page=#">Home</a></li>
-                                <li><a href="?page=#">About</a></li>
-                                <li><a href="?page=#">Proses Pemesanan</a></li>
-                                <li><a href="?page=#">Testimoni</a></li>
-                                <li><a href="?page=#">Galeri</a></li>
-                                <li><a href="?page=#">Kontak</a></li>
-                                <!-- <li><a href="./index-2.html">Home 2</a></li> -->
-                            </ul>
-                        </li>
+
                     </ul>
                 </div>
             </div>
