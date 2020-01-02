@@ -16,14 +16,14 @@
                                     if (ubahpilihwisata($_POST) > 0) {
                                         echo "
                                                 <script>
-                                                    alert('data berhasil ditambahkan');
+                                                    alert('data berhasil diubah');
                                                     document.location.href = 'index.php?page=detailpaket&ID_PKT=$gt_pkt&NM_PKT=$nmpkt';
                                                 </script>
                                                 ";
                                     } else {
                                         echo "
                                             <script>
-                                                alert('data gagal ditambahkan');
+                                                alert('data gagal diubah');
                                                 document.location.href = 'index.php?page=detailpaketubah&ID_PKT=$gt_pkt&NM_PKT=$nmpkt';
                                             </script>
                                             ";
@@ -42,7 +42,6 @@
                             <br>
                             <form action="" method="post">
                                 <label for="NM_PKT"><?= $nmpkt; ?></label>
-                                <label for="ID_PKT"><?= $idpkt; ?></label>
                                 <input type="hidden" name="ID_PKT" value="<?= $gt_pkt; ?>">
                                 <table border="1" cellpadding="10" cellspacing="1">
                                     <tr>
@@ -101,10 +100,20 @@
                                 </table>
                                 <br />
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary" name="submit">Ubah</button>
+                                    <button type="submit" class="btn btn-primary" name="submit"  onclick='return confirmation()'>Ubah</button>
                                     <a style="color: white;" href="index.php?page=detailpaket&ID_PKT=<?= $gt_pkt; ?>&NM_PKT=<?= $nmpkt; ?>" class="btn btn-secondary">Kembali</a>
 
                                 </div>
+                                <script type="text/javascript">
+                                    function confirmation(){
+                                        if (confirm("Anda yakin ingin mengubah data?")){
+                                            location.href='functions.php';
+                                        }
+                                        else {
+                                            return false;
+                                        }
+                                    } 
+                                </script>
                             </form>
                         </div>
                     </div>

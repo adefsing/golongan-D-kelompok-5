@@ -27,7 +27,6 @@
 
                             <br>
                             <label for="NM_PKT"><?= $nmpkt; ?></label>
-                            <label for="ID_PKT"><?= $idpkt; ?></label>
                             <table border="1" cellpadding="10" cellspacing="1">
                                 <tr>
                                     <th>Pilih Wisata</th>

@@ -44,7 +44,7 @@
                                     <div class="form-group col ml-auto">
 
                                         <label class="col-form-label">Nama Paket</label>
-                                        <input type="text" name="NM_PKT" id="NM_PKT" class="form-control input-default" placeholder="Nama Paket" value="<?php echo $ubah['NM_PKT']; ?>">
+                                        <input type="text" name="NM_PKT" id="NM_PKT" autocomplete="off" class="form-control input-default" placeholder="Nama Paket" value="<?php echo $ubah['NM_PKT']; ?>">
                                     </div>
                                 </div>
                         </div>
