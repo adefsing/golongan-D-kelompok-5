@@ -1,6 +1,6 @@
 <?php
 // require 'index.php';
-require 'functions.php';
+
 $nm = $_GET["DTL_PEMESAN"];
 $idps = $_GET["ID_PEMESAN"];
 $ang = $_GET["JMLH_ANGGOTA"];
