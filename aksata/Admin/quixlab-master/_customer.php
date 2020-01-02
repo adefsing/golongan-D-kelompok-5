@@ -7,7 +7,7 @@
                     NIK,
                     ALAMAT_PEMESAN,
                     TLP_PEMESAN,
-                    DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  FROM pemesan ORDER BY TGL_PSN DESC");
+                    DATE_FORMAT(TGL_PSN, '%d-%m-%Y') AS TGL_PSN  FROM pemesan ORDER BY ID_PEMESAN DESC");
     ?>
 
     <div class="row">
@@ -116,7 +116,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="_hapus_pemesan.php?NIK=<?= $rmm["NIK"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
+                                                    <a href="_hapus_pemesan.php?ID_PEMESAN=<?= $rmm["ID_PEMESAN"]; ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>

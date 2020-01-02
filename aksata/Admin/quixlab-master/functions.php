@@ -45,8 +45,8 @@ function tambahpsn($data)
 function hapuspsn($nm)
 {
     global $connect;
-    $nik = htmlspecialchars($nm);
-    mysqli_query($connect, "DELETE FROM pemesan WHERE NIK = '$nik'");
+    $id_pemesan = ($nm);
+    mysqli_query($connect, "DELETE FROM pemesan WHERE ID_PEMESAN = '$id_pemesan'");
     return mysqli_affected_rows($connect);
 }
 
