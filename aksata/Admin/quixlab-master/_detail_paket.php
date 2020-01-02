@@ -88,6 +88,7 @@
                             <div class="modal-footer">
                                 <a href="index.php?page=detailpaketubah&ID_PKT=<?= $gt_pkt; ?>&NM_PKT=<?= $nmpkt; ?>" class="btn btn-primary">Ubah</a>
                                 <a href="?page=paket" class="btn btn-secondary" style="color:white;">Kembali</a>
+
                             </div>
                         </div>
                     </div>

@@ -67,7 +67,7 @@
                                 </label>
                                 <label style="text-align:right;">
 
-                                    <a href="_report_rumahmakan.php?id=<?php echo $_SESSION['username']; ?>"><button type="button" class="btn mb-1 btn-primary btn-lg">CETAK DATA PDF</button>
+                                    <a href="_report_transaksi.php?id=<?php echo $_SESSION['username']; ?>"><button type="button" class="btn mb-1 btn-primary btn-lg">CETAK DATA PDF</button>
                                     </a>
 
 
