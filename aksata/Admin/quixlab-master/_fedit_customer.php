@@ -52,17 +52,17 @@
                                     <div class="form-group col ml-auto">
                                         <input type="hidden" name="ID_PEMESAN" value="<?= $ubah["ID_PEMESAN"]; ?>">
                                         <label class="col-form-label">Nama Pemesan</label>
-                                        <input type="text" name="NM_PEMESAN" autocomplete="off" value="<?php echo $ubah['NM_PEMESAN']; ?>" class="form-control input-default" placeholder="Nama customer">
+                                        <input type="text" name="NM_PEMESAN" autocomplete="off" value="<?= $ubah['NM_PEMESAN']; ?>" class="form-control input-default" placeholder="Nama customer">
                                         <label class="col-form-label">Jumlah Anggota</label>
-                                        <input type="text" name="JMLH_ANGGOTA" autocomplete="off" value="<?php echo $ubah['JMLH_ANGGOTA']; ?>" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
+                                        <input type="text" name="JMLH_ANGGOTA" autocomplete="off" value="<?= $ubah['JMLH_ANGGOTA']; ?>" class="form-control input-default" maxlength="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Jumlah Anggota">
                                         <label class="col-form-label">NIK</label>
-                                        <input type="text" name="NIK" autocomplete="off" value="<?php echo $ubah['NIK']; ?>" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
+                                        <input type="text" name="NIK" autocomplete="off" value="<?= $ubah['NIK']; ?>" class="form-control input-default" maxlength="25" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="NIK">
                                         <label class="col-form-label">Alamat</label>
-                                        <textarea type="text" name="ALAMAT_PEMESAN" autocomplete="off" value="<?php echo $ubah['ALAMAT_PEMESAN']; ?>" class="form-control input-default" placeholder="Alamat" style="height:125px;"><?php echo $ubah['ALAMAT_PEMESAN']; ?></textarea>
+                                        <textarea type="text" name="ALAMAT_PEMESAN" autocomplete="off" value="<?= $ubah['ALAMAT_PEMESAN']; ?>" class="form-control input-default" placeholder="Alamat" style="height:125px;"><?= $ubah['ALAMAT_PEMESAN']; ?></textarea>
                                         <label class="col-form-label">Telepon</label>
-                                        <input type="text" name="TLP_PEMESAN" autocomplete="off" value="<?php echo $ubah['TLP_PEMESAN']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="TELEPON">
+                                        <input type="text" name="TLP_PEMESAN" autocomplete="off" value="<?= $ubah['TLP_PEMESAN']; ?>" class="form-control input-default" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="TELEPON">
                                         <label class="col-form-label">Tanggal Pesan</label>
-                                        <input type="text" name="TGL_PSN" autocomplete="off" value="<?php echo $ubah['TGL_PSN']; ?>" maxlength="10" class="form-control input-default" placeholder="">
+                                        <input type="text" name="TGL_PSN" autocomplete="off" value="<?= $ubah['TGL_PSN']; ?>" maxlength="10" class="form-control input-default" placeholder="">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
