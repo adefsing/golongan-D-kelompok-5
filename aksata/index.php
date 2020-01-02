@@ -371,7 +371,7 @@ https://templatemo.com/tm-535-softy-pinko
                                 <li class="active">Wisata Pantai Sanur, <br> Puja Mandala, <br> Pantai Tanjung Benoa</li>
                             </ul>
                         </div>
-                       
+
                     </div>
                 </div>
                 <!-- ***** Pricing Item End ***** -->
@@ -394,16 +394,12 @@ https://templatemo.com/tm-535-softy-pinko
                                 <li class="active">Hotel Bintang 5</li>
                                 <li class="active">Bis Pariwisata Premium</li>
                                 <li class="active">Wisata Pantai Sanur,<br> Pantai Pandawa, <br> Pantai Jimbaran, dll</li>
-                              
+
                             </ul>
                         </div>
-                        
-                        </div>
+
                     </div>
                 </div>
-                <!-- ***** Pricing Item End ***** -->
-
-                <!-- ***** Pricing Item Start ***** -->
                 <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                     <div class="pricing-item">
                         <div class="pricing-header">
@@ -421,16 +417,21 @@ https://templatemo.com/tm-535-softy-pinko
                                 <li class="active">Pilih Rumah Makannya</li>
                                 <li class="active">Pilih Wisatanya</li>
                                 <li class="active">Yukk atur liburan Anda</li>
-                                
                             </ul>
                         </div>
-                    
-                        </div>
+
                     </div>
                 </div>
-                <!-- ***** Pricing Item End ***** -->
             </div>
+            <!-- ***** Pricing Item End ***** -->
+
+            <!-- ***** Pricing Item Start ***** -->
+
         </div>
+        <!-- ***** Pricing Item End ***** -->
+        </div>
+        </div>
+
     </section>
     <!-- ***** Pricing Plans End ***** -->
 
@@ -498,7 +499,7 @@ https://templatemo.com/tm-535-softy-pinko
                                 <a href="#">Tanah Lot</a>
                             </h3>
                             <div class="text">
-                            Tanah lot merupakan wisata yang berada di bali, yang sangat populer di kunjungi
+                                Tanah lot merupakan wisata yang berada di bali, yang sangat populer di kunjungi
                             </div>
                             <!-- <a href="#" class="main-button">Read More</a> -->
                         </div>
@@ -514,7 +515,7 @@ https://templatemo.com/tm-535-softy-pinko
                                 <a href="#">Bedugul</a>
                             </h3>
                             <div class="text">
-                            Bedugul yaitu wisata yang mempunyai spot bagus dan pemandangan indah di bali
+                                Bedugul yaitu wisata yang mempunyai spot bagus dan pemandangan indah di bali
                             </div>
                             <!-- <a href="#" class="main-button">Read More</a> -->
                         </div>
@@ -530,7 +531,7 @@ https://templatemo.com/tm-535-softy-pinko
                                 <a href="#">Kute</a>
                             </h3>
                             <div class="text">
-                            Kute adalah destinasi wisata wajib jika ada di bali, kute adalah wisata pantai yang sangat indah
+                                Kute adalah destinasi wisata wajib jika ada di bali, kute adalah wisata pantai yang sangat indah
                             </div>
                             <!-- <a href="#" class="main-button">Read More</a> -->
                         </div>
