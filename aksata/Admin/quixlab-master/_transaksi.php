@@ -143,7 +143,7 @@
                                                                 </select>
 
                                                                 <label class="col-form-label" for="TGL_PELAKSANAAN">Tanggal Pelaksanaan</label>
-                                                                <input type="date" class="form-control input-default" name="TGL_PELAKSANAAN" id="TGL_PELAKSANAAN" autocomplete="off" required title="isikan tanggal awal sampai akhir keberangkatan">
+                                                                <input type="text" class="form-control input-default" name="TGL_PELAKSANAAN" id="TGL_PELAKSANAAN" autocomplete="off" required title="isikan tanggal awal sampai akhir keberangkatan">
 
                                                                 <label class="col-form-label" for="TMPT_JPT">Tempat Jemput</label>
                                                                 <input type="text" class="form-control input-default" name="TMPT_JPT" id="TMPT_JPT" autocomplete="off" required>

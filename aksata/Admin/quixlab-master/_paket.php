@@ -94,7 +94,7 @@
 
 
                                                     &nbsp;
-                                                    <a href="hapus.php?ID_PKT=<?= $pktt["ID_PKT"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
+                                                    <a href="_hapuspaket.php?ID_PKT=<?= $pktt["ID_PKT"]; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" data-toggle="tooltip" data-placement="top" title="hapus" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="fa fa-close color-danger"></i>
                                                         </button>
