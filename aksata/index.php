@@ -208,42 +208,42 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="row">
                         <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                             <a href="#" class="mini-box">
-                                <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                                <!-- <i><img src="assets/images/work-process-item-01.png" alt=""></i> -->
                                 <strong>Pilih Paket Liburan</strong>
                                 <span>Pilih paket liburan dengan destinasi wisata mana yang akan Anda, keluarga atau rekan-rekan Anda kunjungi.</span>
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                             <a href="#" class="mini-box">
-                                <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                                <!-- <i><img src="assets/images/work-process-item-01.png" alt=""></i> -->
                                 <strong>Tentukan Paket</strong>
                                 <span>Tentukan apakah destinasi serta fasilitas wisata yang kami sediakan sudah sesuai dengan yang Anda inginkan.</span>
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                             <a href="#" class="mini-box">
-                                <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                                <!-- <i><img src="assets/images/work-process-item-01.png" alt=""></i> -->
                                 <strong>Pilihan</strong>
                                 <span>Jika paket yang tersedia belum sesuai dengan keinginan, kami menyediakan paket custom, Anda dapat mengatur liburan Anda sendiri.</span>
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                             <a href="#" class="mini-box">
-                                <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                                <!-- <i><img src="assets/images/work-process-item-01.png" alt=""></i> -->
                                 <strong>Meeting</strong>
                                 <span>Setelah pemilihan paket, kami akan mengadakan pertemuan untuk membicarakan kembali tentang pesanan paket Anda.</span>
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                             <a href="#" class="mini-box">
-                                <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                                <!-- <i><img src="assets/images/work-process-item-01.png" alt=""></i> -->
                                 <strong>Pembayaran</strong>
                                 <span>Setelah terjadi kesepakatan, Anda dapat membayar DP sejumlah 30% dari harga yang telah disepakati saat meeting.</span>
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                             <a href="#" class="mini-box">
-                                <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                                <!-- <i><img src="assets/images/work-process-item-01.png" alt=""></i> -->
                                 <strong>Keberangkatan</strong>
                                 <span>Pelunasan dapat dilakukan selambat-lambatnya H-2 keberangkatan. Dan Liburan pun siap dilaksanakan.</span>
                             </a>
@@ -279,13 +279,13 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="team-item">
                         <div class="team-content">
                             <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                            <p>Proin a neque nisi. Nam ipsum nisi, venenatis ut nulla quis, egestas scelerisque orci. Maecenas a finibus odio.</p>
-                            <div class="user-image">
+                            <p>AKSATA memberikan pelayanan yang sangat memusakan kepada customer yang akan menggunakan jasa PT. AKSATA</p>
+                            <!-- <div class="user-image">
                                 <img src="http://placehold.it/60x60" alt="">
-                            </div>
+                            </div> -->
                             <div class="team-info">
-                                <h3 class="user-name">Catherine Soft</h3>
-                                <span>Managing Director</span>
+                                <h3 class="user-name">Samuel Mandalung</h3>
+                                <span>Pengusaha</span>
                             </div>
                         </div>
                     </div>
@@ -297,13 +297,13 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="team-item">
                         <div class="team-content">
                             <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                            <p>Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
-                            <div class="user-image">
+                            <p>AKSATA mampu menyesuaikan budget yang ada di customer sehingga perjalanan berlibur dapat berjalan lebih tenang</p>
+                            <!-- <div class="user-image">
                                 <img src="http://placehold.it/60x60" alt="">
-                            </div>
+                            </div> -->
                             <div class="team-info">
-                                <h3 class="user-name">Kelvin Wood</h3>
-                                <span>Digital Marketer</span>
+                                <h3 class="user-name">Yunus Ambanepa</h3>
+                                <span>Pegawai Kantoran</span>
                             </div>
                         </div>
                     </div>
@@ -315,13 +315,13 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="team-item">
                         <div class="team-content">
                             <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                            <p>Quisque diam odio, maximus ac consectetur eu, auctor non lorem. Cras quis est non ante ultrices molestie. Ut vehicula et diam at aliquam.</p>
-                            <div class="user-image">
+                            <p>Wisata menggunakan jasa AKSATA memberikan pengalaman baru yang tak terlupakan, pastinya menyenangkan</p>
+                            <!-- <div class="user-image">
                                 <img src="http://placehold.it/60x60" alt="">
-                            </div>
+                            </div> -->
                             <div class="team-info">
-                                <h3 class="user-name">David Martin</h3>
-                                <span>Website Manager</span>
+                                <h3 class="user-name">Agil Briski</h3>
+                                <span>Guru SD</span>
                             </div>
                         </div>
                     </div>
@@ -339,12 +339,12 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center-heading">
-                        <h2 class="section-title">Pricing Plans</h2>
+                        <h2 class="section-title">PAKET LIBURAN</h2>
                     </div>
                 </div>
                 <div class="offset-lg-3 col-lg-6">
                     <div class="center-text">
-                        <p>Donec vulputate urna sed rutrum venenatis. Cras consequat magna quis arcu elementum, quis congue risus volutpat.</p>
+                        <p>Beberapa paket liburan yang bisa kami tawarkan di AKSATA</p>
                     </div>
                 </div>
             </div>
@@ -355,26 +355,23 @@ https://templatemo.com/tm-535-softy-pinko
                 <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                     <div class="pricing-item">
                         <div class="pricing-header">
-                            <h3 class="pricing-title">Starter</h3>
+                            <h3 class="pricing-title">Bali Exotic Tour</h3>
                         </div>
                         <div class="pricing-body">
                             <div class="price-wrapper">
-                                <span class="currency">$</span>
-                                <span class="price">14.50</span>
-                                <span class="period">monthly</span>
+                                <span class="currency">Rp.</span>
+                                <span class="price">800.000</span>
+                                <span class="period">/orang</span>
                             </div>
                             <ul class="list">
-                                <li class="active">60 GB space</li>
-                                <li class="active">600 GB transfer</li>
-                                <li class="active">Pro Design Panel</li>
-                                <li>15-minute support</li>
-                                <li>Unlimited Emails</li>
-                                <li>24/7 Security</li>
+                                <li class="active">3Hari, 3Malam</li>
+                                <li class="active">Makan 2kali Sehari</li>
+                                <li class="active">Hotel Bintang 3</li>
+                                <li class="active">Bis Pariwisata Standart</li>
+                                <li class="active">Wisata Pantai Sanur, <br> Puja Mandala, <br> Pantai Tanjung Benoa</li>
                             </ul>
                         </div>
-                        <div class="pricing-footer">
-                            <a href="#" class="main-button">Purchase Now</a>
-                        </div>
+                       
                     </div>
                 </div>
                 <!-- ***** Pricing Item End ***** -->
@@ -383,25 +380,24 @@ https://templatemo.com/tm-535-softy-pinko
                 <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                     <div class="pricing-item active">
                         <div class="pricing-header">
-                            <h3 class="pricing-title">Premium</h3>
+                            <h3 class="pricing-title">Bali Cruise Tour</h3>
                         </div>
                         <div class="pricing-body">
                             <div class="price-wrapper">
-                                <span class="currency">$</span>
-                                <span class="price">21.50</span>
-                                <span class="period">monthly</span>
+                                <span class="currency">Rp.</span>
+                                <span class="price">1.000.000</span>
+                                <span class="period">/orang</span>
                             </div>
                             <ul class="list">
-                                <li class="active">120 GB space</li>
-                                <li class="active">1200 GB transfer</li>
-                                <li class="active">Pro Design Panel</li>
-                                <li class="active">15-minute support</li>
-                                <li>Unlimited Emails</li>
-                                <li>24/7 Security</li>
+                                <li class="active">3Hari, 3Malam</li>
+                                <li class="active">Makan 3kali Sehari</li>
+                                <li class="active">Hotel Bintang 5</li>
+                                <li class="active">Bis Pariwisata Premium</li>
+                                <li class="active">Wisata Pantai Sanur,<br> Pantai Pandawa, <br> Pantai Jimbaran, dll</li>
+                              
                             </ul>
                         </div>
-                        <div class="pricing-footer">
-                            <a href="#" class="main-button">Purchase Now</a>
+                        
                         </div>
                     </div>
                 </div>
@@ -411,25 +407,24 @@ https://templatemo.com/tm-535-softy-pinko
                 <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                     <div class="pricing-item">
                         <div class="pricing-header">
-                            <h3 class="pricing-title">Advanced</h3>
+                            <h3 class="pricing-title">Kustom Paket Anda</h3>
                         </div>
                         <div class="pricing-body">
                             <div class="price-wrapper">
-                                <span class="currency">$</span>
-                                <span class="price">42.00</span>
-                                <span class="period">monthly</span>
+                                <span class="currency">Mulai dari Rp.</span>
+                                <span class="price">500.000</span>
+                                <span class="period">/orang</span>
                             </div>
                             <ul class="list">
-                                <li class="active">250 GB space</li>
-                                <li class="active">5000 GB transfer</li>
-                                <li class="active">Pro Design Panel</li>
-                                <li class="active">15-minute support</li>
-                                <li class="active">Unlimited Emails</li>
-                                <li class="active">24/7 Security</li>
+                                <li class="active">Atur Liburan Anda</li>
+                                <li class="active">Pilih Hotelnya</li>
+                                <li class="active">Pilih Rumah Makannya</li>
+                                <li class="active">Pilih Wisatanya</li>
+                                <li class="active">Yukk atur liburan Anda</li>
+                                
                             </ul>
                         </div>
-                        <div class="pricing-footer">
-                            <a href="#" class="main-button">Purchase Now</a>
+                    
                         </div>
                     </div>
                 </div>
@@ -447,25 +442,25 @@ https://templatemo.com/tm-535-softy-pinko
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="count-item decoration-bottom">
                             <strong>126</strong>
-                            <span>Projects</span>
+                            <span>Pemesan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="count-item decoration-top">
                             <strong>63</strong>
-                            <span>Happy Clients</span>
+                            <span>Pelanggan Puas</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="count-item decoration-bottom">
                             <strong>18</strong>
-                            <span>Awards Wins</span>
+                            <span>Penghargaan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="count-item">
                             <strong>27</strong>
-                            <span>Countries</span>
+                            <span>Kota dan Negara</span>
                         </div>
                     </div>
                 </div>
@@ -481,12 +476,12 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center-heading">
-                        <h2 class="section-title">Blog Entries</h2>
+                        <h2 class="section-title">Gallery</h2>
                     </div>
                 </div>
                 <div class="offset-lg-3 col-lg-6">
                     <div class="center-text">
-                        <p>Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
+                        <p>Gallery ini berisikan foto foto tempat liburan yang ada di dalam paket di AKSATA</p>
                     </div>
                 </div>
             </div>
@@ -496,48 +491,48 @@ https://templatemo.com/tm-535-softy-pinko
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-post-thumb">
                         <div class="img">
-                            <img src="assets/images/blog-item-01.png" alt="">
+                            <img src="assets/images/tanah_lot.jpg" alt="">
                         </div>
                         <div class="blog-content">
                             <h3>
-                                <a href="#">Vivamus ac vehicula dui</a>
+                                <a href="#">Tanah Lot</a>
                             </h3>
                             <div class="text">
-                                Cras aliquet ligula dui, vitae fermentum velit tincidunt id. Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.
+                            Tanah lot merupakan wisata yang berada di bali, yang sangat populer di kunjungi
                             </div>
-                            <a href="#" class="main-button">Read More</a>
+                            <!-- <a href="#" class="main-button">Read More</a> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-post-thumb">
                         <div class="img">
-                            <img src="assets/images/blog-item-02.png" alt="">
+                            <img src="assets/images/bedugul2.jpg" alt="">
                         </div>
                         <div class="blog-content">
                             <h3>
-                                <a href="#">Phasellus convallis augue</a>
+                                <a href="#">Bedugul</a>
                             </h3>
                             <div class="text">
-                                Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.
+                            Bedugul yaitu wisata yang mempunyai spot bagus dan pemandangan indah di bali
                             </div>
-                            <a href="#" class="main-button">Read More</a>
+                            <!-- <a href="#" class="main-button">Read More</a> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-post-thumb">
                         <div class="img">
-                            <img src="assets/images/blog-item-03.png" alt="">
+                            <img src="assets/images/kute3.jpg" alt="">
                         </div>
                         <div class="blog-content">
                             <h3>
-                                <a href="#">Nam gravida purus non</a>
+                                <a href="#">Kute</a>
                             </h3>
                             <div class="text">
-                                Maecenas eu erat vitae dui convallis consequat vel gravida nulla. Vestibulum finibus euismod odio, ut tempus enim varius eu.
+                            Kute adalah destinasi wisata wajib jika ada di bali, kute adalah wisata pantai yang sangat indah
                             </div>
-                            <a href="#" class="main-button">Read More</a>
+                            <!-- <a href="#" class="main-button">Read More</a> -->
                         </div>
                     </div>
                 </div>
