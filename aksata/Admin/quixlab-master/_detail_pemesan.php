@@ -54,7 +54,8 @@
                                         <button type="submit" class="btn btn-primary" name="submit" <?php if ($jumlah >= $ang) {
                                                                                                         echo "disabled";
                                                                                                     } ?>>TAMBAH</button>
-                                        <a href="?page=customer" class="btn btn-secondary" style="color:white;">Kembali</a>
+                                        <a href="?page=customer" class="btn btn-secondary" style="color:white;">Kembali Ke Pemesan</a>
+                                        <a href="?page=transaksi" class="btn btn-secondary" style="color:white;">Kembali Ke Transakasi</a>
                                     </div>
                                 </div>
                             </form>

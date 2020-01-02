@@ -25,7 +25,7 @@ $harga = $_GET['HARGA'];
         <div id="logo">
             <img src="images/logoa.png">
         </div>
-        <h1>INVOICE <?= $id_pemesan ?></h1>
+        <h1>INVOICE</h1>
         <div id="company" class="clearfix">
             PT. AKSATA DILAS JAYA<br /> JL. Sumatra 21,<br /> Jember,<br /> Tlp/Fax (0331) 5442678 <br />
             <a href="mailto:adjaduasatu@gmail.com">adjaduasatu@gmail.com</a>
@@ -35,7 +35,7 @@ $harga = $_GET['HARGA'];
             <div><span>Event Org</span> PT. AKSATA TOUR & TRAVEL</div>
             <div><span>PEMESAN</span> <?php echo $nmpms ?></div>
             <div><span>JUMLAH PESERTA</span> <?php echo $jmla ?></div>
-            <div><span>DATE PRINT</span> <?php echo $date->format('l , d F Y H:ia'); ?></div>
+            <div><span>TANGGAL_PELAKSANAAN</span> <?php echo $tanggal; ?></div>
         </div>
     </header>
     <main>
@@ -45,10 +45,10 @@ $harga = $_GET['HARGA'];
                 <tr>
                     <th class="no">NO</th>
                     <th class="th">JENIS LAYANAN <br />WISATA</th>
-                    <th class="th">HARGA LAYANAN <br />WISATA <br />PER UNIT</th>
+                    <th class="th">HARGA LAYANAN <br />WISATA PER UNIT</th>
                     <th>JUMLAH <br />PEMAKAIAN</th>
                     <th>JUMLAH <br />UNIT</th>
-                    <th class="th">JUMLAH TOTAL</th>
+                    <th class="th">&nbsp; &nbsp;JUMLAH TOTAL &nbsp;</th>
                 </tr>
             </thead>
             <tbody>
@@ -74,21 +74,20 @@ $harga = $_GET['HARGA'];
             <tfoot>
                 <tr>
                     <td style="background-color: white;" colspan="3" width="50%" class="hi">
-                        <b> TOUR DEPT</b><br />Tanggal : 10 Januari 2019
+                        <b> TOUR DEPT</b><br />Tanggal : <?php echo $date->format('d F Y '); ?>
                         <br /><br /><br /><br /><br /><br /><br /><b>HARIADI,SE,SPd,MSi</b>
                     </td>
                     <td style="background-color: white;" colspan="3" width="50%" class="hi">
                         <b>PEMESAN</b><br />
-                        <br /><br /><br /><br /><br /><br /><br /><b>HARIADI,SE,SPd,MSi</b>
-                    </td>
+                        <br /><br /><br /><br /><br /><br /><br />
+                        <b><?php echo $nmpms ?></b> </td>
                 </tr>
             </tfoot>
         </table>
         <div id=" notices ">
             <div>NOTICE:</div>
-            <div class=" notice ">A finance charge of 1.5% will be made on unpaid balances after 30 days.
+            <div class=" notice ">Jangan Sampai Hilang, Simpan Sebagai Barang Bukti.
             </div>
-        </div>
     </main>
     <footer>
         Aksata tour & travel 2019.
