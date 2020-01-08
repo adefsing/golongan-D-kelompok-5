@@ -325,7 +325,7 @@ function ubahtrns($data)
     return mysqli_affected_rows($connect);
 }
 
-function caritrnsssssss($keyword)
+function caritrns($keyword)
 {
     $query = "SELECT transaksi.ID_TRNS,
                     pemesan.NM_PEMESAN, 
